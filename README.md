@@ -17,7 +17,7 @@ The **DWCC Sports Management System** is a web-based application designed to hel
 - ASP.NET Core MVC
 - C#
 - Entity Framework Core
-- Database: *Add your database system here*
+- Database: XAMPP
 - HTML, CSS, JavaScript, and Bootstrap (if used)
 
 ## 🎯 Objectives
