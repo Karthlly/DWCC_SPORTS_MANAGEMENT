@@ -1,0 +1,18 @@
+﻿{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=sportsmanagement;User=root;Password=;TreatTinyAsBoolean=true;"
+    },
+  "Email": {
+    "SmtpServer": "sandbox.smtp.mailtrap.io",
+    "SmtpPort": "587",
+    "SenderEmail": "7c8366c9636afa",
+    "SenderPassword": "c650954e1068d7"
+  },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AllowedHosts": "*"
+}

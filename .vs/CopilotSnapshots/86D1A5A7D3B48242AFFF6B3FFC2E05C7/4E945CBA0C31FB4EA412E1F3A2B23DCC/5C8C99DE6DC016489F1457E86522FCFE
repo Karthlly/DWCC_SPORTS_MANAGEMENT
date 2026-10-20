@@ -1,0 +1,464 @@
+﻿@model List<DWCCSportsManagement.Models.Coach>
+@{
+    ViewData["Title"] = "Manage Coaches";
+    bool showRolePanel = ViewContext.HttpContext.Request.Query["panel"] == "role";
+    var searchName = ViewContext.HttpContext.Request.Query["searchName"];
+}
+
+<div class="container mt-5">
+   
+
+    <!-- Role Manager Panel -->
+    <div id="roleManagerPanel" class="card p-4 shadow-sm" style="display:block";>
+        <h2 class="mb-3">Role Manager</h2>
+        <p class="mb-4 text-muted">Manage all user and coach accounts.</p>
+
+        <!-- Search -->
+        <form id="roleSearchForm" method="get" asp-action="ManageCoach" asp-controller="Admin" class="d-flex mb-3">
+            <input type="hidden" name="panel" value="role" />
+            <input class="form-control me-2" placeholder="Search Username, First Name, Last Name" type="text" name="searchName" value="@searchName" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+    <div class="d-flex flex-wrap justify-content-between mb-3">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCoachModal">
+            <i class="bi bi-plus-lg me-1"></i> Add User
+        </button>
+    </div>
+
+
+        <!-- Role Manager Table -->
+         @if (!string.IsNullOrEmpty(TempData["Error"] as string))
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @Html.Raw(TempData["Error"])
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(TempData["Success"] as string))
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+        <div class="table-responsive">
+            @* In your Razor view, e.g., ManageCoach.cshtml *@
+            @{
+                var successMessage = TempData["SuccessMessage"] as string;
+                var newUsername = TempData["NewCoachUsername"] as string;
+                var newPassword = TempData["NewCoachPassword"] as string;
+            }
+
+            @if (!string.IsNullOrEmpty(successMessage))
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@successMessage</strong><br />
+                    @if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword))
+                    {
+                        <span>Username: <strong>@newUsername</strong></span>
+                
+                        <br />
+                        <span>Password: <strong>@newPassword</strong></span>
+                    }
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <table class="table table-striped table-bordered align-middle">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                        <th>Source</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var acc in ViewBag.AllAccounts)
+                    {
+                        <tr>
+                            <td>@acc.Id</td>
+                            <td>@acc.Username</td>
+                            <td>@acc.FirstName</td>
+                            <td>@acc.LastName</td>
+                            <td>
+                                @if (acc.Source == "User")
+                                {
+                                    <span>********</span>
+                                    <br />
+                                    <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#changePasswordModal-@acc.Id">Change Password</a>
+                                }
+                                else
+                                {
+                                    <span>Coach Account</span>
+                                }
+                            </td>
+                            <td>@acc.Role</td>
+                            <td>@acc.Source</td>
+                            <td class="text-center">
+                                @if (acc.Source == "User")
+                                {
+                                    <div class="d-flex justify-content-center align-items-center flex-wrap gap-1">
+                                        <form asp-action="EditUserRole" asp-controller="Admin" method="post" class="d-flex align-items-center gap-1">
+                                            <input type="hidden" name="id" value="@acc.Id" />
+                                            <select name="role" class="form-select form-select-sm">
+                                                <option value="Admin" selected="@(acc.Role == "Admin" ? "selected" : null)">Admin</option>
+                                                <option value="Manager" selected="@(acc.Role == "Manager" ? "selected" : null)">Manager</option>
+                                                <option value="Coach" selected="@(acc.Role == "Coach" ? "selected" : null)">Coach</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                                        </form>
+
+                                        <form asp-action="ToggleUserStatus" asp-controller="Admin" method="post">
+                                            <input type="hidden" name="id" value="@acc.Id" />
+
+                                            @if (acc.Status == "Active")
+                                            {
+                                                <button type="submit"
+                                                        class="btn btn-sm btn-danger"
+                                                        @(acc.Role == "Admin" ? "disabled" : "")>
+                                                    Deactivate
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <button type="submit" class="btn btn-sm btn-success">Activate</button>
+                                            }
+                                        </form>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Coach record</span>
+                                }
+                            </td>
+                        </tr>
+
+                        @* Modal for changing password *@
+                        if (acc.Source == "User")
+                        {
+                            <div class="modal fade" id="changePasswordModal-@acc.Id" tabindex="-1" aria-labelledby="changePasswordModalLabel-@acc.Id" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form method="post" asp-action="ChangeUserPassword" asp-controller="Admin">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="changePasswordModalLabel-@acc.Id">Change Password for @acc.Username</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input type="hidden" name="id" value="@acc.Id" />
+                                                <div class="mb-3">
+                                                    <label for="newPassword-@acc.Id" class="form-label">New Password</label>
+                                                    <input type="password" class="form-control" id="newPassword-@acc.Id" name="newPassword" required />
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="confirmPassword-@acc.Id" class="form-label">Confirm Password</label>
+                                                    <input type="password" class="form-control" id="confirmPassword-@acc.Id" name="confirmPassword" required />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Change Password</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addCoachModal" tabindex="-1" aria-labelledby="addCoachModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form id="addCoachForm" method="post" asp-action="AddCoach" asp-controller="Admin">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCoachModalLabel">Add New Coach</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="FirstName" required />
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="LastName" required />
+                            </div>
+                            <div class="col-12">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="Phone" required placeholder="Enter up to 11 digits" />
+                            </div>
+                            <div class="col-12">
+                                <label for="role" class="form-label">Role</label>
+                                <select class="form-select" id="role" name="Role" required>
+                                    <option value="">-- Select Role --</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Manager">Team Manager</option>
+                                    <option value="Coach">Coach</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="ImageUrl" value="~/assets/coach.jpg" />
+                        <input type="hidden" name="Bio" value="Fill up if applicable" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Add User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="reassignTeamsModal" tabindex="-1" aria-labelledby="reassignTeamsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form method="post" asp-action="ReassignTeams" asp-controller="Admin">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reassignTeamsModalLabel">Reassign Teams</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="oldCoachId" name="OldCoachId" />
+
+                    <div class="mb-3">
+                        <label for="newCoachId" class="form-label">Select New Coach</label>
+                        <select class="form-select" id="newCoachId" name="NewCoachId" required>
+                            <option value="">-- Select Coach --</option>
+                            @if (ViewBag.AllCoaches != null)
+                            {
+                                @foreach (var c in ViewBag.AllCoaches)
+                                {
+                                    if (c.Status == "Active")
+                                    {
+                                        <option value="@c.Id">@c.FirstName @c.LastName</option>
+                                    }
+                                }
+
+
+                            }
+                        </select>
+                    </div>
+
+                    <div id="teamsContainer" class="mb-3">
+                        <label class="form-label">Teams to Reassign</label>
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Reassign Teams</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newCoachModal" tabindex="-1" aria-labelledby="newCoachModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newCoachModalLabel">New Coach Credentials</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Username:</strong> <span id="newCoachUsername"></span></p>
+                <p><strong>Password:</strong> <span id="newCoachPassword"></span></p>
+                <p class="text-muted fst-italic">Make sure to save these credentials!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Toggle Script -->
+@using System.Text.Json
+<script>
+    // Deserialize the coaches from the controller
+    var coaches = @Html.Raw(ViewBag.CoachesJson);
+    console.log('Coaches loaded:', coaches); // Check all IDs here
+</script>
+
+
+<script>
+
+     document.getElementById('addCoachForm').addEventListener('submit', function(e) {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        // Name validation: letters only
+        const nameRegex = /^[A-Za-z]+$/;
+        if (!nameRegex.test(firstName)) {
+            alert('First Name must contain letters only.');
+            e.preventDefault();
+            return;
+        }
+        if (!nameRegex.test(lastName)) {
+            alert('Last Name must contain letters only.');
+            e.preventDefault();
+            return;
+        }
+
+        // Phone validation: numbers only, max 11 digits
+           const phoneRegex = /^\d{11}$/; // exactly 11 digits
+    if (!phoneRegex.test(phone)) {
+        alert('Phone must be exactly 11 digits and numeric.');
+        e.preventDefault();
+        return;
+    }
+
+    });
+
+    function showEditModal(coachId) {
+        // Explicitly close any open modals first
+        var openModals = document.querySelectorAll('.modal.show');
+        openModals.forEach(function(modal) {
+            var bsModal = bootstrap.Modal.getInstance(modal);
+            if (bsModal) bsModal.hide();
+        });
+
+        // Wait a moment for modal to close
+        setTimeout(function() {
+            var modalElement = document.getElementById('modal-coach-' + coachId);
+            if (modalElement) {
+                var modal = new bootstrap.Modal(modalElement);
+                modal.show();
+                console.log('Opening modal for coach ID: ' + coachId);
+            } else {
+                console.error('Modal not found for coach ID: ' + coachId);
+            }
+        }, 100);
+    }
+
+            function showViewModal(coachId) {
+        // Convert to number to ensure proper matching
+        coachId = Number(coachId);
+
+        // Use PascalCase property names exactly as in JSON
+        var coach = coaches.find(c => Number(c.Id) === coachId);
+
+        if (!coach) {
+            console.error('Coach not found with ID: ' + coachId);
+            console.log('All loaded coach IDs:', coaches.map(c => c.Id));
+            return;
+        }
+
+        var imagePath = coach.ImageUrl.startsWith('~') ? coach.ImageUrl.substring(1) : coach.ImageUrl;
+
+        var html = `
+            <div class="row mb-3">
+                <div class="col-md-4 text-center">
+                    <img src="${imagePath}" class="rounded-circle" style="width:150px;height:150px;" alt="${coach.FirstName} ${coach.LastName}" />
+                </div>
+                <div class="col-md-8">
+                    <p><strong>Username:</strong> ${coach.Username}</p>
+                    <p><strong>Full Name:</strong> ${coach.FirstName} ${coach.LastName}</p>
+                    <p><strong>Phone:</strong> ${coach.Phone}</p>
+                    <p><strong>Bio:</strong> ${coach.Bio}</p>
+                    <p><strong>Status:</strong> ${coach.Status}</p>
+                </div>
+            </div>
+            <hr />
+            <h6>Teams Coaching:</h6>
+            <ul>
+                ${(coach.Teams && coach.Teams.length > 0)
+                    ? coach.Teams.map(t => `<li>${t.TeamName}</li>`).join('')
+                    : '<li class="text-muted">No teams assigned</li>'}
+            </ul>
+        `;
+
+        document.getElementById('coachDetails').innerHTML = html;
+
+        var modal = new bootstrap.Modal(document.getElementById('viewCoachModal'));
+        modal.show();
+    }
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Toggle Role Manager panel
+        const toggle = document.getElementById("roleManagerToggle");
+        const coachPanel = document.getElementById("coachPanel");
+        const rolePanel = document.getElementById("roleManagerPanel");
+        const heading = document.getElementById("manageCoachHeading");
+
+        toggle.checked = @showRolePanel.ToString().ToLower();
+        toggle.addEventListener("change", function () {
+            coachPanel.style.display = this.checked ? "none" : "block";
+            rolePanel.style.display = this.checked ? "block" : "none";
+            heading.style.display = this.checked ? "none" : "block";
+        });
+
+        // Handle Reassign Teams modal
+        var tempData = @Html.Raw(TempData["ReassignTeams"] ?? "null");
+
+        if (tempData) {
+            var reassignData = tempData;
+            document.getElementById("oldCoachId").value = reassignData.CoachId;
+
+            var container = document.getElementById("teamsContainer");
+            container.innerHTML = '';
+
+            var label = document.createElement('label');
+            label.classList.add('form-label', 'mb-2');
+            label.textContent = "Teams to Reassign";
+            container.appendChild(label);
+
+            if (reassignData.Teams.length > 0) {
+                reassignData.Teams.forEach(team => {
+                    var div = document.createElement('div');
+                    div.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'mb-2', 'shadow-sm', 'rounded');
+                    div.innerHTML = `
+                        <div>
+                            <p>${team.TeamName}</p>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                });
+            } else {
+                container.innerHTML = `<p class="text-muted fst-italic">No teams found to reassign.</p>`;
+            }
+
+            var modal = new bootstrap.Modal(document.getElementById('reassignTeamsModal'));
+            modal.show();
+        }
+
+        var username = '@TempData["NewCoachUsername"]';
+        var password = '@TempData["NewCoachPassword"]';
+
+        if(username && password) {
+            document.getElementById("newCoachUsername").textContent = username;
+            document.getElementById("newCoachPassword").textContent = password;
+
+            var modal = new bootstrap.Modal(document.getElementById('newCoachModal'));
+            modal.show();
+        }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

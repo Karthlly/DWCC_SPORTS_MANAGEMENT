@@ -1,0 +1,189 @@
+﻿@model List<DWCCSportsManagement.Models.AthleteModel>
+@{
+    ViewData["Title"] = "Coach Dashboard";
+    var missingFiles = Model
+        .Where(a => string.IsNullOrEmpty(a.MedicalInfo) || string.IsNullOrEmpty(a.Grades))
+        .ToList();
+}
+
+<div class="container mt-4">
+    <h1 class="mb-3">Coach Dashboard</h1>
+    <p class="text-muted">Welcome to the DWCC Sports Management System Dashboard.</p>
+    @if (missingFiles.Any())
+    {
+        <div class="alert alert-warning mt-3 p-0" role="alert">
+            <div class="card border-warning mb-0">
+                <div class="card-header bg-warning text-dark d-flex align-items-center">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    <strong>Incomplete Athlete Records</strong>
+                </div>
+                <div class="card-body p-3">
+                    <p class="mb-2">The following athletes are missing Medical Info or Grades:</p>
+                    <div class="list-group list-group-flush">
+                        @foreach (var athlete in missingFiles)
+                        {
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>@athlete.FirstName @athlete.LastName</span>
+                                <span class="d-flex gap-1">
+                                    @if (string.IsNullOrEmpty(athlete.MedicalInfo))
+                                    {
+                                        <span class="badge bg-danger">No Medical Info</span>
+                                    }
+                                    @if (string.IsNullOrEmpty(athlete.Grades))
+                                    {
+                                        <span class="badge bg-warning text-dark">No Grades</span>
+                                    }
+                                </span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mt-4 g-3">
+        <!-- Gender Distribution Card -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card shadow-sm h-100" style="height: 280px;">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0">Gender Distribution</h6>
+                </div>
+                <div class="card-body p-2">
+                    <canvas id="genderChart" style="height:200px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Distribution Card -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card shadow-sm h-100" style="height: 280px;">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0">Status Distribution</h6>
+                </div>
+                <div class="card-body p-2">
+                    <canvas id="statusChart" style="height:200px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 g-3">
+        <!-- Athletes per Team Card -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card shadow-sm h-100" style="height: 280px;">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0">Athletes per Team</h6>
+                </div>
+                <div class="card-body p-2">
+                    <canvas id="teamChart" style="height:200px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Athletes per Sport Card -->
+        <div class="col-lg-6 col-md-12">
+            <div class="card shadow-sm h-100" style="height: 280px;">
+                <div class="card-header bg-success text-white">
+                    <h6 class="mb-0">Athletes per Sport</h6>
+                </div>
+                <div class="card-body p-2">
+                    <canvas id="sportChart" style="height:200px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Helper function to generate light pastel colors
+        function getLightColor() {
+            const hue = Math.floor(Math.random() * 360);
+            const saturation = Math.floor(Math.random() * 30) + 60; // 60-90%
+            const lightness = Math.floor(Math.random() * 20) + 70;  // 70-90%
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
+        fetch('/Home/GetDashboardData')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) { alert(data.error); return; }
+
+                const chartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, precision:0 } },
+                    plugins: {
+                        legend: { position: 'top' }
+                    }
+                };
+
+                function generateColors(count) {
+                    const colors = [];
+                    for (let i = 0; i < count; i++) {
+                        colors.push(getLightColor());
+                    }
+                    return colors;
+                }
+
+                // Gender Chart
+                new Chart(document.getElementById('genderChart').getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: data.gender.map(g => g.gender),
+                        datasets: [{
+                            label: 'Athletes by Gender',
+                            data: data.gender.map(g => g.count),
+                            backgroundColor: generateColors(data.gender.length)
+                        }]
+                    },
+                    options: chartOptions
+                });
+
+                // Status Chart
+                new Chart(document.getElementById('statusChart').getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.status.map(s => s.status),
+                        datasets: [{
+                            label: 'Athletes by Status',
+                            data: data.status.map(s => s.count),
+                            backgroundColor: generateColors(data.status.length)
+                        }]
+                    },
+                    options: chartOptions
+                });
+
+                // Athletes per Team Chart
+                new Chart(document.getElementById('teamChart').getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.perTeam.map(t => t.teamName),
+                        datasets: [{
+                            label: 'Athletes per Team',
+                            data: data.perTeam.map(t => t.count),
+                            backgroundColor: generateColors(data.perTeam.length)
+                        }]
+                    },
+                    options: chartOptions
+                });
+
+                // Athletes per Sport Chart
+                new Chart(document.getElementById('sportChart').getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.perSport.map(s => s.sportName),
+                        datasets: [{
+                            label: 'Athletes per Sport',
+                            data: data.perSport.map(s => s.count),
+                            backgroundColor: generateColors(data.perSport.length)
+                        }]
+                    },
+                    options: chartOptions
+                });
+
+            })
+            .catch(error => console.error('Error fetching dashboard data:', error));
+    </script>
+}

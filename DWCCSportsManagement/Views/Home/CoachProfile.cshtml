@@ -1,0 +1,105 @@
+﻿@model DWCCSportsManagement.Models.Coach
+
+@{
+    ViewData["Title"] = "Coach Profile";
+}
+
+<!-- PAGE STYLES -->
+<style>
+    .profile-header {
+        background: linear-gradient(90deg, #0e4e2c, #009e43);
+        border-radius: 20px;
+        padding: 40px;
+        color: white;
+        position: relative;
+        margin-top: 50px;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        object-fit: cover;
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        margin-top: 50px;
+    }
+
+    .metric-card {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        
+    }
+
+    .section-box {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        margin-top: 20px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .tag {
+        background: #e7f7ed;
+        padding: 8px 15px;
+        border-radius: 20px;
+        display: inline-block;
+        margin: 4px;
+        font-size: 14px;
+        color: #0b7d3b;
+    }
+
+    .availability-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 16px;
+    }
+
+    .quick-btn {
+        background: #009e43;
+        color: white;
+        border-radius: 12px;
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+    }
+</style>
+
+
+<!-- HEADER -->
+<div class="profile-header mb-4">
+    <img src="@Url.Content(Model.ImageUrl.Replace("~", ""))" class="profile-photo" />
+
+    <div style="margin-left: 200px;">
+        <h2 class="text-white">@Model.FirstName @Model.LastName</h2>
+        <p>Head Coach & P.E. Instructor at DWCC</p>
+
+        <span class="badge bg-light text-dark">Active</span>
+        <span class="badge bg-primary">Certified Professional</span>
+
+        <div class="mt-3">
+            <i class="bi bi-telephone"></i> @Model.Phone <br />
+            <i class="bi bi-envelope"></i> @($"{Model.Username}@dwcc.edu") <br />
+            <i class="bi bi-geo-alt"></i> DWCC Sports Complex
+        </div>
+
+        <div class="mt-3">
+            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editCoachModal">Edit Profile</button>
+
+            <form asp-action="Logout" asp-controller="Home" method="post" class="d-inline">
+                <button class="btn btn-danger">Logout</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- LOAD PARTIAL MODAL -->
+@await Html.PartialAsync("_EditCoachModal", Model)

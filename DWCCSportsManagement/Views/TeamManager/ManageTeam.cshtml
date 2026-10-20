@@ -1,0 +1,305 @@
+﻿@model List<DWCCSportsManagement.Models.TeamModel>
+@{
+    ViewData["Title"] = "Manage Team";
+
+    // ✅ Use actual model types from database
+    var sports = ViewBag.Sports as List<DWCCSportsManagement.Models.Sport>;
+    var coaches = ViewBag.Coaches as List<DWCCSportsManagement.Models.Coach>;
+
+    var uniqueSports = sports
+        .GroupBy(s => s.Name)
+        .Select(g => g.First()) // take first row per sport name
+        .ToList();
+
+    var uniqueSportsForFilter = sports
+    .GroupBy(s => s.Name)
+    .Select(g => g.First())
+    .ToList();
+
+}
+
+<div class="container mt-5">
+    <h1>Manage Team</h1>
+
+    <!-- Add Team Button -->
+    <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addTeamModal">
+        Add Team
+    </button>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label class="form-label">Category</label>
+            <select id="filterCategory" class="form-select">
+                <option value="">All Categories</option>
+                @foreach (var cat in ViewBag.Categories)
+                {
+                    <option value="@cat.Name">@cat.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Sport</label>
+            <select id="filterSport" class="form-select">
+                <option value="">All Sports</option>
+                @foreach (var s in uniqueSportsForFilter)
+                {
+                    <option value="@s.Name">@s.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Division</label>
+            <select id="filterDivision" class="form-select">
+                <option value="">All Divisions</option>
+                @foreach (var sc in ViewBag.SubCategories)
+                {
+                    <option value="@sc.Name">@sc.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <!-- Team Table -->
+    <div class="table-responsive mb-4">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <table class="table table-hover align-middle" id="teamsTable">
+            <thead>
+                <tr>
+                    <th>Team Name</th>
+                    <th>Sport</th>
+                    <th>Category</th>
+                    <th>Division</th>
+                    <th>Coach</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var team in Model)
+                {
+                    var sport = sports?.FirstOrDefault(s => s.Id == team.SportId);
+                    var sportName = sport?.Name ?? "N/A";
+                    var categoryName = sport?.Category?.Name ?? "N/A";
+                    var subCategoryName = sport?.SubCategory?.Name ?? "N/A";
+                    var coach = coaches?.FirstOrDefault(c => c.Id == team.CoachId);
+                    var coachName = coach != null ? $"{coach.FirstName} {coach.LastName}" : "N/A";
+
+                    <tr>
+                        <td>@team.TeamName</td>
+                        <td>@sportName</td>
+                        <td>@categoryName</td>
+                        <td>@subCategoryName</td>
+                        <td>@coachName</td>
+                        <td><span class="badge bg-warning text-dark">@team.Status</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Add Team Modal -->
+    <div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" asp-action="AddTeam" asp-controller="TeamManager">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addTeamModalLabel">Add New Team</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Team Name -->
+                        <div class="mb-3">
+                            <label class="form-label">Team Name</label>
+                            <input type="text" class="form-control" name="TeamName" required />
+                        </div>
+
+                        <!-- Sport Dropdown - DEDUPLICATED -->
+                        <div class="mb-3">
+                            <label class="form-label">Sport</label>
+                            <select class="form-select" id="sportSelect" required>
+                                <option value="">Select a sport</option>
+
+                                @* Deduplicate by Sport Name only, only Active *@
+                                @{
+                                    var activeUniqueSportNames = sports
+                                    .Where(s => s.Status != "Archived")
+                                    .GroupBy(s => s.Name)
+                                    .Select(g => g.First())
+                                    .OrderBy(s => s.Name)
+                                    .ToList();
+                                }
+
+                                @foreach (var sport in activeUniqueSportNames)
+                                {
+                                    <option value="@sport.Name" data-sportname="@sport.Name">
+                                        @sport.Name
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <input type="hidden" name="SportId" id="SportIdHidden" />
+
+                        <!-- Category Field (Single option) -->
+                        <div class="mb-3" id="singleCategorySection" style="display:none;">
+                            <label class="form-label">Category</label>
+                            <input type="text" class="form-control" id="categoryField" readonly />
+                        </div>
+
+                        <!-- Radio Buttons for Multiple Entries -->
+                        <div class="mb-3" id="multiCategorySection" style="display:none;">
+                            <label class="form-label">Select Category & Sub-Category</label>
+                            <div id="radioContainer"></div>
+                        </div>
+
+                        <!-- Coach Dropdown -->
+                        <div class="mb-3">
+                            <label class="form-label">Coach</label>
+                            <select class="form-select" name="CoachId" required>
+                                <option value="">Select a coach</option>
+                                @foreach (var coach in coaches)
+                                {
+                                    <option value="@coach.Id">@coach.FirstName @coach.LastName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Add Team</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterCategory = document.getElementById('filterCategory');
+            const filterSport = document.getElementById('filterSport');
+            const filterDivision = document.getElementById('filterDivision');
+            const table = document.getElementById('teamsTable');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            // Create "No teams available" row
+            let noDataRow = document.createElement('tr');
+            noDataRow.id = 'noDataRow';
+            noDataRow.innerHTML = `<td colspan="6" class="text-center">No teams available</td>`;
+            noDataRow.style.display = 'none';
+            tbody.appendChild(noDataRow);
+
+            function filterTable() {
+                const categoryVal = filterCategory.value.toLowerCase();
+                const sportVal = filterSport.value.toLowerCase();
+                const divisionVal = filterDivision.value.toLowerCase();
+
+                let anyVisible = false;
+
+                rows.forEach(row => {
+                    const category = row.cells[2].textContent.toLowerCase();
+                    const sport = row.cells[1].textContent.toLowerCase();
+                    const division = row.cells[3].textContent.toLowerCase();
+
+                    const show =
+                        (categoryVal === '' || category.includes(categoryVal)) &&
+                        (sportVal === '' || sport.includes(sportVal)) &&
+                        (divisionVal === '' || division.includes(divisionVal));
+
+                    row.style.display = show ? '' : 'none';
+
+                    if (show) anyVisible = true;
+                });
+
+                noDataRow.style.display = anyVisible ? 'none' : '';
+            }
+
+            filterCategory.addEventListener('change', filterTable);
+            filterSport.addEventListener('change', filterTable);
+            filterDivision.addEventListener('change', filterTable);
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sportSelect = document.getElementById("sportSelect");
+            const radioContainer = document.getElementById("radioContainer");
+            const singleCategory = document.getElementById("singleCategorySection");
+            const multiCategory = document.getElementById("multiCategorySection");
+            const categoryField = document.getElementById("categoryField");
+            const sportIdHidden = document.getElementById("SportIdHidden");
+
+            const allSports = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(sports));
+
+            sportSelect.addEventListener("change", () => {
+                const selectedSportName = sportSelect.value;
+
+                // Only active entries
+                const activeRows = allSports.filter(s => s.Name === selectedSportName && s.Status !== "Archived");
+
+                // Deduplicate by Category + SubCategory
+                const uniqueRows = [];
+                const seen = new Set();
+                activeRows.forEach(s => {
+                    const key = `${s.Category?.Name ?? ''}-${s.SubCategory?.Name ?? ''}`;
+                    if (!seen.has(key)) {
+                        uniqueRows.push(s);
+                        seen.add(key);
+                    }
+                });
+
+                radioContainer.innerHTML = "";
+                sportIdHidden.value = "";
+
+                if (uniqueRows.length > 1) {
+                    multiCategory.style.display = "block";
+                    singleCategory.style.display = "none";
+
+                    uniqueRows.forEach((sport, index) => {
+                        radioContainer.innerHTML += `
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio"
+                                       name="SportDetailSelection"
+                                       data-id="${sport.Id}"
+                                       data-category="${sport.Category?.Name ?? ''}"
+                                       data-subcategory="${sport.SubCategory?.Name ?? ''}"
+                                       id="sportOption${index}" required>
+                                <label class="form-check-label" for="sportOption${index}">
+                                    ${sport.Category?.Name ?? 'N/A'} — ${sport.SubCategory?.Name ?? 'N/A'}
+                                </label>
+                            </div>
+                        `;
+                    });
+
+                    document.querySelectorAll('input[name="SportDetailSelection"]').forEach(rb => {
+                        rb.addEventListener('change', function() {
+                            sportIdHidden.value = this.dataset.id;
+                        });
+                    });
+
+                } else if (uniqueRows.length === 1) {
+                    singleCategory.style.display = "block";
+                    multiCategory.style.display = "none";
+
+                    const sport = uniqueRows[0];
+                    categoryField.value = `${sport.Category?.Name ?? ''} — ${sport.SubCategory?.Name ?? ''}`;
+                    sportIdHidden.value = sport.Id;
+                } else {
+                    multiCategory.style.display = "none";
+                    singleCategory.style.display = "none";
+                }
+            });
+        });
+    </script>

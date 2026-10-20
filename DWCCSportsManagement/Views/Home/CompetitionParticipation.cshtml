@@ -1,0 +1,437 @@
+﻿@model CompetitionParticipationViewModel
+
+<div class="container mt-5">
+    <h1>Participate in a Competition</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <!-- Competition Cards -->
+    <div class="row mt-4">
+        @foreach (var comp in Model.Competitions)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden">
+
+                    <!-- Colored header -->
+                    <div style="background-color: #0e4e2c; color: white; text-align: center; padding: 1rem;">
+                        <h5 class="card-title mb-0">@comp.Name</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <p class="mb-2">
+                            <span class="badge" style="background-color: #0e4e2c; color: white;">Type: @comp.Type</span>
+                        </p>
+                        <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>@comp.Venue</p>
+                        <p class="mb-1"><i class="bi bi-calendar-event me-2"></i>Start: @comp.StartDate.ToString("yyyy-MM-dd")</p>
+                        <p class="mb-3"><i class="bi bi-calendar-event me-2"></i>End: @comp.EndDate.ToString("yyyy-MM-dd")</p>
+                    </div>
+
+                    <div class="card-footer bg-transparent border-top-0 text-center pb-3">
+                        <button class="btn participate-btn me-2"
+                                style="background-color: #0e4e2c; color: white;"
+                                data-competitionid="@comp.CompetitionId">
+                            Participate
+                        </button>
+                        <button class="btn btn-info view-participants-btn"
+                                style="color: white;"
+                                data-competitionid="@comp.CompetitionId"
+                                data-competitionname="@comp.Name">
+                            <i class="bi bi-eye me-1"></i>View
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Participate Modal -->
+<div class="modal fade" id="participateModal" tabindex="-1" aria-labelledby="participateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <form id="participateForm" method="post" asp-action="ParticipateInCompetition" asp-controller="Home">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="participateModalLabel">Participate in Competition</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <input type="hidden" id="competitionId" name="CompetitionId" />
+
+                    <!-- Teams Section -->
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Select Teams</label>
+
+                        <!-- Select All -->
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" id="selectAllTeams">
+                            <label class="form-check-label fw-semibold" for="selectAllTeams">Select All</label>
+                        </div>
+
+                        <!-- Teams List -->
+                        <div id="teamCheckboxContainer" class="border rounded p-2" style="max-height: 250px; overflow-y: auto;">
+                            <!-- Team checkboxes will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- View Participants Modal -->
+<div class="modal fade" id="viewParticipantsModal" tabindex="-1" aria-labelledby="viewParticipantsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-light border-bottom">
+                <h5 class="modal-title" id="viewParticipantsModalLabel">Competition Participants</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <h6 id="competitionNameDisplay" class="mb-3 fw-bold text-center"></h6>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover table-sm align-middle">
+                        <thead class="table-light">
+                            <tr class="text-center">
+                                <th scope="col">Team</th>
+                                <th scope="col">Results</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="participantsTableBody">
+                            <!-- Populated dynamically via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="saveAllBtn">
+                    <i class="bi bi-save me-1"></i>Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        .completed-result {
+            font-weight: bold;
+            color: #198754;
+            padding: 4px 8px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .result-input {
+            width: 150px;
+            display: inline-block;
+        }
+
+        .results-cell {
+            min-width: 180px;
+        }
+        
+        .status-cell {
+            min-width: 150px;
+        }
+        
+        .readonly-status {
+            color: #198754;
+            font-weight: bold;
+            padding: 4px 8px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    </style>
+
+    <script>
+        var availableTeamsByCompetition = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.AvailableTeamsByCompetition));
+
+        // Prepare participants data
+        var participantsByCompetition = {};
+        @foreach (var comp in Model.Competitions)
+        {
+            var participants = Model.Participants.Where(p => p.CompetitionId == comp.CompetitionId).ToList();
+            <text>
+            participantsByCompetition[@comp.CompetitionId] = [
+                @foreach (var participant in participants)
+                {
+                    var team = Model.Teams.FirstOrDefault(t => t.TeamId == participant.TeamId);
+                    <text>
+                    {
+                        participantId: @participant.ParticipantId,
+                        competitionId: @participant.CompetitionId,
+                        teamId: @participant.TeamId,
+                        teamName: '@Html.Raw(team?.TeamName ?? "Unknown")',
+                        status: '@participant.Status',
+                        results: '@Html.Raw(participant.Results ?? "")'
+                    },
+                    </text>
+                }
+            ];
+            </text>
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const participateButtons = document.querySelectorAll(".participate-btn");
+            const viewButtons = document.querySelectorAll(".view-participants-btn");
+            const participateModal = new bootstrap.Modal(document.getElementById('participateModal'));
+            const viewParticipantsModal = new bootstrap.Modal(document.getElementById('viewParticipantsModal'));
+            const competitionInput = document.getElementById('competitionId');
+            const teamContainer = document.getElementById('teamCheckboxContainer');
+            const selectAllCheckbox = document.getElementById('selectAllTeams');
+            const saveAllBtn = document.getElementById('saveAllBtn');
+
+            // Store the current competition ID when opening the modal
+            let currentCompetitionId = null;
+
+            // Disable participate buttons with no available teams
+            participateButtons.forEach(btn => {
+                const compId = btn.getAttribute("data-competitionid");
+                const hasTeams = availableTeamsByCompetition[compId] && availableTeamsByCompetition[compId].length > 0;
+
+                if (!hasTeams) {
+                    btn.disabled = true;
+                    btn.style.backgroundColor = '#6c757d';
+                    btn.style.cursor = 'not-allowed';
+                    btn.textContent = 'No Teams Available';
+                }
+            });
+
+            // Handle Participate button clicks
+            participateButtons.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const compId = this.getAttribute("data-competitionid");
+                    competitionInput.value = compId;
+
+                    // Clear previous checkboxes
+                    teamContainer.innerHTML = '';
+                    selectAllCheckbox.checked = false;
+
+                    // Populate checkboxes with team name + sub-category
+                    if (availableTeamsByCompetition[compId]) {
+                        availableTeamsByCompetition[compId].forEach(team => {
+                            const div = document.createElement('div');
+                            div.classList.add('form-check');
+                            div.innerHTML = `
+                                <input class="form-check-input team-checkbox" type="checkbox" name="TeamIds" value="${team.TeamId}" id="team${team.TeamId}">
+                                <label class="form-check-label" for="team${team.TeamId}">${team.TeamName} (${team.SubCategory})</label>
+                            `;
+                            teamContainer.appendChild(div);
+                        });
+                    }
+
+                    participateModal.show();
+                });
+            });
+
+            // Handle View button clicks
+            viewButtons.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const compId = this.getAttribute("data-competitionid");
+                    const compName = this.getAttribute("data-competitionname");
+                    
+                    currentCompetitionId = compId; // Store the competition ID
+
+                    // Set competition name in modal
+                    document.getElementById('competitionNameDisplay').textContent = compName;
+
+                    // Get participants for this competition
+                    const participants = participantsByCompetition[compId] || [];
+                    const tableBody = document.getElementById('participantsTableBody');
+                    tableBody.innerHTML = '';
+
+                    if (participants.length === 0) {
+                        tableBody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">No participants yet</td></tr>';
+                    } else {
+                        participants.forEach(participant => {
+                            const row = document.createElement('tr');
+
+                            // Team name cell
+                            const teamCell = document.createElement('td');
+                            teamCell.textContent = participant.teamName;
+                            row.appendChild(teamCell);
+
+                            // Results cell
+                            const resultsCell = document.createElement('td');
+                            resultsCell.className = 'results-cell';
+                            
+                            if (participant.status === 'Completed') {
+                                // Show plain text for completed participants (read-only)
+                                resultsCell.innerHTML = `
+                                    <span class="completed-result">${participant.results || 'N/A'}</span>
+                                `;
+                            } else {
+                                // Show input field for non-completed participants
+                                resultsCell.innerHTML = `
+                                    <input type="text" 
+                                           class="form-control form-control-sm result-input" 
+                                           placeholder="Enter standing" 
+                                           value="${participant.results || ''}"
+                                           data-participant-id="${participant.participantId}" />
+                                `;
+                            }
+                            row.appendChild(resultsCell);
+
+                            // Status cell
+                            const statusCell = document.createElement('td');
+                            statusCell.className = 'status-cell';
+                            
+                            if (participant.status === 'Completed') {
+                                // Show readonly status for completed
+                                statusCell.innerHTML = `
+                                    <span class="readonly-status">Completed</span>
+                                    <input type="hidden" class="status-input" value="Completed" data-participant-id="${participant.participantId}" />
+                                `;
+                            } else {
+                                // Show dropdown for non-completed
+                                statusCell.innerHTML = `
+                                    <select class="form-select form-select-sm status-input" data-participant-id="${participant.participantId}">
+                                        <option value="">Select status</option>
+                                        <option value="Processing" ${participant.status === 'Processing' ? 'selected' : ''}>Processing</option>
+                                        <option value="Ongoing" ${participant.status === 'Ongoing' ? 'selected' : ''}>Ongoing</option>
+                                        <option value="Completed" ${participant.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                                    </select>
+                                `;
+                            }
+                            row.appendChild(statusCell);
+
+                            // Action cell - Only Withdraw button (NO UPDATE BUTTON)
+                            const actionCell = document.createElement('td');
+                            actionCell.innerHTML = `
+                                <button type="button" class="btn btn-danger btn-sm withdraw-btn" data-participant-id="${participant.participantId}">
+                                    Withdraw
+                                </button>
+                            `;
+                            row.appendChild(actionCell);
+
+                            tableBody.appendChild(row);
+                        });
+                    }
+
+                    viewParticipantsModal.show();
+                });
+            });
+
+            // Handle Select All
+            selectAllCheckbox.addEventListener('change', function () {
+                const checkboxes = teamContainer.querySelectorAll('.team-checkbox');
+                checkboxes.forEach(cb => cb.checked = this.checked);
+            });
+
+            // Optional: Update Select All if any checkbox is manually unchecked
+            teamContainer.addEventListener('change', function(e) {
+                if (e.target.classList.contains('team-checkbox')) {
+                    const all = teamContainer.querySelectorAll('.team-checkbox');
+                    const checked = teamContainer.querySelectorAll('.team-checkbox:checked');
+                    selectAllCheckbox.checked = all.length === checked.length;
+                }
+            });
+
+            // Handle Save All button click
+            saveAllBtn.addEventListener('click', function() {
+                const participantsToUpdate = [];
+                
+                // Get all participant rows
+                const rows = document.querySelectorAll('#participantsTableBody tr');
+                
+                rows.forEach(row => {
+                    // Skip if it's the "No participants" row
+                    if (row.querySelector('td.text-center.text-muted')) return;
+                    
+                    const resultInput = row.querySelector('.result-input');
+                    const statusInput = row.querySelector('.status-input');
+                    const participantId = resultInput ? resultInput.getAttribute('data-participant-id') : 
+                                       statusInput ? statusInput.getAttribute('data-participant-id') : null;
+                    
+                    if (participantId) {
+                        const results = resultInput ? resultInput.value.trim() : '';
+                        const status = statusInput ? statusInput.value : '';
+                        
+                        participantsToUpdate.push({
+                            participantId: parseInt(participantId),
+                            competitionId: currentCompetitionId,
+                            results: results,
+                            status: status
+                        });
+                    }
+                });
+                
+                if (participantsToUpdate.length === 0) {
+                    alert('No data to save');
+                    return;
+                }
+                
+                // Send AJAX request to update all results and statuses
+                fetch('/Home/UpdateAllResultsAndStatus', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(participantsToUpdate)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('All changes saved successfully!');
+                        // Close the modal and refresh the page
+                        viewParticipantsModal.hide();
+                        location.reload();
+                    } else {
+                        alert('Error saving changes: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while saving changes');
+                });
+            });
+
+            // Handle Withdraw button clicks
+            document.addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('withdraw-btn')) {
+                    const participantId = e.target.getAttribute('data-participant-id');
+                    
+                    if (confirm('Are you sure you want to withdraw this participant?')) {
+                        // Create a form and submit it
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '/Home/WithdrawParticipant';
+                        
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'ParticipantId';
+                        input.value = participantId;
+                        
+                        form.appendChild(input);
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                }
+            });
+        });
+    </script>
+}

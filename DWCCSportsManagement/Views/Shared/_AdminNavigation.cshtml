@@ -1,0 +1,200 @@
+﻿@*
+    Sidebar partial view
+*@
+@{
+    string IsActive(string controller, string action)
+    {
+        var routeData = ViewContext.RouteData;
+        var currentController = routeData.Values["Controller"]?.ToString();
+        var currentAction = routeData.Values["Action"]?.ToString();
+
+        return currentController == controller && currentAction == action ? "active" : "";
+    }
+}
+
+
+<style>
+    /* Sidebar base styling */
+    .sidebar {
+        width: 270px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #0e4e2c;
+        padding: 20px;
+        transition: width 0.3s ease;
+        overflow: hidden;
+        z-index: 1100;
+        color: white;
+    }
+
+        /* Collapsed sidebar */
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        /* Brand transition when collapsed */
+        .sidebar .brand span {
+            transition: opacity 0.2s ease;
+            color: white;
+        }
+
+        .sidebar.collapsed .brand span {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar .brand img {
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.collapsed .brand img {
+            transform: scale(0.9);
+        }
+
+        /* Nav link styling */
+        .sidebar .nav-link {
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            color: white; /* all text white */
+            transition: background-color 0.3s;
+        }
+
+            .sidebar .nav-link i {
+                color: white; /* icon color white */
+            }
+
+            /* Active link styling */
+            .sidebar .nav-link.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                font-weight: 600;
+            }
+
+            /* Hover effect */
+            .sidebar .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+                .sidebar .nav-link.active i,
+                .sidebar .nav-link:hover i {
+                    color: white !important;
+                }
+
+        /* Nav link text hides when collapsed */
+        .sidebar.collapsed .nav-link span {
+            display: none;
+        }
+
+    /* Main content, auto-adjusting */
+    .main-content {
+        margin-left: 260px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
+
+        .main-content.expanded {
+            margin-left: 70px;
+        }
+
+    /* Toggle button */
+    .toggle-btn {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        background: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        z-index: 1200;
+    }
+
+    /* Hide toggle button when sidebar is collapsed */
+    .sidebar.collapsed .toggle-btn {
+        display: none;
+    }
+
+    /* Center icons when sidebar is collapsed */
+    .sidebar.collapsed .nav-link {
+        justify-content: center; /* centers icon horizontally */
+        text-align: center;
+        height: 50px; /* fixed height for proper vertical centering */
+        align-items: center; /* centers icon vertically */
+        padding-left: 0; /* remove left padding for centering */
+        padding-right: 0; /* remove right padding for centering */
+    }
+</style>
+
+<div class="sidebar" id="sidebar">
+    <!-- Toggle Button -->
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="bi bi-chevron-left" id="sidebar-icon"></i>
+    </div>
+
+    <div class="brand fw-bold mb-4 d-flex align-items-center">
+        <img src="~/images/logo-removebg-preview.png" alt="DWCC Logo" width="40" height="40">
+        <span>Admin</span>
+    </div>
+
+    <ul class="nav flex-column">
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Admin", "AdminInterface")" asp-controller="Admin" asp-action="AdminInterface">
+                <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Admin", "ManageTeamManager")" asp-controller="Admin" asp-action="ManageTeamManager">
+                <i class="bi bi-people"></i> <span>Manage Team Manager</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Admin", "ManageCoach")" asp-controller="Admin" asp-action="ManageCoach">
+                <i class="bi bi-person-badge"></i> <span>Manage Roles</span>
+            </a>
+        </li>
+        <li class="nav-item mt-3">
+            <form id="logoutForm" method="post" asp-controller="TeamManager" asp-action="Logout" class="d-none">
+                @Html.AntiForgeryToken()
+            </form>
+            <a href="#" class="nav-link text-danger fw-bold"
+               onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                <i class="bi bi-box-arrow-right"></i> <span>Logout</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+<script>
+    function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        let content = document.querySelector(".main-content");
+        let icon = document.getElementById("sidebar-icon");
+
+        sidebar.classList.toggle("collapsed");
+        content.classList.toggle("expanded");
+
+        if (sidebar.classList.contains("collapsed")) {
+            icon.classList.remove("bi-chevron-left");
+            icon.classList.add("bi-chevron-right");
+        } else {
+            icon.classList.remove("bi-chevron-right");
+            icon.classList.add("bi-chevron-left");
+        }
+    }
+</script>

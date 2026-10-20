@@ -1,0 +1,20 @@
+﻿{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=sportsmanagement;User=root;Password=;TreatTinyAsBoolean=true;"
+    },
+  "Email": {
+    "SmtpServer": "sandbox.smtp.mailtrap.io",
+    "SmtpPort": "2525",
+    "SenderEmail": "noreply@dwccsports.local",
+    "SenderPassword": "c650954e1068d7",
+    "SmtpUsername": "7c8366c9636afa",
+    "SmtpPassword": "c650954e1068d7"
+  },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AllowedHosts": "*"
+}

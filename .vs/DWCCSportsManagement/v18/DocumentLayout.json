@@ -1,0 +1,783 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\coachprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\coachprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_editcoachmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_editcoachmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_coachnavigation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_coachnavigation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\managecoach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\managecoach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_layoutteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_layoutteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\manageteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\manageteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\coach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\coach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\manageteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\manageteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\admininterface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\admininterface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\manageathlete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\manageathlete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\managecompetition.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\managecompetition.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\competitionparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\competitionparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\data\\sportscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\data\\sportscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\competitionparticipationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\competitionparticipationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\performancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\performancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\sessionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\sessionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\athletemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\athletemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\teammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\teammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\competition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\competition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\sport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\sport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\athleteperformance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\athleteperformance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\scheduletraining.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\scheduletraining.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\competitionparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\competitionparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\athlete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\athlete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\manageteam.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\manageteam.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\migrations\\20251031085128_addcompetitionparticipants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\migrations\\20251031085128_addcompetitionparticipants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\attendancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\attendancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\migrations\\20251031030319_addattendancetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\migrations\\20251031030319_addattendancetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\migrations\\20251031014826_addsessiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\migrations\\20251031014826_addsessiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\roster.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\roster.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\cj lumanglas\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\js\\roster.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\js\\roster.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManageCoach.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "ViewState": "AgIAAH0BAAAAAAAAAAAAAEwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_EditCoachModal.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T06:44:51.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_CoachNavigation.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoachProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAF0AAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LayoutTeamManager.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageTeamManager.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Coach.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Coach.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Coach.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Coach.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Coach.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TeamManager.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAcwP4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ManageTeam.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAuwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminInterface.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Program.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Program.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DWCCSportsManagement\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-27T05:45:33.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "home.css",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-27T05:45:33.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\User.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ManageAthlete.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAwGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Attendance.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAcwGMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ManageCompetition.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CompetitionParticipant.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAYwAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SportsContext.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Data\\SportsContext.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Data\\SportsContext.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Data\\SportsContext.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Data\\SportsContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wLwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CompetitionParticipationModel.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PerformanceModel.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Attendance.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Attendance.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Attendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SessionModel.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\SessionModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\SessionModel.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\SessionModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\SessionModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA3wBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AthleteModel.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAxwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TeamModel.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\TeamModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\TeamModel.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\TeamModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\TeamModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Competition.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Competition.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Competition.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Competition.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Competition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Sport.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Sport.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Sport.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Sport.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Sport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Category.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AthletePerformance.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ScheduleTraining.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwEgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CompetitionParticipation.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Athlete.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Athlete.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Athlete.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Athlete.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Athlete.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "manageteam.css",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-27T05:45:33.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "20251031085128_AddCompetitionParticipants.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Migrations\\20251031085128_AddCompetitionParticipants.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Migrations\\20251031085128_AddCompetitionParticipants.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Migrations\\20251031085128_AddCompetitionParticipants.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Migrations\\20251031085128_AddCompetitionParticipants.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AttendanceModel.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAcwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20251031030319_AddAttendanceTable.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Migrations\\20251031030319_AddAttendanceTable.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Migrations\\20251031030319_AddAttendanceTable.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Migrations\\20251031030319_AddAttendanceTable.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Migrations\\20251031030319_AddAttendanceTable.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAcwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20251031014826_AddSessionTable.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Migrations\\20251031014826_AddSessionTable.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Migrations\\20251031014826_AddSessionTable.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Migrations\\20251031014826_AddSessionTable.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Migrations\\20251031014826_AddSessionTable.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvy8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Team.cs",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Team.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Team.cs",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Team.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Team.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T05:45:33.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Roster.cshtml",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T05:45:33.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\appsettings.json",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\appsettings.json",
+              "RelativeToolTip": "DWCCSportsManagement\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-27T05:45:33.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-27T05:45:33.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "roster.js",
+              "DocumentMoniker": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\js\\roster.js",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\js\\roster.js",
+              "ToolTip": "C:\\Users\\CJ LUMANGLAS\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\js\\roster.js",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\js\\roster.js",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwGQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-27T05:45:33.608Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 144,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

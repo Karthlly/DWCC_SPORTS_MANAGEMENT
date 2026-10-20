@@ -1,0 +1,191 @@
+﻿# Password Reset Feature - Implementation Guide
+
+## Overview
+The password reset feature allows users to reset their password via email using a 6-digit verification code.
+**Email Provider: Mailtrap (for development/testing)**
+
+## Flow Diagram
+```
+Login Page
+    ↓
+[Forgot Password?] link
+    ↓
+ForgotPassword.cshtml - User enters email
+    ↓
+System generates 6-digit code & sends email
+    ↓
+VerifyResetCode.cshtml - User enters code from email
+    ↓
+Code validation
+    ↓
+ResetPassword.cshtml - User enters new password
+    ↓
+Password updated successfully, redirect to login
+```
+
+## Components Created
+
+### 1. Models
+- **PasswordReset.cs**: Stores reset tokens with expiry time (15 minutes)
+
+### 2. Services
+- **EmailService.cs**: Handles sending password reset codes via SMTP (Mailtrap)
+
+### 3. Database
+- **PasswordResets DbSet**: New table in SportsContext
+
+### 4. Controllers
+- **HomeController.cs**: Added 4 new action methods:
+  - `ForgotPassword()` (GET/POST)
+  - `VerifyResetCode()` (GET/POST)
+  - `ResetPassword()` (GET/POST)
+
+### 5. Views
+- **ForgotPassword.cshtml**: Email entry form
+- **VerifyResetCode.cshtml**: 6-digit code verification
+- **ResetPassword.cshtml**: New password entry with show/hide toggle
+
+## Mailtrap Configuration
+
+### Step 1: Create Mailtrap Account
+1. Go to https://mailtrap.io
+2. Sign up for a free account
+3. Verify your email
+
+### Step 2: Get Mailtrap Credentials
+1. Log in to Mailtrap dashboard
+2. Navigate to **Email Testing** → **Inboxes**
+3. Click on **My Inbox** (or create a new inbox)
+4. Click **Integrations**
+5. Select **SMTP** from the dropdown
+6. You'll see credentials in the format:
+
+```
+Host: sandbox.smtp.mailtrap.io
+Port: 2525 (or 465, 587)
+Username: [your-username]
+Password: [your-password]
+```
+
+### Step 3: Update appsettings.json
+Add/update the Email configuration in your `appsettings.json`:
+
+```json
+{
+    "Email": {
+        "SmtpServer": "sandbox.smtp.mailtrap.io",
+        "SmtpPort": "2525",
+        "SenderEmail": "your-mailtrap-username@example.com",
+        "SenderPassword": "your-mailtrap-password"
+    }
+}
+```
+
+**Replace the following:**
+- `SenderEmail`: Use your Mailtrap username (or any email format)
+- `SenderPassword`: Your Mailtrap API token/password from the dashboard
+
+### Alternative Port Settings
+- **Port 2525**: Standard, works everywhere
+- **Port 587**: TLS (more secure, if available)
+- **Port 465**: SSL (if available)
+
+*Use 2525 if you're unsure - it's the most compatible.*
+
+## Features
+
+✅ **Security**
+- 6-digit codes expire after 15 minutes
+- Codes can only be used once
+- Old unused codes are replaced with new ones
+- Email verification prevents account enumeration
+
+✅ **User Experience**
+- Clear step-by-step flow
+- Password show/hide toggle
+- Input validation on client and server side
+- Success/error messages at each step
+- Responsive design using Bootstrap 5
+
+✅ **Email Template**
+- Professional HTML email with reset code
+- Clear code display with letter spacing
+- Expiry information
+- Security warning
+- Clean, branded design
+
+✅ **Error Handling**
+- SMTP-specific error logging
+- Configuration validation
+- Graceful fallback on email failure
+- Detailed error messages in logs
+
+## Database Migration
+
+Run the following commands to create the password_resets table:
+
+```powershell
+Add-Migration AddPasswordResetTable
+Update-Database
+```
+
+## Testing in Development
+
+### With Mailtrap:
+1. Go to https://mailtrap.io/inboxes
+2. Open your inbox
+3. Submit a password reset request using any test email
+4. Check the Mailtrap inbox for the reset code email
+5. Copy the code and continue with password reset flow
+
+### Test Emails to Use:
+- You can use any email format for testing (doesn't need to be real)
+- Example: `test@example.com`, `user123@test.com`, etc.
+
+## Going to Production
+
+When moving to production, consider:
+
+1. **Switch Email Provider** (e.g., SendGrid, AWS SES, Azure SendGrid)
+2. **Update Credentials** in environment variables or Key Vault
+3. **Enable SSL/TLS** - Use port 465 (SSL) or 587 (TLS) for security
+4. **Set Sender Email** - Use a professional domain email (e.g., noreply@yourcompany.com)
+5. **Add Email Templates** - Use a template engine like Liquid or Handlebars for better email design
+
+### Production Configuration Example (SendGrid):
+```json
+{
+    "Email": {
+        "SmtpServer": "smtp.sendgrid.net",
+        "SmtpPort": "587",
+        "SenderEmail": "noreply@yourdomain.com",
+        "SenderPassword": "SG.xxxxx"
+    }
+}
+```
+
+## Troubleshooting
+
+### Email Not Received
+- Check Mailtrap inbox (might be in spam folder if using real email)
+- Verify credentials in appsettings.json
+- Check application logs for SMTP errors
+- Ensure your email configuration is not overridden by environment variables
+
+### SMTP Connection Errors
+- Verify Mailtrap is running and account is active
+- Check firewall/network settings allow SMTP connections
+- Try different port (2525, 587, or 465)
+- Ensure credentials are URL-encoded if they contain special characters
+
+### Code Still in DB After Reset
+- Reset codes are intentionally stored plaintext for simplicity
+- In production, consider hashing with salt for security
+- Old codes are automatically cleaned up after 15 minutes
+
+## Notes
+
+- Mailtrap is **free for development** and includes 500 emails/month
+- Emails are **sandboxed** - they only appear in Mailtrap, not actually sent
+- Perfect for testing email functionality without real SMTP server
+- Switch to production provider (SendGrid, AWS SES, etc.) before deploying to production

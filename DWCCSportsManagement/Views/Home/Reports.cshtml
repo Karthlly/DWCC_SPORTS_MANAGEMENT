@@ -1,0 +1,707 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+}
+<div class="container mt-4">
+
+    <!-- ================= Combined Report Export ================= -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
+            <h2 class="card-title mb-0">Export Combined Reports</h2>
+            <div class="d-flex gap-2 mt-2 mt-md-0">
+                <button id="exportCombinedCSV" class="btn btn-success">Export Combined CSV</button>
+                <button id="exportCombinedPDF" class="btn btn-danger">Export Combined PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date Filter for Competition -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body d-flex align-items-center flex-wrap gap-2">
+            <div class="form-group">
+                <label for="compDateFrom" class="form-label">From:</label>
+                <input type="date" id="compDateFrom" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="compDateTo" class="form-label">To:</label>
+                <input type="date" id="compDateTo" class="form-control" />
+            </div>
+            <button id="compFilterBtn" class="btn btn-primary mt-4">Filter</button>
+            <button id="compClearBtn" class="btn btn-secondary mt-4">Show All</button>
+                <button id="compCsvBtn" class="btn btn-success mt-4">Export CSV</button>
+                <button id="compPdfBtn" class="btn btn-danger mt-4">Export PDF</button>
+
+        </div>
+    </div>
+
+    <!-- Competition Table -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="compReportsTable" class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Participant ID</th>
+                            <th>Competition</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Team</th>
+                            <th>Sport</th>
+                            <th>SubCategory</th>
+                            <th>Results</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Date Filter for Attendance -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body d-flex align-items-center flex-wrap gap-2">
+            <div class="form-group">
+                <label for="attDateFrom" class="form-label">From:</label>
+                <input type="date" id="attDateFrom" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="attDateTo" class="form-label">To:</label>
+                <input type="date" id="attDateTo" class="form-control" />
+            </div>
+            <button id="attFilterBtn" class="btn btn-primary mt-4">Filter</button>
+            <button id="attClearBtn" class="btn btn-secondary mt-4">Show All</button>
+            <button id="attCsvBtn" class="btn btn-success mt-4">Export CSV</button>
+            <button id="attPdfBtn" class="btn btn-danger mt-4">Export PDF</button>
+        </div>
+    </div>
+
+    <!-- Attendance Table -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="attendanceTable" class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Date</th>
+                            <th>Player Name</th>
+                            <th>Team</th>
+                            <th>Session Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script>
+        // ================= Competition & Attendance Data =================
+        let allCompData = [];
+        let allAttendance = [];
+
+        // Competition buttons
+        document.getElementById("compCsvBtn").addEventListener("click", exportCompCSV);
+        document.getElementById("compPdfBtn").addEventListener("click", exportCompPDF);
+
+        // Attendance buttons
+        document.getElementById("attCsvBtn").addEventListener("click", exportAttCSV);
+        document.getElementById("attPdfBtn").addEventListener("click", exportAttPDF);
+
+        async function loadCompReports() {
+            try {
+                const response = await fetch('@Url.Action("GetParticipantCompetitions", "Home")');
+                allCompData = await response.json();
+                if (allCompData.length > 0) setCompDateRange(allCompData);
+                renderCompTable(allCompData);
+            } catch (error) { console.error("Error fetching competition data:", error); }
+        }
+
+        async function loadAttendance() {
+            try {
+                const response = await fetch('@Url.Action("GetAttendanceReport", "Home")');
+                allAttendance = await response.json();
+                if (allAttendance.length > 0) setAttDateRange(allAttendance);
+                renderAttTable(allAttendance);
+            } catch (error) { console.error("Error fetching attendance data:", error); }
+        }
+
+        // ================= Render Tables =================
+        function renderCompTable(data) {
+            const tbody = document.querySelector("#compReportsTable tbody");
+            tbody.innerHTML = "";
+            data.forEach(item => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.participantId}</td>
+                    <td>${item.competitionName}</td>
+                    <td>${new Date(item.competitionStartDate).toLocaleDateString()}</td>
+                    <td>${new Date(item.competitionEndDate).toLocaleDateString()}</td>
+                    <td>${item.teamName}</td>
+                    <td>${item.sportName}</td>
+                    <td>${item.subCategoryName}</td>
+                    <td>${item.results}</td>
+                    <td>${item.status}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function renderAttTable(data) {
+            const tbody = document.querySelector("#attendanceTable tbody");
+            tbody.innerHTML = "";
+            data.forEach(item => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${new Date(item.date).toLocaleDateString()}</td>
+                    <td>${item.playerName}</td>
+                    <td>${item.teamName}</td>
+                    <td>${item.sessionType}</td>
+                    <td>${item.status}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // ================= Filter Functions =================
+        function setCompDateRange(data) {
+            const dates = data.map(d => new Date(d.competitionStartDate));
+            const min = new Date(Math.min(...dates));
+            const max = new Date(Math.max(...dates));
+            document.getElementById("compDateFrom").min = min.toISOString().split("T")[0];
+            document.getElementById("compDateFrom").max = max.toISOString().split("T")[0];
+            document.getElementById("compDateTo").min = min.toISOString().split("T")[0];
+            document.getElementById("compDateTo").max = max.toISOString().split("T")[0];
+        }
+
+        function filterCompTable() {
+            const from = new Date(document.getElementById("compDateFrom").value);
+            const to = new Date(document.getElementById("compDateTo").value);
+            to.setHours(23, 59, 59, 999);
+            const filtered = allCompData.filter(d => {
+                const date = new Date(d.competitionStartDate);
+                return date >= from && date <= to;
+            });
+            renderCompTable(filtered);
+        }
+
+        function clearCompFilter() {
+            document.getElementById("compDateFrom").value = "";
+            document.getElementById("compDateTo").value = "";
+            renderCompTable(allCompData);
+        }
+
+        function setAttDateRange(data) {
+            const dates = data.map(d => new Date(d.date));
+            const min = new Date(Math.min(...dates));
+            const max = new Date(Math.max(...dates));
+            document.getElementById("attDateFrom").min = min.toISOString().split("T")[0];
+            document.getElementById("attDateFrom").max = max.toISOString().split("T")[0];
+            document.getElementById("attDateTo").min = min.toISOString().split("T")[0];
+            document.getElementById("attDateTo").max = max.toISOString().split("T")[0];
+        }
+
+        function filterAttTable() {
+            const from = new Date(document.getElementById("attDateFrom").value);
+            const to = new Date(document.getElementById("attDateTo").value);
+            to.setHours(23, 59, 59, 999);
+            const filtered = allAttendance.filter(d => {
+                const date = new Date(d.date);
+                return date >= from && date <= to;
+            });
+            renderAttTable(filtered);
+        }
+
+        function clearAttFilter() {
+            document.getElementById("attDateFrom").value = "";
+            document.getElementById("attDateTo").value = "";
+            renderAttTable(allAttendance);
+        }
+
+        document.getElementById("compFilterBtn").addEventListener("click", filterCompTable);
+        document.getElementById("compClearBtn").addEventListener("click", clearCompFilter);
+        document.getElementById("attFilterBtn").addEventListener("click", filterAttTable);
+        document.getElementById("attClearBtn").addEventListener("click", clearAttFilter);
+
+        // ================= Analytics Functions =================
+        function calculateCompetitionInsights(data) {
+            if (data.length === 0) return null;
+
+            const totalCompetitions = data.length;
+            const uniqueParticipants = new Set(data.map(d => d.participantId)).size;
+            const sportCounts = {};
+            const statusCounts = {};
+            const teamCounts = {};
+
+            data.forEach(item => {
+                sportCounts[item.sportName] = (sportCounts[item.sportName] || 0) + 1;
+                statusCounts[item.status] = (statusCounts[item.status] || 0) + 1;
+                teamCounts[item.teamName] = (teamCounts[item.teamName] || 0) + 1;
+            });
+
+            const topSport = Object.entries(sportCounts).sort((a, b) => b[1] - a[1])[0];
+            const topTeam = Object.entries(teamCounts).sort((a, b) => b[1] - a[1])[0];
+
+            return {
+                totalCompetitions,
+                uniqueParticipants,
+                topSport: topSport ? `${topSport[0]} (${topSport[1]} entries)` : 'N/A',
+                topTeam: topTeam ? `${topTeam[0]} (${topTeam[1]} entries)` : 'N/A',
+                statusBreakdown: statusCounts,
+                sportBreakdown: sportCounts
+            };
+        }
+
+        function calculateAttendanceInsights(data) {
+            if (data.length === 0) return null;
+
+            const totalSessions = data.length;
+            const uniquePlayers = new Set(data.map(d => d.playerName)).size;
+            const statusCounts = {};
+            const teamCounts = {};
+            const sessionTypeCounts = {};
+
+            data.forEach(item => {
+                statusCounts[item.status] = (statusCounts[item.status] || 0) + 1;
+                teamCounts[item.teamName] = (teamCounts[item.teamName] || 0) + 1;
+                sessionTypeCounts[item.sessionType] = (sessionTypeCounts[item.sessionType] || 0) + 1;
+            });
+
+            const attendanceRate = statusCounts['Present'] ?
+                ((statusCounts['Present'] / totalSessions) * 100).toFixed(1) : 0;
+
+            const topTeam = Object.entries(teamCounts).sort((a, b) => b[1] - a[1])[0];
+
+            return {
+                totalSessions,
+                uniquePlayers,
+                attendanceRate: `${attendanceRate}%`,
+                topTeam: topTeam ? `${topTeam[0]} (${topTeam[1]} sessions)` : 'N/A',
+                statusBreakdown: statusCounts,
+                sessionTypeBreakdown: sessionTypeCounts
+            };
+        }
+
+        // ================= PDF Helper Functions =================
+        function addPDFHeader(doc, title, subtitle = null) {
+            // Header background
+            doc.setFillColor(41, 128, 185);
+            doc.rect(0, 0, 210, 35, 'F');
+
+            // Title
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(22);
+            doc.setFont(undefined, 'bold');
+            doc.text(title, 14, 18);
+
+            // Subtitle/Date
+            doc.setFontSize(11);
+            doc.setFont(undefined, 'normal');
+            const dateText = subtitle || `Generated: ${new Date().toLocaleString()}`;
+            doc.text(dateText, 14, 27);
+
+            doc.setTextColor(0, 0, 0);
+            return 40; // Return starting Y position for content
+        }
+
+        function addInsightsSection(doc, insights, startY, title) {
+            doc.setFillColor(236, 240, 241);
+            doc.roundedRect(14, startY, 182, 45, 3, 3, 'F');
+
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor(52, 73, 94);
+            doc.text(title, 18, startY + 8);
+
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'normal');
+            doc.setTextColor(0, 0, 0);
+
+            let yPos = startY + 16;
+            const leftCol = 18;
+            const rightCol = 110;
+
+            Object.entries(insights).forEach(([key, value], index) => {
+                if (typeof value === 'object') return; // Skip breakdown objects
+
+                const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                const xPos = index % 2 === 0 ? leftCol : rightCol;
+
+                doc.setFont(undefined, 'bold');
+                doc.text(`${label}:`, xPos, yPos);
+                doc.setFont(undefined, 'normal');
+                doc.text(String(value), xPos + 45, yPos);
+
+                if (index % 2 === 1) yPos += 7;
+            });
+
+            return startY + 50;
+        }
+
+        function addFooter(doc) {
+            const pageCount = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= pageCount; i++) {
+                doc.setPage(i);
+                doc.setFontSize(9);
+                doc.setTextColor(128, 128, 128);
+                doc.text(`Page ${i} of ${pageCount}`, 14, 285);
+                doc.text('Confidential - Internal Use Only', 105, 285, { align: 'center' });
+                doc.text(new Date().toLocaleDateString(), 196, 285, { align: 'right' });
+            }
+        }
+
+        // ================= Export Competition CSV =================
+        function exportCompCSV() {
+            const headers = ["Participant ID","Competition","Start Date","End Date","Team","Sport","SubCategory","Results","Status"];
+            const rows = Array.from(document.querySelectorAll("#compReportsTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText).join(","));
+            let csvContent = headers.join(",") + "\n";
+            csvContent += rows.join("\n");
+
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "competition_report.csv";
+            link.click();
+        }
+
+        // ================= Export Attendance CSV =================
+        function exportAttCSV() {
+            const headers = ["Date","Player Name","Team","Session Type","Status"];
+            const rows = Array.from(document.querySelectorAll("#attendanceTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText).join(","));
+            let csvContent = headers.join(",") + "\n";
+            csvContent += rows.join("\n");
+
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "attendance_report.csv";
+            link.click();
+        }
+
+        // ================= Export Combined CSV =================
+        function exportCombinedCSV() {
+            const compHeaders = ["Participant ID","Competition","Start Date","End Date","Team","Sport","SubCategory","Results","Status"];
+            const compRows = Array.from(document.querySelectorAll("#compReportsTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText).join(","));
+            let csvContent = "Competition Report\n" + compHeaders.join(",") + "\n" + compRows.join("\n") + "\n\n";
+
+            const attHeaders = ["Date","Player Name","Team","Session Type","Status"];
+            const attRows = Array.from(document.querySelectorAll("#attendanceTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText).join(","));
+            csvContent += "Attendance Report\n" + attHeaders.join(",") + "\n" + attRows.join("\n");
+
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "combined_report.csv";
+            link.click();
+        }
+
+        // ================= Export Competition PDF =================
+        function exportCompPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Get current table data
+            const tableData = Array.from(document.querySelectorAll("#compReportsTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText));
+
+            // Calculate insights from displayed data
+            const displayedData = tableData.map(row => ({
+                participantId: row[0],
+                competitionName: row[1],
+                competitionStartDate: row[2],
+                competitionEndDate: row[3],
+                teamName: row[4],
+                sportName: row[5],
+                subCategoryName: row[6],
+                results: row[7],
+                status: row[8]
+            }));
+
+            const insights = calculateCompetitionInsights(displayedData);
+
+            // Header
+            let yPos = addPDFHeader(doc, 'Competition Report', `Total Entries: ${tableData.length}`);
+
+            // Insights Section
+            if (insights) {
+                yPos = addInsightsSection(doc, {
+                    totalCompetitions: insights.totalCompetitions,
+                    uniqueParticipants: insights.uniqueParticipants,
+                    topSport: insights.topSport,
+                    topTeam: insights.topTeam
+                }, yPos, 'Key Insights');
+            }
+
+            // Competition Table
+            doc.setFontSize(13);
+            doc.setFont(undefined, 'bold');
+            doc.text('Competition Details', 14, yPos + 5);
+
+            doc.autoTable({
+                startY: yPos + 10,
+                head: [["ID","Competition","Start","End","Team","Sport","Category","Results","Status"]],
+                body: tableData,
+                theme: 'striped',
+                headStyles: {
+                    fillColor: [41, 128, 185],
+                    textColor: 255,
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                styles: {
+                    fontSize: 8,
+                    cellPadding: 3
+                },
+                alternateRowStyles: {
+                    fillColor: [245, 245, 245]
+                },
+                columnStyles: {
+                    0: { cellWidth: 15 },
+                    1: { cellWidth: 30 },
+                    2: { cellWidth: 20 },
+                    3: { cellWidth: 20 },
+                    4: { cellWidth: 25 },
+                    5: { cellWidth: 20 },
+                    6: { cellWidth: 20 },
+                    7: { cellWidth: 20 },
+                    8: { cellWidth: 20 }
+                }
+            });
+
+            // Footer
+            addFooter(doc);
+
+            doc.save("competition_report.pdf");
+        }
+
+        // ================= Export Attendance PDF =================
+        function exportAttPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Get current table data
+            const tableData = Array.from(document.querySelectorAll("#attendanceTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText));
+
+            // Calculate insights from displayed data
+            const displayedData = tableData.map(row => ({
+                date: row[0],
+                playerName: row[1],
+                teamName: row[2],
+                sessionType: row[3],
+                status: row[4]
+            }));
+
+            const insights = calculateAttendanceInsights(displayedData);
+
+            // Header
+            let yPos = addPDFHeader(doc, 'Attendance Report', `Total Sessions: ${tableData.length}`);
+
+            // Insights Section
+            if (insights) {
+                yPos = addInsightsSection(doc, {
+                    totalSessions: insights.totalSessions,
+                    uniquePlayers: insights.uniquePlayers,
+                    attendanceRate: insights.attendanceRate,
+                    topTeam: insights.topTeam
+                }, yPos, 'Attendance Insights');
+            }
+
+            // Attendance Table
+            doc.setFontSize(13);
+            doc.setFont(undefined, 'bold');
+            doc.text('Attendance Records', 14, yPos + 5);
+
+            doc.autoTable({
+                startY: yPos + 10,
+                head: [["Date","Player Name","Team","Session Type","Status"]],
+                body: tableData,
+                theme: 'striped',
+                headStyles: {
+                    fillColor: [41, 128, 185],
+                    textColor: 255,
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                styles: {
+                    fontSize: 9,
+                    cellPadding: 4
+                },
+                alternateRowStyles: {
+                    fillColor: [245, 245, 245]
+                },
+                columnStyles: {
+                    0: { cellWidth: 30 },
+                    1: { cellWidth: 45 },
+                    2: { cellWidth: 40 },
+                    3: { cellWidth: 35 },
+                    4: { cellWidth: 30, halign: 'center' }
+                }
+            });
+
+            // Footer
+            addFooter(doc);
+
+            doc.save("attendance_report.pdf");
+        }
+
+        // ================= Export Combined PDF =================
+        async function exportCombinedPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Get Competition Data
+            const compData = Array.from(document.querySelectorAll("#compReportsTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText));
+
+            const compDisplayedData = compData.map(row => ({
+                participantId: row[0],
+                competitionName: row[1],
+                competitionStartDate: row[2],
+                competitionEndDate: row[3],
+                teamName: row[4],
+                sportName: row[5],
+                subCategoryName: row[6],
+                results: row[7],
+                status: row[8]
+            }));
+
+            // Get Attendance Data
+            const attData = Array.from(document.querySelectorAll("#attendanceTable tbody tr"))
+                .map(r => Array.from(r.children).map(c => c.innerText));
+
+            const attDisplayedData = attData.map(row => ({
+                date: row[0],
+                playerName: row[1],
+                teamName: row[2],
+                sessionType: row[3],
+                status: row[4]
+            }));
+
+            // Calculate Insights
+            const compInsights = calculateCompetitionInsights(compDisplayedData);
+            const attInsights = calculateAttendanceInsights(attDisplayedData);
+
+            // === PAGE 1: EXECUTIVE SUMMARY ===
+            let yPos = addPDFHeader(doc, 'Combined Performance Report', 'Executive Summary');
+
+            // Competition Insights
+            if (compInsights) {
+                yPos = addInsightsSection(doc, {
+                    totalCompetitions: compInsights.totalCompetitions,
+                    uniqueParticipants: compInsights.uniqueParticipants,
+                    topSport: compInsights.topSport,
+                    topTeam: compInsights.topTeam
+                }, yPos, 'Competition Overview');
+            }
+
+            // Attendance Insights
+            if (attInsights) {
+                yPos = addInsightsSection(doc, {
+                    totalSessions: attInsights.totalSessions,
+                    uniquePlayers: attInsights.uniquePlayers,
+                    attendanceRate: attInsights.attendanceRate,
+                    topTeam: attInsights.topTeam
+                }, yPos + 5, 'Attendance Overview');
+            }
+
+            // === PAGE 2: COMPETITION DETAILS ===
+            doc.addPage();
+            yPos = addPDFHeader(doc, 'Competition Details', null);
+
+            doc.setFontSize(13);
+            doc.setFont(undefined, 'bold');
+            doc.text('Competition Records', 14, yPos + 5);
+
+            doc.autoTable({
+                startY: yPos + 10,
+                head: [["ID","Competition","Start","End","Team","Sport","Category","Results","Status"]],
+                body: compData,
+                theme: 'striped',
+                headStyles: {
+                    fillColor: [41, 128, 185],
+                    textColor: 255,
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                styles: {
+                    fontSize: 8,
+                    cellPadding: 3
+                },
+                alternateRowStyles: {
+                    fillColor: [245, 245, 245]
+                },
+                columnStyles: {
+                    0: { cellWidth: 15 },
+                    1: { cellWidth: 30 },
+                    2: { cellWidth: 20 },
+                    3: { cellWidth: 20 },
+                    4: { cellWidth: 25 },
+                    5: { cellWidth: 20 },
+                    6: { cellWidth: 20 },
+                    7: { cellWidth: 20 },
+                    8: { cellWidth: 20 }
+                }
+            });
+
+            // === PAGE 3: ATTENDANCE DETAILS ===
+            doc.addPage();
+            yPos = addPDFHeader(doc, 'Attendance Details', null);
+
+            doc.setFontSize(13);
+            doc.setFont(undefined, 'bold');
+            doc.text('Attendance Records', 14, yPos + 5);
+
+            doc.autoTable({
+                startY: yPos + 10,
+                head: [["Date","Player Name","Team","Session Type","Status"]],
+                body: attData,
+                theme: 'striped',
+                headStyles: {
+                    fillColor: [41, 128, 185],
+                    textColor: 255,
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                styles: {
+                    fontSize: 9,
+                    cellPadding: 4
+                },
+                alternateRowStyles: {
+                    fillColor: [245, 245, 245]
+                },
+                columnStyles: {
+                    0: { cellWidth: 30 },
+                    1: { cellWidth: 45 },
+                    2: { cellWidth: 40 },
+                    3: { cellWidth: 35 },
+                    4: { cellWidth: 30, halign: 'center' }
+                }
+            });
+
+            // Add footer to all pages
+            addFooter(doc);
+
+            doc.save("combined_report.pdf");
+        }
+
+        // ================= Export Buttons =================
+        document.getElementById("exportCombinedCSV").addEventListener("click", exportCombinedCSV);
+        document.getElementById("exportCombinedPDF").addEventListener("click", exportCombinedPDF);
+
+        loadCompReports();
+        loadAttendance();
+
+    </script>
+}

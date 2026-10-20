@@ -1,0 +1,341 @@
+﻿@*
+    Sport Management View
+*@
+<div class="container mt-4">
+    <h2>Sport Management</h2>
+    <div class="mb-3">
+        <button id="addSportBtn"
+                class="btn btn-sm btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#addSportModal">
+            + Add Sport
+        </button>
+    </div>
+
+    @* Display TempData messages *@
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <!-- Add Sport Modal -->
+    <div class="modal fade" id="addSportModal" tabindex="-1" aria-labelledby="addSportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="addSportModalLabel">Add New Sport</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/TeamManager/AddSport">
+                        <div class="mb-3">
+                            <label for="sportName" class="form-label">Sport Name</label>
+                            <input type="text" class="form-control" id="sportName" name="SportName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" name="Category">
+                                <option value="1">Singles</option>
+                                <option value="2">Doubles</option>
+                                <option value="3">Group</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subCategory" class="form-label">SubCategory</label>
+                            <select class="form-select" id="subCategory" name="SubCategory">
+                                <option value="1">Womens</option>
+                                <option value="2">Mens</option>
+                                <option value="3">Mixed</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Save Sport</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="customAlertContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1055;"></div>
+
+
+    <table class="table table-bordered mt-3" id="sportsTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Sport Name</th>
+                <th>Category / SubCategory</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be appended here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Edit Sport Modal -->
+<div class="modal fade" id="editSportModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Edit Sport Entries</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered" id="editSportTable">
+                    <thead>
+                        <tr>
+                            <th>Sport ID</th>
+                            <th>Sport Name</th>
+                            <th>Category</th>
+                            <th>SubCategory</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be appended dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS (for modal) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sportsData = [];
+               function loadSports() {
+        $.ajax({
+            url: '/TeamManager/GetSports',
+            method: 'GET',
+            success: function(response) {
+                sportsData = response.sports;
+
+                const grouped = {};
+                sportsData.forEach(s => {
+                    const key = s.name;
+                    if (!grouped[key]) grouped[key] = [];
+                    grouped[key].push(s);
+                });
+
+                const tbodyMain = $("#sportsTable tbody");
+                tbodyMain.empty();
+
+                let counter = 1;
+                for (const [sportName, sportList] of Object.entries(grouped)) {
+                    const uniqueCombos = new Set(
+                        sportList.map(s => `${s.category?.name ?? ''}-${s.subCategory?.name ?? ''}`)
+                    );
+                    const singleEntry = uniqueCombos.size === 1;
+
+                    const ul = $("<ul></ul>");
+                    let naAdded = false; // Track if N/A has been added
+
+                    sportList.forEach(s => {
+                        let cat, sub;
+
+                        if (s.status !== "Archived") {
+                            cat = s.category ? s.category.name : "";
+                            sub = s.subCategory ? s.subCategory.name : "";
+                            ul.append(`<li>${cat}${cat && sub ? ' / ' : ''}${sub}</li>`);
+                        } else {
+                            const allArchived = sportList.every(x => x.status === "Archived");
+                            // Only add N/A once
+                            if ((singleEntry || allArchived) && !naAdded) {
+                                ul.append(`<li>N/A</li>`);
+                                naAdded = true;
+                            }
+                        }
+                    });
+
+                    // Skip row only if multiple entries exist and none should display
+                    if (!singleEntry && ul.children().length === 0) continue;
+
+                    const tr = $("<tr></tr>");
+                    tr.append(`<td>${counter++}</td>`);
+                    tr.append(`<td>${sportName}</td>`);
+                    tr.append($("<td></td>").append(ul));
+
+                    const tdActions = $(`<td></td>`);
+                    tdActions.append(`
+                        <button class="btn btn-sm btn-primary me-1 edit-btn" data-sportname="${sportName}">
+                            Edit
+                        </button>
+                    `);
+
+                    if (sportList.every(s => s.status === "Archived")) {
+                        tr.addClass("table-secondary");
+                    }
+
+                    tr.append(tdActions);
+                    tbodyMain.append(tr);
+                }
+            },
+            error: function(err) {
+                console.error("Error fetching sports:", err);
+            }
+        });
+    }
+
+
+
+
+
+            loadSports();
+        // Edit / Archive in main table
+        $("#sportsTable tbody").on("click", ".edit-btn", function() {
+            const sportName = $(this).data("sportname");
+            const sportList = sportsData.filter(s => s.name === sportName);
+
+            const tbody = $("#editSportTable tbody");
+            tbody.empty();
+
+            sportList.forEach(s => {
+                const isArchived = s.status === "Archived";
+
+                const actionBtn = isArchived
+                    ? `<button class="btn btn-sm btn-warning restore-row-btn">Restore</button>`
+                    : `<button class="btn btn-sm btn-danger archive-row-btn">Archive</button>`;
+
+                const tr = $(`
+                    <tr>
+                        <td>${s.id}<input type="hidden" class="sport-id" value="${s.id}"></td>
+                        <td>${s.name}</td>
+                        <td><input type="text" class="form-control category-input" value="${s.category ? s.category.name : ''}"></td>
+                        <td><input type="text" class="form-control subcategory-input" value="${s.subCategory ? s.subCategory.name : ''}"></td>
+                        <td>
+                            <div class="d-flex gap-1">
+                                ${actionBtn}
+                            </div>
+                        </td>
+                    </tr>
+                `);
+                tbody.append(tr);
+            });
+
+            const modal = new bootstrap.Modal(document.getElementById("editSportModal"));
+            modal.show();
+        });
+
+
+
+            // Save or archive individual row in modal
+            $("#editSportTable tbody").on("click", ".save-row-btn", function() {
+                const row = $(this).closest("tr");
+                const id = row.find(".sport-id").val();
+                const category = row.find(".category-input").val();
+                const subCategory = row.find(".subcategory-input").val();
+
+                $.ajax({
+                    url: '/TeamManager/UpdateSport',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify([{ id, category, subCategory }]),
+                    success: function(res) {
+                        alert(res.message || "Row updated successfully!");
+                        loadSports();
+                    },
+                    error: function(err) {
+                        console.error("Error updating row:", err);
+                    }
+                });
+            });
+
+                   // Archive sport in modal
+            // Archive sport in modal
+        $("#editSportTable tbody").on("click", ".archive-row-btn", function() {
+            const row = $(this).closest("tr");
+            const id = row.find(".sport-id").val();
+
+            if (confirm(`Are you sure you want to archive this entry ${id}?`)) {
+                $.ajax({
+                    url: '/TeamManager/ArchiveSport?id=' + id,
+                    method: 'POST',
+                    success: function(res) {
+                        showCustomAlert(res.message || "Sport archived successfully!", "warning");
+
+                        // Update row in modal dynamically
+                        const btnContainer = row.find("td div.d-flex");
+                        btnContainer.empty();
+                        btnContainer.append('<button class="btn btn-sm btn-warning restore-row-btn">Restore</button>');
+                        row.addClass("table-secondary");
+
+                        // Reload main table
+                        loadSports();
+                    },
+                    error: function(err) {
+                        console.error("Error archiving row:", err);
+                    }
+                });
+            }
+        });
+
+        // Restore sport in modal
+        $("#editSportTable tbody").on("click", ".restore-row-btn", function() {
+            const row = $(this).closest("tr");
+            const id = row.find(".sport-id").val();
+
+            if (confirm(`Are you sure you want to restore this sport ${id}?`)) {
+                $.ajax({
+                    url: '/TeamManager/RestoreSport?id=' + id,
+                    method: 'POST',
+                    success: function(res) {
+                        showCustomAlert(res.message || "Sport restored successfully!", "success");
+
+                        const btnContainer = row.find("td div.d-flex");
+                        btnContainer.empty();
+                        btnContainer.append('<button class="btn btn-sm btn-danger archive-row-btn">Archive</button>');
+                        row.removeClass("table-secondary");
+
+                        // Reload main table
+                        loadSports();
+                    },
+                    error: function(err) {
+                        console.error("Error restoring sport:", err);
+                    }
+                });
+            }
+        });
+
+
+            function showCustomAlert(message, type = "success", duration = 3000) {
+            const alertId = "alert-" + Date.now();
+            const alertHtml = `
+                <div id="${alertId}" class="alert alert-${type} alert-dismissible fade show" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            $("#customAlertContainer").append(alertHtml);
+
+            // Auto-dismiss after duration
+            setTimeout(() => {
+                const alertElem = bootstrap.Alert.getOrCreateInstance(document.getElementById(alertId));
+                alertElem.close();
+            }, duration);
+        }
+
+
+
+        });
+</script>

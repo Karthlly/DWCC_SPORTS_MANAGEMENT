@@ -1,0 +1,163 @@
+﻿@model List<DWCCSportsManagement.Models.TeamModel>
+@{
+    ViewData["Title"] = "Manage Team Creation";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Manage Team Creation</h1>
+    <p>Check the details before accepting team creation</p>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>Team ID</th>
+                    <th>Team Name</th>
+                    <th>Sport</th>
+                    <th>Coach</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var team in Model)
+                {
+                    <tr>
+                        <td>@team.TeamId</td>
+                        <td>@team.TeamName</td>
+                        <td>@(team.Sport?.Name ?? "N/A")</td>
+                        <td>@(team.Coach != null ? $"{team.Coach.FirstName} {team.Coach.LastName}" : "N/A")</td>
+                        <td>@team.Status</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#teamModal@(team.TeamId)">
+                                <i class="bi bi-eye"></i> View
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modals -->
+@foreach (var team in Model)
+{
+        <div class="modal fade" id="teamModal@(team.TeamId)" tabindex="-1" aria-labelledby="teamModalLabel@(team.TeamId)" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content shadow-sm">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="teamModalLabel@(team.TeamId)">
+                            <i class="bi bi-people-fill me-2"></i> Team Details
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Team Info Card -->
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <i class="bi bi-hash me-1"></i> <strong>Team ID:</strong>
+                                        <p class="mb-0">@team.TeamId</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <i class="bi bi-pencil-square me-1"></i> <strong>Team Name:</strong>
+                                        <p class="mb-0">@team.TeamName</p>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <i class="bi bi-trophy me-1"></i> <strong>Sport:</strong>
+                                        <p class="mb-0">@(team.Sport?.Name ?? "N/A")</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <i class="bi bi-person-badge me-1"></i> <strong>Coach:</strong>
+                                        <p class="mb-0">@(team.Coach != null ? $"{team.Coach.FirstName} {team.Coach.LastName}" : "N/A")</p>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <i class="bi bi-info-circle me-1"></i> <strong>Status:</strong>
+                                        <p class="mb-0">@team.Status</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Athletes Table -->
+                        <h5 class="mt-3 mb-2"><i class="bi bi-list-ul me-1"></i> Athletes</h5>
+                        <div class="table-responsive" style="max-height:300px; overflow-y:auto;">
+                            <table class="table table-sm table-bordered table-striped table-hover" id="athletesTable@(team.TeamId)">
+                                <thead class="table-light sticky-top">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Birthdate</th>
+                                        <th>Medical Info</th>
+                                        <th>Grades</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- AJAX will populate rows here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle me-1"></i> Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+
+
+<link rel="stylesheet" href="~/css/manageteam.css" />
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function loadAthletes(teamId) {
+            var tableBody = document.querySelector("#athletesTable" + teamId + " tbody");
+            if (!tableBody) return;
+            tableBody.innerHTML = ""; // clear previous content
+
+            // Fetch using route segment (works with /Admin/GetAthletes/11)
+            fetch("/Admin/GetAthletes/" + teamId)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        tableBody.innerHTML = '<tr><td colspan="7" class="text-center text-muted">No athletes assigned to this team.</td></tr>';
+                    } else {
+                        data.forEach((athlete, index) => {
+                            tableBody.innerHTML += `<tr>
+                                <td>${index + 1}</td>
+                                <td>${athlete.firstName} ${athlete.lastName}</td>
+                                <td>${athlete.gender || 'N/A'}</td>
+                                <td>${athlete.birthdate || 'N/A'}</td>
+                                <td>${athlete.medicalInfo ? `<a href="${athlete.medicalInfo}" target="_blank">View File</a>` : 'N/A'}</td>
+                                <td>${athlete.grades ? `<a href="${athlete.grades}" target="_blank">View File</a>` : 'N/A'}</td>
+                                <td>${athlete.status || 'N/A'}</td>
+                            </tr>`;
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading athletes:', error));
+        }
+
+        // Attach event to all modal buttons
+        document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => {
+            button.addEventListener('click', function() {
+                var teamId = this.getAttribute('data-bs-target').replace('#teamModal','');
+                loadAthletes(teamId);
+            });
+        });
+    });
+</script>

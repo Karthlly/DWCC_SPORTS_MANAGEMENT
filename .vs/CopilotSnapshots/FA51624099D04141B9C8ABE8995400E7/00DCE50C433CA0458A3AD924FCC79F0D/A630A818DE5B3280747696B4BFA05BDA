@@ -1,0 +1,114 @@
+﻿using System.Net;
+using System.Net.Mail;
+
+namespace DWCCSportsManagement.Services
+{
+    public interface IEmailService
+    {
+        Task<bool> SendPasswordResetCodeAsync(string email, string resetCode);
+    }
+
+    public class EmailService : IEmailService
+    {
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<EmailService> _logger;
+
+        public EmailService(IConfiguration configuration, ILogger<EmailService> logger)
+        {
+            _configuration = configuration;
+            _logger = logger;
+        }
+
+        public async Task<bool> SendPasswordResetCodeAsync(string email, string resetCode)
+        {
+            try
+            {
+                var smtpServer = _configuration["Email:SmtpServer"];
+                var smtpPort = int.Parse(_configuration["Email:SmtpPort"] ?? "2525");
+                var senderEmail = _configuration["Email:SenderEmail"];
+                var smtpUsername = _configuration["Email:SmtpUsername"];
+                var smtpPassword = _configuration["Email:SmtpPassword"];
+
+                // Validate configuration
+                if (string.IsNullOrEmpty(smtpServer) || string.IsNullOrEmpty(smtpUsername) || string.IsNullOrEmpty(smtpPassword))
+                {
+                    _logger.LogError("Email configuration is incomplete. Please check appsettings.json");
+                    return false;
+                }
+
+                using (var client = new SmtpClient(smtpServer, smtpPort))
+                {
+                    client.EnableSsl = false; // Mailtrap on port 2525 doesn't use SSL
+                    client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+                    client.Timeout = 10000;
+
+                    var subject = "DWCC Halcons - Password Reset Code";
+                    var body = $@"
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <style>
+                                body {{ font-family: Arial, sans-serif; }}
+                                .container {{ max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5; }}
+                                .card {{ background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }}
+                                .header {{ color: #0e4e2c; margin-bottom: 20px; }}
+                                .code {{ 
+                                    font-size: 32px; 
+                                    color: #27ae60; 
+                                    letter-spacing: 5px; 
+                                    font-weight: bold; 
+                                    text-align: center;
+                                    padding: 20px;
+                                    background-color: #f0f0f0;
+                                    border-radius: 5px;
+                                    margin: 20px 0;
+                                }}
+                                .warning {{ color: #e74c3c; font-weight: bold; margin-top: 20px; }}
+                                .footer {{ color: #7f8c8d; font-size: 12px; margin-top: 30px; text-align: center; }}
+                            </style>
+                        </head>
+                        <body>
+                            <div class='container'>
+                                <div class='card'>
+                                    <h2 class='header'>Password Reset Request</h2>
+                                    <p>You requested a password reset for your <strong>DWCC Halcons Management System</strong> account.</p>
+                                    <p>Your password reset code is:</p>
+                                    <div class='code'>{resetCode}</div>
+                                    <p><strong>This code will expire in 15 minutes.</strong></p>
+                                    <p>If you didn't request a password reset, please ignore this email and your password will remain unchanged.</p>
+                                    <p class='warning'>⚠️ For security reasons, never share this code with anyone.</p>
+                                    <div class='footer'>
+                                        <p>© 2025 DWCC Sports Management System</p>
+                                        <p>If you have any issues, please contact the administrator.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </body>
+                        </html>
+                    ";
+
+                    var message = new MailMessage(senderEmail, email)
+                    {
+                        Subject = subject,
+                        Body = body,
+                        IsBodyHtml = true
+                    };
+
+                    await client.SendMailAsync(message);
+                    _logger.LogInformation($"Password reset code sent successfully to {email}");
+                    return true;
+                }
+            }
+            catch (SmtpException ex)
+            {
+                _logger.LogError($"SMTP Error sending password reset email to {email}: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error sending password reset email to {email}: {ex.Message}");
+                return false;
+            }
+        }
+    }
+}

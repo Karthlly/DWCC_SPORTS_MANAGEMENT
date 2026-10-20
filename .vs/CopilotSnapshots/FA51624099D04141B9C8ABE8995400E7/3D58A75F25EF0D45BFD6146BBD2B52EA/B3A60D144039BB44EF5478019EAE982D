@@ -1,0 +1,165 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Verify Reset Code";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #0e4e2c, #00bfa5);
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/bg.jpg') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            border: none;
+            border-top: 4px solid #27ae60;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-body {
+            padding: 3rem;
+        }
+
+        .card-title {
+            color: #0e4e2c;
+            font-weight: bold;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: #0e4e2c;
+        }
+
+        .form-control {
+            border-radius: 0.75rem;
+            padding: 0.8rem;
+            border: 1px solid #ced4da;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #0e4e2c;
+            box-shadow: 0 0 0 0.2rem rgba(14, 78, 44, 0.25);
+            outline: none;
+        }
+
+        .btn-primary {
+            background: #0e4e2c;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            padding: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0b3b20;
+            transform: scale(1.03);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            padding: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .alert {
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .text-muted {
+            color: #6c757d !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h3 class="card-title mb-4 text-center">Verify Reset Code</h3>
+                        <p class="text-muted text-center mb-4">Enter the 6-digit code we sent to your email address.</p>
+
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="bi bi-exclamation-triangle me-2"></i> @ViewBag.Error
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+
+                        <form method="post" asp-action="VerifyResetCode" asp-controller="Home" id="codeForm">
+                            <input type="hidden" name="email" value="@ViewBag.Email" />
+
+                            <div class="mb-3">
+                                <label for="resetCode" class="form-label">Reset Code</label>
+                                <input type="text" class="form-control text-center" id="resetCode" name="resetCode" 
+                                       placeholder="000000" maxlength="6" inputmode="numeric" required 
+                                       style="font-size: 24px; letter-spacing: 10px;" />
+                                <small class="text-muted d-block mt-2">Code expires in 15 minutes</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 mb-3">Verify Code</button>
+                            <a href="@Url.Action("ForgotPassword", "Home")" class="btn btn-secondary w-100">Back</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Only allow numbers in the code field
+        document.getElementById('resetCode').addEventListener('keypress', function(e) {
+            if (!/^\d$/.test(e.key)) {
+                e.preventDefault();
+            }
+        });
+
+        // Validate form on submit
+        document.getElementById('codeForm').addEventListener('submit', function(e) {
+            const code = document.getElementById('resetCode').value.trim();
+            if (!/^\d{6}$/.test(code)) {
+                alert('Please enter a valid 6-digit code.');
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

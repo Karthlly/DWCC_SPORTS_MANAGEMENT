@@ -1,0 +1,67 @@
+﻿using System.Net;
+using System.Net.Mail;
+
+namespace DWCCSportsManagement.Services
+{
+    public interface IEmailService
+    {
+        Task<bool> SendPasswordResetCodeAsync(string email, string resetCode);
+    }
+
+    public class EmailService : IEmailService
+    {
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<EmailService> _logger;
+
+        public EmailService(IConfiguration configuration, ILogger<EmailService> logger)
+        {
+            _configuration = configuration;
+            _logger = logger;
+        }
+
+        public async Task<bool> SendPasswordResetCodeAsync(string email, string resetCode)
+        {
+            try
+            {
+                var smtpServer = _configuration["Email:SmtpServer"];
+                var smtpPort = int.Parse(_configuration["Email:SmtpPort"] ?? "587");
+                var senderEmail = _configuration["Email:SenderEmail"];
+                var senderPassword = _configuration["Email:SenderPassword"];
+
+                using (var client = new SmtpClient(smtpServer, smtpPort))
+                {
+                    client.EnableSsl = true;
+                    client.Credentials = new NetworkCredential(senderEmail, senderPassword);
+
+                    var subject = "DWCC Halcons - Password Reset Code";
+                    var body = $@"
+                        <h2>Password Reset Request</h2>
+                        <p>You requested a password reset for your DWCC Halcons Management System account.</p>
+                        <p><strong>Your password reset code is:</strong></p>
+                        <h3 style='color: #27ae60; font-size: 24px; letter-spacing: 3px;'>{resetCode}</h3>
+                        <p>This code will expire in 15 minutes.</p>
+                        <p>If you didn't request a password reset, please ignore this email.</p>
+                        <hr />
+                        <p style='color: #7f8c8d; font-size: 12px;'>© 2025 DWCC Sports Management</p>
+                    ";
+
+                    var message = new MailMessage(senderEmail, email)
+                    {
+                        Subject = subject,
+                        Body = body,
+                        IsBodyHtml = true
+                    };
+
+                    await client.SendMailAsync(message);
+                    _logger.LogInformation($"Password reset code sent to {email}");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error sending password reset email: {ex.Message}");
+                return false;
+            }
+        }
+    }
+}

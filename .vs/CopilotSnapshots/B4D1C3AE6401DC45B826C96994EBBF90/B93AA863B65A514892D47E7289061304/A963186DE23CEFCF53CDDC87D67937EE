@@ -1,0 +1,1740 @@
+﻿using DWCCSportsManagement.Data;
+using DWCCSportsManagement.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using System.Linq;
+using System.Security.Claims;
+using DWCCSportsManagement.Services;
+
+namespace DWCCSportsManagement.Controllers
+{
+    [Authorize(Roles = "Coach")]
+    public class HomeController : Controller
+    {
+        private readonly SportsContext _context;
+
+        public HomeController(SportsContext context)
+        {
+            _context = context;
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View(); // Loads login page
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> Index(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                ViewBag.Error = "Please enter username and password.";
+                return View();
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Username == username);
+
+            if (user != null)
+            {
+                // Check Active / Inactive
+                if (user.Status != "Active")
+                {
+                    ViewBag.Error = "Your account is inactive. Please contact the administrator.";
+                    return View();
+                }
+
+                var passwordHasher = new PasswordHasher<User>();
+                var result = passwordHasher.VerifyHashedPassword(user, user.Password, password);
+
+                if (result == PasswordVerificationResult.Success)
+                {
+                    // Normalize role from DB (enum values like 'admin', 'team manager', 'coach')
+                    var dbRole = (user.Role ?? string.Empty).Trim().ToLowerInvariant();
+                    string normalizedRole = dbRole switch
+                    {
+                        "admin" => "Admin",
+                        "coach" => "Coach",
+                        "team manager" => "Manager",
+                        "manager" => "Manager",
+                        _ => user.Role // fallback
+                    };
+
+                    var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Role, normalizedRole),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // ✅ ADDED THIS
+            };
+
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(claimsIdentity),
+                        new AuthenticationProperties { IsPersistent = true }
+                    );
+
+                    // Redirect based on role
+                    switch (normalizedRole)
+                    {
+                        case "Coach":
+                            return RedirectToAction("Roster", "Home");
+                        case "Admin":
+                            return RedirectToAction("AdminInterface", "Admin");
+                        case "Manager":
+                            return RedirectToAction("ManageTeam", "TeamManager");
+                        default:
+                            ViewBag.Error = "Role not recognized.";
+                            return View();
+                    }
+                }
+            }
+
+            ViewBag.Error = "Invalid username or password.";
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Logout()
+        {
+            // Sign out the user
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Optionally clear session
+            HttpContext.Session.Clear();
+
+            // Redirect to login page or homepage
+            return RedirectToAction("Index", "Home");
+        }
+
+        // Password Reset Flow
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                ViewBag.Error = "Please enter a valid email address.";
+                return View();
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                // Don't reveal if email exists for security reasons
+                ViewBag.Success = "If an account with that email exists, a reset code has been sent.";
+                return View();
+            }
+
+            // Generate 6-digit reset code
+            var resetCode = new Random().Next(100000, 999999).ToString();
+            var resetRecord = new PasswordReset
+            {
+                UserId = user.Id,
+                ResetCode = resetCode,
+                ExpiryTime = DateTime.UtcNow.AddMinutes(15),
+                IsUsed = false
+            };
+
+            // Remove any existing unused reset codes for this user
+            var oldResets = _context.PasswordResets.Where(p => p.UserId == user.Id && !p.IsUsed).ToList();
+            _context.PasswordResets.RemoveRange(oldResets);
+
+            _context.PasswordResets.Add(resetRecord);
+            _context.SaveChanges();
+
+            // Send email with reset code
+            var emailService = HttpContext.RequestServices.GetRequiredService<IEmailService>();
+            var emailSent = await emailService.SendPasswordResetCodeAsync(email, resetCode);
+
+            if (emailSent)
+            {
+                // Redirect to verify code page
+                return RedirectToAction("VerifyResetCode", new { email });
+            }
+            else
+            {
+                ViewBag.Error = "Failed to send reset code. Please try again later.";
+                return View();
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult VerifyResetCode(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return RedirectToAction("Index");
+
+            ViewBag.Email = email;
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult VerifyResetCode(string email, string resetCode)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(resetCode))
+            {
+                ViewBag.Error = "Please enter both email and reset code.";
+                ViewBag.Email = email;
+                return View();
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                ViewBag.Error = "Invalid email address.";
+                ViewBag.Email = email;
+                return View();
+            }
+
+            var validReset = _context.PasswordResets
+                .FirstOrDefault(p => p.UserId == user.Id 
+                    && p.ResetCode == resetCode 
+                    && !p.IsUsed 
+                    && p.ExpiryTime > DateTime.UtcNow);
+
+            if (validReset == null)
+            {
+                ViewBag.Error = "Invalid or expired reset code.";
+                ViewBag.Email = email;
+                return View();
+            }
+
+            // Mark as used and proceed to reset password
+            validReset.IsUsed = true;
+            _context.SaveChanges();
+
+            return RedirectToAction("ResetPassword", new { email, userId = user.Id });
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult ResetPassword(string email, int userId)
+        {
+            // Verify user exists
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId && u.Email == email);
+            if (user == null)
+                return RedirectToAction("Index");
+
+            ViewBag.Email = email;
+            ViewBag.UserId = userId;
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult ResetPassword(int userId, string newPassword, string confirmPassword)
+        {
+            if (string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
+            {
+                ViewBag.Error = "Please enter both password and confirmation.";
+                ViewBag.UserId = userId;
+                return View();
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                ViewBag.Error = "Passwords do not match.";
+                ViewBag.UserId = userId;
+                return View();
+            }
+
+            if (newPassword.Length < 6)
+            {
+                ViewBag.Error = "Password must be at least 6 characters long.";
+                ViewBag.UserId = userId;
+                return View();
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            if (user == null)
+            {
+                ViewBag.Error = "User not found.";
+                return View();
+            }
+
+            // Hash and update password
+            var passwordHasher = new PasswordHasher<User>();
+            user.Password = passwordHasher.HashPassword(user, newPassword);
+            _context.SaveChanges();
+
+            TempData["Success"] = "Your password has been reset successfully. Please log in with your new password.";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult SaveRubrics([FromBody] List<Rubric> rubrics)
+        {
+            if (rubrics == null || rubrics.Count == 0)
+                return BadRequest("No data received.");
+
+            // 1️⃣ Remove all existing rubrics
+            var existingRubrics = _context.Rubrics.ToList();
+            if (existingRubrics.Any())
+            {
+                _context.Rubrics.RemoveRange(existingRubrics);
+                _context.SaveChanges(); // optional, can save after adding new ones
+            }
+
+            // 2️⃣ Add new rubrics
+            foreach (var r in rubrics)
+            {
+                r.CreatedAt = DateTime.Now;
+                r.UpdatedAt = DateTime.Now;
+                _context.Rubrics.Add(r);
+            }
+
+            _context.SaveChanges();
+            return Ok("Rubrics saved successfully!");
+        }
+
+
+
+        public IActionResult Roster(int? sportId = null)
+        {
+            // Get logged-in coach username from session
+            var username = User.Identity.Name;
+
+            var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+            if (coach == null)
+            {
+                TempData["Error"] = "Coach not found or session expired.";
+                return RedirectToAction("Index");
+            }
+
+            // Get teams belonging to this coach
+            var teams = _context.Teams
+                .Include(t => t.Sport)
+                .Where(t => t.CoachId == coach.Id) // <-- use coach.Id here
+                .ToList();
+
+            // Filter by sport if selected
+            if (sportId.HasValue)
+            {
+                teams = teams.Where(t => t.SportId == sportId.Value).ToList();
+            }
+
+            // Get athletes under those teams
+            var teamIds = teams.Select(t => t.TeamId).ToList();
+            var athletes = _context.Athletes
+                .Include(a => a.Team)
+                .Include(a => a.Sport)
+                .Where(a => a.TeamId != null && teamIds.Contains(a.TeamId.Value))
+                .ToList();
+
+            // Dropdown sports for this coach
+            var sports = teams
+     .Select(t => t.Sport)
+     .Where(s => s != null)
+     .Distinct()
+     .ToList();
+
+
+            ViewBag.Sports = sports;
+            ViewBag.SelectedSport = sportId;
+            ViewBag.Teams = teams;
+
+            return View(athletes);
+        }
+
+
+
+
+
+
+        // Helper method to make positions look realistic per sport
+        private string GetPositionBySport(string sportName, int index)
+        {
+            return sportName switch
+            {
+                "Basketball" => new[] { "Guard", "Forward", "Center", "Shooting Guard", "Point Guard" }[index - 1],
+                "Football" => new[] { "Goalkeeper", "Defender", "Midfielder", "Winger", "Striker" }[index - 1],
+                "Volleyball" => new[] { "Setter", "Libero", "Outside Hitter", "Middle Blocker", "Opposite Hitter" }[index - 1],
+                "Futsal" => new[] { "Goalkeeper", "Defender", "Winger", "Pivot", "Fixo" }[index - 1],
+                "Sepak Takraw" => new[] { "Tekong", "Feeder", "Striker", "Substitute", "Coach" }[index - 1],
+                "Arnis" => new[] { "Stick Fighter", "Sword Fighter", "Coach", "Trainer", "Assistant" }[index - 1],
+                "Chess" => new[] { "Player 1", "Player 2", "Player 3", "Player 4", "Coach" }[index - 1],
+                "Billiards" => new[] { "Player 1", "Player 2", "Player 3", "Coach", "Referee" }[index - 1],
+                "Darts" => new[] { "Thrower", "Spotter", "Coach", "Manager", "Assistant" }[index - 1],
+                "Athletics" => new[] { "Runner", "Sprinter", "Jumper", "Thrower", "Coach" }[index - 1],
+                "Taekwondo" => new[] { "Fighter", "Trainer", "Coach", "Assistant", "Manager" }[index - 1],
+                "Lawn Tennis" => new[] { "Singles Player", "Doubles Player", "Coach", "Trainer", "Manager" }[index - 1],
+                "Table Tennis" => new[] { "Player 1", "Player 2", "Coach", "Trainer", "Manager" }[index - 1],
+                "Swimming" => new[] { "Freestyle", "Backstroke", "Breaststroke", "Butterfly", "Coach" }[index - 1],
+                _ => "Player"
+            };
+        }
+
+
+        public IActionResult Attendance(int? sessionId)
+        {
+            var username = User.Identity.Name;
+
+            // Get the logged-in coach
+            var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+            if (coach == null)
+            {
+                TempData["Error"] = "Coach not found or session expired.";
+                return RedirectToAction("Index");
+            }
+
+            // Get teams of this coach
+            var coachTeams = _context.Teams
+                .Where(t => t.CoachId == coach.Id)
+                .ToList();
+
+            var rubrics = _context.Rubrics
+                .OrderBy(r => r.Order)
+                .ToList();
+
+            var distinctPoints = rubrics
+                .Select(r => r.Points)
+                .Distinct()
+                .OrderByDescending(p => p)
+                .ToList();
+
+            // Pass teams to view for dropdown
+            ViewBag.Sessions = _context.Sessions
+                .Include(s => s.Team)
+                .Where(s => coachTeams.Select(t => t.TeamId).Contains(s.TeamId))
+                .ToList();
+
+            ViewBag.SelectedSessionId = sessionId;
+            ViewBag.DistinctPoints = distinctPoints;
+
+            List<AthleteModel> athletes = new List<AthleteModel>();
+            Dictionary<int, AttendanceStatus> existingAttendance = new Dictionary<int, AttendanceStatus>();
+
+            if (sessionId.HasValue)
+            {
+                // Make sure the selected session belongs to this coach
+                var selectedSession = _context.Sessions
+                    .Include(s => s.Team)
+                    .FirstOrDefault(s => s.SessionId == sessionId.Value && coachTeams.Select(t => t.TeamId).Contains(s.TeamId));
+
+                if (selectedSession != null)
+                {
+                    int teamId = selectedSession.TeamId;
+
+                    // Get athletes in this session's team
+                    athletes = _context.Athletes
+                        .Include(a => a.Team)
+                        .Include(a => a.Sport)
+                        .Where(a => a.TeamId == teamId)
+                        .Select(a => new AthleteModel
+                        {
+                            AthleteId = a.AthleteId,
+                            FirstName = a.FirstName,
+                            LastName = a.LastName,
+                            Gender = a.Gender,
+                            Birthdate = a.Birthdate,
+                            MedicalInfo = a.MedicalInfo,
+                            TeamId = a.TeamId,
+                            SportId = a.SportId,
+                            Team = a.Team,
+                            Sport = a.Sport
+                        })
+                        .ToList();
+
+                    // Load existing attendance for this session
+                    var attendanceRecords = _context.Attendance
+                        .Where(a => a.SessionId == sessionId.Value)
+                        .ToList();
+
+                    // Build dictionary: AthleteId -> Status
+                    foreach (var record in attendanceRecords)
+                    {
+                        existingAttendance[record.AthleteId] = record.Status;
+                    }
+                }
+            }
+
+            // Pass existing attendance to view
+            ViewBag.ExistingAttendance = existingAttendance;
+
+            return View(athletes);
+        }
+
+
+
+
+
+
+        [HttpPost]
+        public IActionResult ToggleAthleteStatus(int id)
+        {
+            var athlete = _context.Athletes.FirstOrDefault(a => a.AthleteId == id);
+            if (athlete == null)
+            {
+                TempData["Error"] = "Athlete not found.";
+                return RedirectToAction("Roster");
+            }
+
+            // Toggle status
+            if (athlete.Status == "Active")
+                athlete.Status = "Inactive";
+            else
+                athlete.Status = "Active";
+
+            _context.SaveChanges();
+
+            TempData["Success"] = $"Athlete {athlete.FirstName} {athlete.LastName} is now {athlete.Status}.";
+            return RedirectToAction("Roster");
+        }
+
+
+        public IActionResult AthletePerformance(int? sessionId)
+        {
+            // Get logged-in coach
+            var username = User.Identity.Name;
+            var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+
+            if (coach == null)
+            {
+                TempData["Error"] = "Coach not found or session expired.";
+                return RedirectToAction("Index");
+            }
+
+            // Get all rubrics and group by Criteria
+            var rubrics = _context.Rubrics
+                .OrderBy(r => r.Order)
+                .ToList();
+
+            // Get distinct points for header
+            var distinctPoints = rubrics
+                .Select(r => r.Points)
+                .Distinct()
+                .OrderByDescending(p => p)
+                .ToList();
+
+            // Get sessions
+            var sessions = _context.Sessions
+                .Include(s => s.Team)
+                .Where(s => s.Team.CoachId == coach.Id)
+                .OrderByDescending(s => s.DateTime)
+                .ToList();
+
+            List<AthleteModel> athletes = new List<AthleteModel>();
+
+            if (sessionId.HasValue)
+            {
+                var selectedSession = _context.Sessions
+                    .Include(s => s.Team)
+                    .FirstOrDefault(s => s.SessionId == sessionId.Value);
+
+                if (selectedSession != null)
+                {
+                    athletes = _context.Athletes
+                        .Include(a => a.Team)
+                        .Where(a => a.TeamId == selectedSession.TeamId)
+                        .ToList();
+                }
+            }
+
+            ViewBag.Sessions = sessions;
+            ViewBag.Athletes = athletes;
+            ViewBag.SelectedSessionId = sessionId;
+            ViewBag.Rubrics = rubrics;
+            ViewBag.DistinctPoints = distinctPoints;
+
+            return View();
+        }
+
+
+        // Add this AJAX endpoint for dynamic athlete loading
+        [HttpGet]
+        public JsonResult GetAthletesBySession(int sessionId)
+        {
+            var session = _context.Sessions
+                .Include(s => s.Team)
+                .FirstOrDefault(s => s.SessionId == sessionId);
+
+            if (session == null)
+            {
+                return Json(new List<object>());
+            }
+
+            var athletes = _context.Athletes
+                .Where(a => a.TeamId == session.TeamId)
+                .Select(a => new
+                {
+                    athleteId = a.AthleteId,
+                    fullName = $"{a.FirstName} {a.LastName}"
+                })
+                .ToList();
+
+            return Json(athletes);
+        }
+
+
+
+        [HttpPost]
+        public IActionResult SubmitPerformance(int athleteId, int sessionId, string remarks, int rating, int maxRating)
+        {
+            var performance = new PerformanceModel
+            {
+                AthleteId = athleteId,
+                SessionId = sessionId,
+                Remarks = remarks,
+                Rating = rating,
+                MaxRating = maxRating     // <-- SAVE IT
+            };
+
+            _context.Performances.Add(performance);
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Performance submitted successfully!";
+            return RedirectToAction("Attendance");
+        }
+        public IActionResult ScheduleTraining()
+        {
+            var username = User.Identity.Name;
+            var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+            if (coach == null)
+            {
+                TempData["Error"] = "Coach not found or session expired.";
+                return RedirectToAction("Index");
+            }
+
+            // Get teams of this coach
+            var teams = _context.Teams
+                .Where(t => t.CoachId == coach.Id)
+                .ToList();
+
+            // Pass TeamModel objects, not just names
+            ViewBag.TeamNames = teams;
+
+            // Get sessions for this coach's teams
+            var sessions = _context.Sessions
+                .Include(s => s.Team) // Include Team for display
+                .Where(s => teams.Select(t => t.TeamId).Contains(s.TeamId))
+                .ToList();
+
+            return View(sessions);
+        }
+
+        [HttpPost]
+        public IActionResult ActivateSession(int id)
+        {
+            var session = _context.Sessions.FirstOrDefault(s => s.SessionId == id);
+            if (session != null)
+            {
+                session.Status = "Active";
+                _context.SaveChanges();
+                TempData["Success"] = "Session activated successfully!";
+            }
+            return RedirectToAction("ScheduleTraining");
+        }
+
+
+
+        [HttpPost]
+        public IActionResult AddSession(SessionModel model)
+        {
+            // Debug: print the received model
+            System.Diagnostics.Debug.WriteLine("AddSession called");
+            System.Diagnostics.Debug.WriteLine($"DateTime: {model.DateTime}");
+            System.Diagnostics.Debug.WriteLine($"TeamId: {model.TeamId}");
+            System.Diagnostics.Debug.WriteLine($"Description: {model.Description}");
+            System.Diagnostics.Debug.WriteLine($"Location: {model.Location}");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Sessions.Add(model);
+                    _context.SaveChanges();
+                    TempData["Success"] = "Session added successfully!";
+                    System.Diagnostics.Debug.WriteLine("Session inserted successfully.");
+                }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = "Failed to add session.";
+                    System.Diagnostics.Debug.WriteLine($"Error inserting session: {ex.Message}");
+                }
+            }
+            else
+            {
+                TempData["Error"] = "ModelState is invalid!";
+                foreach (var key in ModelState.Keys)
+                {
+                    var state = ModelState[key];
+                    foreach (var error in state.Errors)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"ModelState Error for {key}: {error.ErrorMessage}");
+                    }
+                }
+            }
+
+            return RedirectToAction("ScheduleTraining");
+        }
+        [HttpPost]
+        public IActionResult SaveAttendance(int SessionId, Dictionary<int, string> Statuses)
+        {
+            if (SessionId == 0 || Statuses == null)
+            {
+                TempData["Error"] = "Invalid session or statuses.";
+                return RedirectToAction("Attendance", new { sessionId = SessionId });
+            }
+
+            foreach (var entry in Statuses)
+            {
+                int athleteId = entry.Key;
+                string statusStr = entry.Value;
+
+                if (!Enum.TryParse<DWCCSportsManagement.Models.AttendanceStatus>(statusStr, out var status))
+                {
+                    status = DWCCSportsManagement.Models.AttendanceStatus.Present; // default
+                }
+
+                // Check if attendance exists
+                var existing = _context.Attendance
+                                       .FirstOrDefault(a => a.SessionId == SessionId && a.AthleteId == athleteId);
+
+                if (existing != null)
+                {
+                    // Update existing
+                    existing.Status = status;
+                    _context.Attendance.Update(existing);
+                }
+                else
+                {
+                    // Insert new
+                    var attendance = new DWCCSportsManagement.Models.AttendanceModel
+                    {
+                        SessionId = SessionId,
+                        AthleteId = athleteId,
+                        Status = status
+                    };
+                    _context.Attendance.Add(attendance);
+                }
+            }
+
+            _context.SaveChanges();
+            TempData["Success"] = "Attendance saved successfully!";
+            return RedirectToAction("Attendance", new { sessionId = SessionId });
+        }
+
+
+
+        // POST: Archive Session
+        [HttpPost]
+        public IActionResult ArchiveSession(int id)
+        {
+            var session = _context.Sessions.FirstOrDefault(s => s.SessionId == id);
+            if (session != null)
+            {
+                session.Status = "Archived"; // Update status instead of deleting
+                _context.SaveChanges();
+                TempData["Success"] = "Session archived successfully!";
+            }
+            return RedirectToAction("ScheduleTraining");
+        }
+
+
+
+        public IActionResult CoachProfile()
+        {
+            // Get logged-in username from session
+            var username = User.Identity.Name;
+
+            if (string.IsNullOrEmpty(username))
+            {
+                TempData["Error"] = "Session expired. Please log in again.";
+                return RedirectToAction("Index");
+            }
+
+            // Fetch coach data from database
+            var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+
+            if (coach == null)
+            {
+                TempData["Error"] = "Coach profile not found.";
+                return RedirectToAction("Index");
+            }
+
+            // Pass coach model to the view
+            return View(coach);
+        }
+
+        public async Task<IActionResult> Profile(int id)
+        {
+            var coach = await _context.Coaches.FindAsync(id);
+            if (coach == null)
+            {
+                return NotFound();
+            }
+            return View(coach);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> EditCoach(int id, Coach updatedCoach, IFormFile? ImageFile)
+        {
+            var coach = await _context.Coaches.FindAsync(id);
+
+            if (coach == null)
+            {
+                return NotFound();
+            }
+
+            // Update basic fields
+            coach.FirstName = updatedCoach.FirstName;
+            coach.LastName = updatedCoach.LastName;
+            coach.Phone = updatedCoach.Phone;
+            coach.Bio = updatedCoach.Bio;
+
+            // Handle image upload if new image is provided
+            if (ImageFile != null && ImageFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/coaches");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(ImageFile.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await ImageFile.CopyToAsync(stream);
+                }
+
+                // Update image path
+                coach.ImageUrl = $"~/images/coaches/{fileName}";
+            }
+
+            _context.Coaches.Update(coach);
+            await _context.SaveChangesAsync();
+
+            // Redirect back to the profile page
+            return RedirectToAction("CoachProfile", new { id = coach.Id });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadMedicalInfo(int id, IFormFile MedicalFile)
+        {
+            if (MedicalFile == null || MedicalFile.Length == 0)
+            {
+                TempData["Error"] = "No file selected for upload.";
+                return RedirectToAction("Roster", "Home");
+            }
+
+            var athlete = await _context.Athletes.FindAsync(id);
+            if (athlete == null)
+            {
+                TempData["Error"] = "Athlete not found.";
+                return RedirectToAction("Roster", "Home");
+            }
+
+            var imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+            if (!Directory.Exists(imagesFolder))
+            {
+                Directory.CreateDirectory(imagesFolder);
+            }
+
+            var fileName = Guid.NewGuid() + Path.GetExtension(MedicalFile.FileName);
+            var filePath = Path.Combine(imagesFolder, fileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await MedicalFile.CopyToAsync(stream);
+            }
+
+            athlete.MedicalInfo = "/images/" + fileName;
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Medical Info uploaded successfully!";
+            return RedirectToAction("Roster", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadGrades(int id, IFormFile GradesFile)
+        {
+            if (GradesFile == null || GradesFile.Length == 0)
+            {
+                TempData["Error"] = "No file selected for upload.";
+                return RedirectToAction("Roster", "Home");
+            }
+
+            var athlete = await _context.Athletes.FindAsync(id);
+            if (athlete == null)
+            {
+                TempData["Error"] = "Athlete not found.";
+                return RedirectToAction("Roster", "Home");
+            }
+
+            var imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+            if (!Directory.Exists(imagesFolder))
+            {
+                Directory.CreateDirectory(imagesFolder);
+            }
+
+            var fileName = Guid.NewGuid() + Path.GetExtension(GradesFile.FileName);
+            var filePath = Path.Combine(imagesFolder, fileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await GradesFile.CopyToAsync(stream);
+            }
+
+            athlete.Grades = "/images/" + fileName;
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Grades uploaded successfully!";
+            return RedirectToAction("Roster", "Home");
+        }
+
+        public IActionResult CompetitionParticipation()
+        {
+            // Load competitions
+            var competitions = _context.Competitions.ToList();
+
+            // Load teams with related Sport and SubCategory
+            var allTeams = _context.Teams
+                .Where(t => t.Status == "Accepted")
+                .Include(t => t.Sport)                  // Include Sport
+                .ThenInclude(s => s.SubCategory)        // Include SubCategory of the Sport
+                .ToList();
+
+            // Load participants
+            var participants = _context.CompetitionParticipants.ToList();
+
+            // Prepare available teams per competition
+            var availableTeamsByCompetition = new Dictionary<int, List<object>>();
+            foreach (var comp in competitions)
+            {
+                var participatedTeamIds = participants
+                    .Where(p => p.CompetitionId == comp.CompetitionId)
+                    .Select(p => p.TeamId)
+                    .ToList();
+
+                // Include SubCategory name in the output for the view
+                availableTeamsByCompetition[comp.CompetitionId] = allTeams
+                    .Where(t => !participatedTeamIds.Contains(t.TeamId))
+                    .Select(t => new
+                    {
+                        t.TeamId,
+                        t.TeamName,
+                        SubCategory = t.Sport?.SubCategory?.Name ?? "N/A"
+                    })
+                    .ToList<object>();
+            }
+
+            ViewBag.AvailableTeamsByCompetition = availableTeamsByCompetition;
+
+            var viewModel = new CompetitionParticipationViewModel
+            {
+                Competitions = competitions,
+                Teams = allTeams,
+                Participants = participants
+            };
+
+            return View(viewModel);
+        }
+
+
+        [HttpPost]
+        public IActionResult UpdateResult(int participantId, string results)
+        {
+            var participant = _context.CompetitionParticipants
+                .FirstOrDefault(p => p.ParticipantId == participantId);
+
+            if (participant != null)
+            {
+                participant.Results = results;
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Status updated successfully!";
+            }
+
+            return RedirectToAction("CompetitionParticipation");
+        }
+
+        [HttpPost]
+        public IActionResult ParticipateInCompetition(int competitionId, List<int> TeamIds)
+        {
+            if (TeamIds != null && TeamIds.Count > 0)
+            {
+                foreach (var teamId in TeamIds)
+                {
+                    // Prevent duplicate participation
+                    if (!_context.CompetitionParticipants.Any(p => p.CompetitionId == competitionId && p.TeamId == teamId))
+                    {
+                        var participant = new CompetitionParticipant
+                        {
+                            CompetitionId = competitionId,
+                            TeamId = teamId,
+                            Results = "N/A"
+                        };
+                        _context.CompetitionParticipants.Add(participant);
+                    }
+                }
+
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Selected team(s) successfully added to the competition!";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "No teams were selected.";
+            }
+
+            return RedirectToAction("CompetitionParticipation");
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatus(int ParticipantId, string Status)
+        {
+            if (string.IsNullOrEmpty(Status))
+            {
+                TempData["Error"] = "Please select a valid status.";
+                return RedirectToAction("CompetitionParticipants");
+            }
+
+            var participant = await _context.CompetitionParticipants
+                                            .FirstOrDefaultAsync(p => p.ParticipantId == ParticipantId);
+            if (participant == null)
+            {
+                TempData["Error"] = "Participant not found.";
+                return RedirectToAction("CompetitionParticipants");
+            }
+
+            participant.Status = Status;
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Participant status updated successfully.";
+            return RedirectToAction("CompetitionParticipation");
+        }
+
+        [HttpPost]
+        public IActionResult WithdrawParticipant(int participantId)
+        {
+            var participant = _context.CompetitionParticipants.FirstOrDefault(p => p.ParticipantId == participantId);
+            if (participant != null)
+            {
+                _context.CompetitionParticipants.Remove(participant);
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Participant successfully withdrawn from the competition.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Participant not found.";
+            }
+
+            return RedirectToAction("CompetitionParticipation"); // Redirect back to your view
+        }
+
+
+
+        public IActionResult Dashboard()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            // Get athletes for this coach
+            int coachId = int.Parse(userId);
+            var teamIds = _context.Teams
+                            .Where(t => t.CoachId == coachId)
+                            .Select(t => t.TeamId)
+                            .ToList();
+
+            var athletes = _context.Athletes
+                            .Where(a => a.TeamId.HasValue && teamIds.Contains(a.TeamId.Value))
+                            .ToList();
+
+            ViewBag.UserId = userId; // pass User ID separately
+            return View(athletes);
+        }
+
+
+        [HttpGet]
+        public IActionResult GetDashboardData()
+        {
+            // Get logged-in coach's ID from claims
+            var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userIdClaim))
+            {
+                return Json(new { error = "User not logged in." });
+            }
+
+            if (!int.TryParse(userIdClaim, out int coachId))
+            {
+                return Json(new { error = "Invalid user ID." });
+            }
+
+            // Get the coach record
+            var coach = _context.Users.FirstOrDefault(u => u.Id == coachId);
+            if (coach == null)
+            {
+                return Json(new { error = "Coach not found." });
+            }
+
+            // Get teams owned by this coach
+            var teams = _context.Teams
+                .Where(t => t.CoachId == coachId)
+                .ToList();
+
+            var teamIds = teams.Select(t => t.TeamId).ToList();
+
+            // Get athletes belonging to these teams
+            var athletes = _context.Athletes
+                .Where(a => a.TeamId.HasValue && teamIds.Contains(a.TeamId.Value))
+                .ToList();
+
+            // Get all sports
+            var sports = _context.Sports.ToList();
+
+            // Prepare dashboard data
+            var genderData = athletes
+                .GroupBy(a => a.Gender)
+                .Select(g => new { gender = g.Key, count = g.Count() })
+                .ToList();
+
+            var statusData = athletes
+                .GroupBy(a => a.Status)
+                .Select(s => new { status = s.Key, count = s.Count() })
+                .ToList();
+
+            var perTeam = athletes
+                .GroupBy(a => a.TeamId)
+                .Select(g => new
+                {
+                    teamId = g.Key,
+                    teamName = teams.FirstOrDefault(t => t.TeamId == g.Key)?.TeamName,
+                    count = g.Count()
+                })
+                .ToList();
+
+            var perSport = athletes
+                .GroupBy(a => a.SportId)
+                .Select(g => new
+                {
+                    sportId = g.Key,
+                    sportName = sports.FirstOrDefault(s => s.Id == g.Key)?.Name,
+                    count = g.Count()
+                })
+                .ToList();
+
+            // Return JSON for the dashboard
+            return Json(new
+            {
+                gender = genderData,
+                status = statusData,
+                perTeam,
+                perSport
+            });
+        }
+
+        // GET: ManageAthlete
+        public IActionResult ManageAthlete()
+        {
+            var athletes = _context.Athletes
+                .Include(a => a.Team)
+                .Include(a => a.Sport)
+                .ToList();
+
+            // Pass teams to ViewBag
+            ViewBag.Teams = _context.Teams.ToList();
+
+            return View(athletes);
+        }
+
+        // POST: Add Athlete
+        [HttpPost]
+        public async Task<IActionResult> AddAthlete(
+    AthleteModel athlete,
+    IFormFile MedicalFile,
+    IFormFile GradesFile)
+        {
+            try
+            {
+                Debug.WriteLine("=== AddAthlete Called ===");
+
+                // Check if this is an existing athlete (from search)
+                bool isExistingAthlete = athlete.AthleteId > 0;
+                Debug.WriteLine($"IsExistingAthlete: {isExistingAthlete}, AthleteId: {athlete.AthleteId}");
+
+                // Log incoming athlete data
+                Debug.WriteLine($"FirstName: {athlete.FirstName}");
+                Debug.WriteLine($"LastName: {athlete.LastName}");
+                Debug.WriteLine($"Gender: {athlete.Gender}");
+                Debug.WriteLine($"Birthdate: {athlete.Birthdate}");
+                Debug.WriteLine($"TeamId: {athlete.TeamId}");
+
+                // Log ModelState errors if any
+                if (!ModelState.IsValid)
+                {
+                    Debug.WriteLine("ModelState is INVALID!");
+                    foreach (var key in ModelState.Keys)
+                    {
+                        var errors = ModelState[key].Errors;
+                        foreach (var error in errors)
+                        {
+                            Debug.WriteLine($"ModelState Error - {key}: {error.ErrorMessage}");
+                        }
+                    }
+
+                    // Repopulate ViewBag before returning
+                    var username = User.Identity.Name;
+                    var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+                    if (coach != null)
+                    {
+                        var teams = _context.Teams
+                            .Include(t => t.Sport)
+                            .Where(t => t.CoachId == coach.Id)
+                            .ToList();
+
+                        ViewBag.Teams = teams;
+
+                        var sports = teams
+                            .Select(t => t.Sport)
+                            .Where(s => s != null)
+                            .Distinct()
+                            .ToList();
+                        ViewBag.Sports = sports;
+
+                        var teamIds = teams.Select(t => t.TeamId).ToList();
+                        var athletes = _context.Athletes
+                            .Include(a => a.Team)
+                            .Include(a => a.Sport)
+                            .Where(a => a.TeamId != null && teamIds.Contains(a.TeamId.Value))
+                            .ToList();
+
+                        return View("Roster", athletes);
+                    }
+
+                    return View("Roster", new List<AthleteModel>());
+                }
+
+                // Ensure images folder exists
+                var imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                if (!Directory.Exists(imagesFolder))
+                {
+                    Debug.WriteLine("Creating images folder at: " + imagesFolder);
+                    Directory.CreateDirectory(imagesFolder);
+                }
+
+                AthleteModel targetAthlete;
+
+                if (isExistingAthlete)
+                {
+                    // UPDATE existing athlete
+                    targetAthlete = await _context.Athletes.FindAsync(athlete.AthleteId);
+
+                    if (targetAthlete == null)
+                    {
+                        throw new Exception("Athlete not found");
+                    }
+
+                    Debug.WriteLine($"Updating existing athlete: {targetAthlete.FirstName} {targetAthlete.LastName}");
+
+                    // Update team assignment
+                    targetAthlete.TeamId = athlete.TeamId;
+                }
+                else
+                {
+                    // CREATE new athlete
+                    Debug.WriteLine("Creating new athlete");
+                    targetAthlete = athlete;
+                    targetAthlete.Status = "Active"; // Set default status
+                }
+
+                // Save Medical File (only if uploaded)
+                if (MedicalFile != null && MedicalFile.Length > 0)
+                {
+                    var medicalFileName = Guid.NewGuid() + Path.GetExtension(MedicalFile.FileName);
+                    var medicalPath = Path.Combine(imagesFolder, medicalFileName);
+                    Debug.WriteLine("Saving MedicalFile to: " + medicalPath);
+
+                    using var medicalStream = new FileStream(medicalPath, FileMode.Create);
+                    await MedicalFile.CopyToAsync(medicalStream);
+
+                    targetAthlete.MedicalInfo = "/images/" + medicalFileName;
+                }
+                else if (!isExistingAthlete)
+                {
+                    Debug.WriteLine("Warning: No MedicalFile uploaded for new athlete");
+                }
+
+                // Save Grades File (only if uploaded)
+                if (GradesFile != null && GradesFile.Length > 0)
+                {
+                    var gradesFileName = Guid.NewGuid() + Path.GetExtension(GradesFile.FileName);
+                    var gradesPath = Path.Combine(imagesFolder, gradesFileName);
+                    Debug.WriteLine("Saving GradesFile to: " + gradesPath);
+
+                    using var gradesStream = new FileStream(gradesPath, FileMode.Create);
+                    await GradesFile.CopyToAsync(gradesStream);
+
+                    targetAthlete.Grades = "/images/" + gradesFileName;
+                }
+                else if (!isExistingAthlete)
+                {
+                    Debug.WriteLine("Warning: No GradesFile uploaded for new athlete");
+                }
+
+                // Assign SportId based on Team
+                if (targetAthlete.TeamId.HasValue)
+                {
+                    var team = _context.Teams.FirstOrDefault(t => t.TeamId == targetAthlete.TeamId);
+                    if (team != null)
+                    {
+                        targetAthlete.SportId = team.SportId;
+                        Debug.WriteLine($"Assigned SportId {targetAthlete.SportId} based on TeamId {targetAthlete.TeamId}");
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"Team not found for TeamId {targetAthlete.TeamId}");
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine("TeamId is null");
+                }
+
+                // Add or Update athlete in DB
+                if (isExistingAthlete)
+                {
+                    // UPDATE existing athlete
+                    targetAthlete = await _context.Athletes.FindAsync(athlete.AthleteId);
+
+                    if (targetAthlete == null)
+                        throw new Exception("Athlete not found");
+
+                    targetAthlete.TeamId = athlete.TeamId;
+                }
+                else
+                {
+                    // CREATE NEW ATHLETE (Correct way)
+                    targetAthlete = new AthleteModel
+                    {
+                        StudentId = athlete.StudentId,
+                        FirstName = athlete.FirstName,
+                        LastName = athlete.LastName,
+                        Gender = athlete.Gender,
+                        Birthdate = athlete.Birthdate,
+                        Course = athlete.Course,
+                        YearLevel = athlete.YearLevel,
+                        TeamId = athlete.TeamId,
+                        Status = "Active"
+                    };
+                }
+
+
+                var result = await _context.SaveChangesAsync();
+                Debug.WriteLine($"SaveChangesAsync result: {result}");
+
+                string action = isExistingAthlete ? "assigned to team" : "added";
+                TempData["Success"] = $"Athlete {targetAthlete.FirstName} {targetAthlete.LastName} {action} successfully!";
+                return RedirectToAction("Roster");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("AddAthlete Exception: " + ex.ToString());
+                TempData["Error"] = "Failed to add/update athlete: " + ex.Message;
+
+                // Repopulate ViewBag before returning
+                var username = User.Identity.Name;
+                var coach = _context.Coaches.FirstOrDefault(c => c.Username == username);
+                if (coach != null)
+                {
+                    var teams = _context.Teams
+                        .Include(t => t.Sport)
+                        .Where(t => t.CoachId == coach.Id)
+                        .ToList();
+
+                    ViewBag.Teams = teams;
+
+                    var sports = teams
+                        .Select(t => t.Sport)
+                        .Where(s => s != null)
+                        .Distinct()
+                        .ToList();
+                    ViewBag.Sports = sports;
+
+                    var teamIds = teams.Select(t => t.TeamId).ToList();
+                    var athletes = _context.Athletes
+                        .Include(a => a.Team)
+                        .Include(a => a.Sport)
+                        .Where(a => a.TeamId != null && teamIds.Contains(a.TeamId.Value))
+                        .ToList();
+
+                    return View("Roster", athletes);
+                }
+
+                return View("Roster", new List<AthleteModel>());
+            }
+        }
+
+        // Add this helper method to populate ViewBag consistently
+        private void PopulateViewBagData()
+        {
+            ViewBag.Teams = _context.Teams.Include(t => t.Sport).Where(t => t.Status == "Accepted").ToList();
+            ViewBag.Sports = _context.Sports.ToList();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetRemarks(int athleteId)
+        {
+            // Get performance records for this athlete, joining with sessions to get description
+            var remarks = await _context.Performance
+                .Where(p => p.AthleteId == athleteId)
+                .Join(_context.Sessions,
+                      p => p.SessionId,
+                      s => s.SessionId,
+                      (p, s) => new
+                      {
+                          SessionDescription = s.Description,
+                          Remarks = p.Remarks,
+                          Rating = p.Rating,
+                          MaxRating = p.MaxRating // <-- add this
+                      })
+                .OrderBy(x => x.SessionDescription)
+                .ToListAsync();
+
+            // Get athlete full name
+            var athlete = await _context.Athletes
+                .Where(a => a.AthleteId == athleteId)
+                .Select(a => a.FirstName + " " + a.LastName)
+                .FirstOrDefaultAsync();
+
+            // Return JSON with athlete name and session description
+            var result = remarks.Select(r => new
+            {
+                athleteName = athlete,
+                sessionName = r.SessionDescription,
+                remarks = r.Remarks,
+                rating = r.Rating,
+                maxRating = r.MaxRating // <-- include for JS
+            });
+
+            return Json(result);
+        }
+
+        public IActionResult GetAttendance(int athleteId)
+        {
+            var attendance = _context.Attendance
+                .Where(a => a.AthleteId == athleteId)
+                .Select(a => new
+                {
+                    a.AttendanceId,
+                    a.SessionId,
+                    Status = a.Status.ToString(),   // 🔥 ALWAYS output string!
+                    SessionName = a.Session.Description
+                })
+                .ToList();
+
+            return Json(attendance);
+        }
+        [HttpGet]
+        public JsonResult CheckStudentID(int studentId)
+        {
+            bool exists = _context.Athletes.Any(a => a.StudentId == studentId);
+            return Json(new { exists });
+        }
+
+        public IActionResult Reports()
+        {
+                       return View();
+        }
+
+        // GET: /Report/GetParticipantCompetitions
+        public IActionResult GetParticipantCompetitions()
+        {
+            var data = _context.CompetitionParticipants
+                .Include(cp => cp.Competition)
+                .Include(cp => cp.Team)
+                    .ThenInclude(t => t.Sport)
+                        .ThenInclude(s => s.SubCategory)
+                .Where(cp => cp.Status == "Completed")
+                .ToList();
+
+            var jsonData = data.Select(cp => new
+            {
+                cp.ParticipantId,
+                cp.CompetitionId,
+                CompetitionName = cp.Competition.Name,
+                CompetitionStartDate = cp.Competition.StartDate,
+                CompetitionEndDate = cp.Competition.EndDate,
+                cp.TeamId,
+                TeamName = cp.Team.TeamName,
+                SportName = cp.Team.Sport.Name,
+                SubCategoryName = cp.Team.Sport.SubCategory != null ? cp.Team.Sport.SubCategory.Name : null,
+                cp.Results,
+                cp.Status
+            });
+
+            return Json(jsonData);
+        }
+
+        public IActionResult GetAttendanceReport()
+        {
+            var data = _context.Attendance
+                .Include(a => a.Athlete)
+                .Include(a => a.Session)
+                    .ThenInclude(s => s.Team)
+                .ToList();
+
+            var jsonData = data.Select(a => new
+            {
+                a.AttendanceId,
+                Date = a.Session?.DateTime,                // Use Session.DateTime
+                PlayerName = a.Athlete != null ? a.Athlete.FirstName : null, // Replace FullName with your property
+                TeamName = a.Session?.Team?.TeamName,
+                SessionType = a.Session?.Description,     // You can store Training/Game in Description
+                SessionDate = a.Session.DateTime,
+                Status = a.Status.ToString()
+            });
+
+            return Json(jsonData);
+        }
+        public IActionResult GetAthleteById(int id)
+        {
+            var athlete = _context.Athletes
+                .Where(a => a.AthleteId == id)
+                .Select(a => new {
+                    athleteId = a.AthleteId,
+                    firstName = a.FirstName,
+                    lastName = a.LastName,
+                    studentId = a.StudentId,
+                    gender = a.Gender,
+                    birthdate = a.Birthdate,
+                    status = a.Status,
+                    medicalInfo = a.MedicalInfo,
+                    grades = a.Grades,
+
+                    // FK values
+                    teamId = a.TeamId,
+                    sportId = a.SportId,
+
+                    // NEW — get names from navigation properties
+                    teamName = a.Team != null ? a.Team.TeamName : null,
+                    sportName = a.Sport != null ? a.Sport.Name : null
+                })
+                .FirstOrDefault();
+
+            return Json(athlete);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateAthlete([FromBody] AthleteModel model)
+        {
+            if (model == null || model.AthleteId == 0)
+                return Json(new { success = false, message = "Invalid athlete data." });
+
+            var athlete = _context.Athletes.FirstOrDefault(a => a.AthleteId == model.AthleteId);
+            if (athlete == null)
+                return Json(new { success = false, message = "Athlete not found." });
+
+            try
+            {
+                // Update editable fields
+                athlete.FirstName = model.FirstName;
+                athlete.LastName = model.LastName;
+                athlete.StudentId = model.StudentId;
+                athlete.Gender = model.Gender;
+                athlete.Status = model.Status;
+                athlete.Birthdate = model.Birthdate;
+
+                // Update team & sport
+                athlete.TeamId = model.TeamId;
+                athlete.SportId = model.SportId;
+
+                // DO NOT MODIFY the files
+                // athlete.MedicalInfo;
+                // athlete.Grades;
+
+                _context.SaveChanges();
+
+                return Json(new { success = true, message = "Athlete updated successfully!" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> UploadMedicalInfo1(int athleteId, IFormFile medicalFile)
+        {
+            if (athleteId == 0 || medicalFile == null || medicalFile.Length == 0)
+            {
+                TempData["Error"] = "Invalid file or athlete ID.";
+                return RedirectToAction("Roster");
+            }
+
+            var athlete = _context.Athletes.FirstOrDefault(a => a.AthleteId == athleteId);
+            if (athlete == null)
+            {
+                TempData["Error"] = "Athlete not found.";
+                return RedirectToAction("Roster");
+            }
+
+            try
+            {
+                // Upload folder inside wwwroot/images
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                // Generate unique filename
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(medicalFile.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                // Save file
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await medicalFile.CopyToAsync(stream);
+                }
+
+                // Store relative path in database
+                athlete.MedicalInfo = $"/images/{fileName}";
+                _context.SaveChanges();
+
+                TempData["Success1"] = "Medical info uploaded successfully!";
+                return RedirectToAction("Roster");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error1"] = $"Error uploading file: {ex.Message}";
+                return RedirectToAction("Roster");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadGrades1(int athleteId, IFormFile gradesFile)
+        {
+            if (athleteId == 0 || gradesFile == null || gradesFile.Length == 0)
+            {
+                TempData["Error"] = "Invalid file or athlete ID.";
+                return RedirectToAction("Roster");
+            }
+
+            var athlete = _context.Athletes.FirstOrDefault(a => a.AthleteId == athleteId);
+            if (athlete == null)
+            {
+                TempData["Error1"] = "Athlete not found.";
+                return RedirectToAction("Roster");
+            }
+
+            try
+            {
+                // Upload folder inside wwwroot/images
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
+                // Generate unique filename
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(gradesFile.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
+                // Save file
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await gradesFile.CopyToAsync(stream);
+                }
+
+                // Store relative path in database
+                athlete.Grades = $"/images/{fileName}";
+                _context.SaveChanges();
+
+                TempData["Success1"] = "Grades uploaded successfully!";
+                return RedirectToAction("Roster");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Error uploading file: {ex.Message}";
+                return RedirectToAction("Roster");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetTeamsAndSports()
+        {
+            var allTeams = _context.Teams
+                .Select(t => new { t.TeamId, t.TeamName, t.SportId })
+                .ToList();
+
+            var allSports = _context.Sports
+                .Select(s => new { s.Id, s.Name })
+                .ToList();
+
+            return Json(new
+            {
+                teams = allTeams,
+                sports = allSports
+            });
+        }
+
+        [HttpGet]
+        public IActionResult GetRubrics()
+        {
+            // Fetch rubrics from database
+            var rubrics = _context.Rubrics
+                .Select(r => new
+                {
+                    r.Criteria,
+                    r.Points,
+                    r.Description
+                })
+                .ToList();
+
+            // Return JSON
+            return Json(rubrics);
+        }
+
+        [HttpGet]
+        public JsonResult SearchAthletesWithoutTeam(string searchTerm)
+        {
+            try
+            {
+                // Try to parse searchTerm as int for StudentId search
+                int studentIdSearch = 0;
+                bool isNumericSearch = int.TryParse(searchTerm, out studentIdSearch);
+
+                var athletes = _context.Athletes
+                    .Where(a => a.SportId == null && // Only athletes without SportId
+                                ((isNumericSearch && a.StudentId == studentIdSearch) ||
+                                 a.FirstName.Contains(searchTerm) ||
+                                 a.LastName.Contains(searchTerm)))
+                    .Select(a => new
+                    {
+                        athleteId = a.AthleteId,
+                        studentId = a.StudentId,
+                        firstName = a.FirstName,
+                        lastName = a.LastName,
+                        gender = a.Gender,
+                        birthdate = a.Birthdate,
+                        medicalInfo = a.MedicalInfo,
+                        grades = a.Grades,
+                        course = a.Course,        // ADD THIS
+                        yearLevel = a.YearLevel   // ADD THIS IF NEEDED
+                    })
+                    .Take(10) // Limit results
+                    .ToList();
+
+                return Json(athletes);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { error = ex.Message });
+            }
+        }
+
+
+    }
+}}

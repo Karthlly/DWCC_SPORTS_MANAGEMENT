@@ -1,0 +1,201 @@
+﻿@* Team Manager Sidebar *@
+@{
+    string IsActive(string controller, string action)
+    {
+        var routeData = ViewContext.RouteData;
+        var currentController = routeData.Values["Controller"]?.ToString();
+        var currentAction = routeData.Values["Action"]?.ToString();
+
+        return currentController == controller && currentAction == action ? "active" : "";
+    }
+}
+
+<link rel="stylesheet" href="~/css/dashboard.css" />
+
+<style>
+    /* Sidebar base styling */
+    .sidebar {
+        width: 270px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #0e4e2c;
+        padding: 20px;
+        overflow: hidden;
+        color: white;
+        transition: width 0.3s ease;
+        z-index: 1100;
+    }
+
+        /* Collapsed sidebar */
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        /* Brand */
+        .sidebar .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+            .sidebar .brand img {
+                width: 40px;
+                height: 40px;
+                transition: transform 0.3s ease;
+            }
+
+        .sidebar.collapsed .brand img {
+            transform: scale(0.9);
+        }
+
+        .sidebar .brand span {
+            transition: opacity 0.2s ease;
+        }
+
+        .sidebar.collapsed .brand span {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Nav links */
+        .sidebar .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+            .sidebar .nav-link i {
+                font-size: 18px;
+            }
+
+            .sidebar .nav-link.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white !important;
+                font-weight: 600;
+            }
+
+            .sidebar .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        /* Hide text when collapsed */
+        .sidebar.collapsed .nav-link span {
+            display: none;
+        }
+
+        /* Center icons when collapsed */
+        .sidebar.collapsed .nav-link {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    /* Toggle button */
+    .toggle-btn {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #0d6efd;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1200;
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        display: none;
+    }
+
+    /* Main content */
+    .main-content {
+        margin-left: 270px;
+        transition: margin-left 0.3s ease;
+        padding: 20px;
+    }
+
+        .main-content.expanded {
+            margin-left: 70px;
+        }
+</style>
+
+<div class="sidebar" id="sidebar">
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="bi bi-chevron-left" id="sidebar-icon"></i>
+    </div>
+
+    <div class="brand">
+        <img src="~/images/logo-removebg-preview.png" alt="DWCC Logo">
+        <span>Team Manager</span>
+    </div>
+
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link @IsActive("TeamManager", "Dashboard")" asp-controller="TeamManager" asp-action="Dashboard">
+                <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @IsActive("TeamManager", "SportManagement")" asp-controller="TeamManager" asp-action="SportManagement">
+                <i class="bi bi-flag-fill"></i> <span>Sport Management</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @IsActive("TeamManager", "ManageTeam")" asp-controller="TeamManager" asp-action="ManageTeam">
+                <i class="bi bi-people-fill"></i> <span>Manage Team</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @IsActive("TeamManager", "ManageAthlete")" asp-controller="TeamManager" asp-action="ManageAthlete">
+                <i class="bi bi-person-badge"></i> <span>View Athletes</span>
+            </a>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link @IsActive("TeamManager", "ManageCompetition")" asp-controller="TeamManager" asp-action="ManageCompetition">
+                <i class="bi bi-trophy"></i> <span>Manage Competition</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("TeamManager", "Reports")" asp-controller="TeamManager" asp-action="Reports">
+                <i class="bi bi-flag-fill"></i> <span>Reports</span>
+            </a>
+        </li>
+        <li class="nav-item mt-3">
+            <form id="logoutForm" method="post" asp-controller="TeamManager" asp-action="Logout" class="d-none">
+                @Html.AntiForgeryToken()
+            </form>
+            <a href="#" class="nav-link text-danger fw-bold" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                <i class="bi bi-box-arrow-right"></i> <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const content = document.querySelector(".main-content");
+        const icon = document.getElementById("sidebar-icon");
+
+        sidebar.classList.toggle("collapsed");
+        if (content) content.classList.toggle("expanded");
+
+        icon.classList.toggle("bi-chevron-left");
+        icon.classList.toggle("bi-chevron-right");
+    }
+</script>

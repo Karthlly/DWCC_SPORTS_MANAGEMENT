@@ -1,0 +1,1001 @@
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\source\repos\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+C:\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.sourcelink.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+C:\Users\CJ LUMANGLAS\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.sourcelink.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement NEW\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ExcelDataReader.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.Interfaces.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ExcelDataReader.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.sourcelink.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll
+D:\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ExcelDataReader.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.sourcelink.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+C:\Users\aikawa\Downloads\DWCCSportsManagement (2)\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\appsettings.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.runtime.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.staticwebassets.endpoints.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.exe
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.deps.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.runtimeconfig.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ExcelDataReader.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.AssemblyReference.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfoInputs.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.AssemblyInfo.cs
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.csproj.CoreCompileInputs.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.RazorAssemblyInfo.cs
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.sourcelink.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\bundle\DWCCSportsManagement.styles.css
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\scopedcss\projectbundle\DWCCSportsManagement.bundle.scp.css
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSpor.D55F31C1.Up2Date
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\refint\DWCCSportsManagement.dll
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.pdb
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\DWCCSportsManagement.genruntimeconfig.cache
+C:\Users\Jhona\OneDrive\Documents\DWCCSportsManagement\DWCCSportsManagement\obj\Debug\net8.0\ref\DWCCSportsManagement.dll

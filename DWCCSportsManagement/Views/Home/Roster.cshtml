@@ -1,0 +1,1000 @@
+﻿@model List<DWCCSportsManagement.Models.AthleteModel>
+@{
+
+    var teams = ViewBag.Teams as List<DWCCSportsManagement.Models.TeamModel> ?? new List<DWCCSportsManagement.Models.TeamModel>();
+    var performances = ViewBag.Performances as List<DWCCSportsManagement.Models.PerformanceModel> ?? new List<DWCCSportsManagement.Models.PerformanceModel>();
+}
+
+<div class="container-fluid mt-5">
+    <h1 class="text-start mb-4">Athlete Management</h1>
+
+    <!-- Sports Filter Dropdown -->
+    <form method="get" asp-action="Roster" class="mb-4">
+        <div class="row g-2 align-items-center">
+            <div class="col-auto">
+                <label for="sportFilter" class="col-form-label">Filter by Sport:</label>
+            </div>
+            <div class="col-auto">
+                <select class="form-select w-auto" name="sportId" onchange="this.form.submit()">
+                    <option value="">All Sports</option>
+                    @foreach (var sport in ViewBag.Sports)
+                    {
+                       <option value="@sport.Id" selected="@(ViewBag.SelectedSport == sport.Id)">
+                          @sport.Name
+                       </option>
+
+                    }
+                </select>
+
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addAthleteModal">
+        Add Athlete
+    </button>
+
+    <div class="modal fade" id="addAthleteModal" tabindex="-1" aria-labelledby="addAthleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 600px;">
+
+            <!-- SMALL MODAL -->
+            <div class="modal-content shadow-lg border-0 rounded-3">
+                <form method="post" asp-action="AddAthlete" asp-controller="Home" enctype="multipart/form-data">
+
+                    <!-- HEADER -->
+                    <div class="modal-header bg-success text-white py-2">
+                        <h6 class="modal-title" id="addAthleteModalLabel">Add New Athlete</h6>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="modal-body">
+
+                        <!-- SEARCH -->
+                        <div class="alert alert-info p-2 mb-3 small">
+                            <div class="fw-bold mb-1">
+                                <i class="bi bi-search me-1"></i>Search Existing Athlete
+                            </div>
+
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="athleteSearch1" placeholder="Search student..." />
+                                <button type="button" class="btn btn-primary" id="searchBtn">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+
+                            <small class="text-muted">Only athletes without a team will appear.</small>
+
+                            <div id="searchResults"
+                                 class="list-group mt-1"
+                                 style="display:none; max-height:150px; overflow-y:auto;">
+                            </div>
+                        </div>
+
+
+                        <input type="hidden" id="AthleteId" name="AthleteId" />
+                        
+
+
+                        <!-- ATHLETE INFO -->
+                        <h6 class="text-success fw-bold small mb-2">Athlete Info</h6>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Student ID</label>
+                                <input type="text" class="form-control form-control-sm" id="StudentID"
+                                       name="StudentID" minlength="5" maxlength="5" pattern="\d{5}" required readonly/>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">First Name</label>
+                                <input type="text" class="form-control form-control-sm" id="FirstName" name="FirstName" required readonly/>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Last Name</label>
+                                <input type="text" class="form-control form-control-sm" id="LastName" name="LastName" required readonly />
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Gender</label>
+                                <select class="form-select form-select-sm" id="Gender" name="Gender" required>
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Course</label>
+                                <input type="text" class="form-control form-control-sm" id="Course" name="Course" required readonly />
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Year Level</label>
+                                <input type="text" class="form-control form-control-sm" id="YearLevel" name="YearLevel" readonly />
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label small mb-0">Birthdate</label>
+                                <input type="date" class="form-control form-control-sm" id="Birthdate" name="Birthdate" readonly/>
+                            </div>
+                        </div>
+
+                        <!-- DOCUMENTS -->
+                        <h6 class="text-success fw-bold small mt-3 mb-2">Documents</h6>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Medical Info</label>
+                                <input type="file" class="form-control form-control-sm" id="MedicalFile"
+                                       name="MedicalFile" accept="application/pdf, image/*" required />
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Grades</label>
+                                <input type="file" class="form-control form-control-sm" id="GradesFile"
+                                       name="GradesFile" accept="application/pdf, image/*" required />
+                            </div>
+                        </div>
+
+                        <!-- TEAM INFO -->
+                        <h6 class="text-success fw-bold small mt-3 mb-2">Team Info</h6>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Team</label>
+                                <select class="form-select form-select-sm" id="teamSelect" name="TeamId" required>
+                                    <option value="">Select team</option>
+                                    @foreach (var team in teams.Where(t => t.Status == "Accepted"))
+                                    {
+                                        <option value="@team.TeamId" data-sport="@team.Sport?.Name">
+                                            @team.TeamName
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label small mb-0">Sport</label>
+                                <input type="text" id="sportName" name="SportName"
+                                       class="form-control form-control-sm" readonly />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- FOOTER -->
+                    <div class="modal-footer py-2">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success btn-sm">
+                            <i class="bi bi-plus-lg me-1"></i> Add
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Teams and Athletes Table -->
+    <!-- Search Input -->
+    <div class="mb-3">
+        <input type="text" id="athleteSearch" class="form-control" placeholder="Search by First or Last Name...">
+    </div>
+
+    <div class="table-responsive">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["Success"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <table class="table table-bordered" id="athleteTable">
+            @* Success Message *@
+            @if (TempData["Success1"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success1"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            @* Error Message *@
+            @if (TempData["Error1"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error1"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Sports</th>
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var athlete in Model)
+                {
+                    <tr>
+                        <td>@athlete.TeamName</td>
+                        <td>@athlete.SportName</td>
+                        <td>@athlete.FirstName @athlete.LastName</td>
+                        <td>@athlete.Gender</td>
+                        <td>@athlete.Status</td>
+                        <td>
+                            <!-- Toggle Status -->
+                            <form method="post" asp-action="ToggleAthleteStatus" asp-route-id="@athlete.AthleteId" class="d-inline">
+                                @if (athlete.Status == "Active")
+                                {
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Deactivate">
+                                        <i class="bi bi-person-dash-fill"></i>
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-success btn-sm" title="Activate">
+                                        <i class="bi bi-person-check-fill"></i>
+                                    </button>
+                                }
+                            </form>
+
+                            <!-- View Button -->
+                            <button type="button"
+                                    class="btn btn-info btn-sm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#viewAthleteModal-@athlete.AthleteId"
+                                    title="View">
+                                <i class="bi bi-eye-fill"></i>
+                            </button>
+
+                            <!-- View Remarks Button -->
+                            <button class="btn btn-success btn-sm view-remarks-btn"
+                                    data-athleteid="@athlete.AthleteId"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#remarksModal"
+                                    title="View Remarks">
+                                <i class="bi bi-chat-dots-fill"></i>
+                            </button>
+
+                            <!-- Edit Button -->
+                            <button class="btn btn-warning btn-sm view-remarks-btn"
+                                    data-athleteid="@athlete.AthleteId"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editAthleteModal"
+                                    title="Edit">
+                                <i class="bi bi-pencil-fill"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+        <!-- Edit Athlete Modal -->
+        <div class="modal fade" id="editAthleteModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header bg-warning text-dark">
+                        <h5 class="modal-title">
+                            <i class="bi bi-pencil-square me-2"></i> Edit Athlete
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <input type="hidden" id="editAthleteId">
+
+                        <div class="row g-3">
+
+                            <!-- First Name -->
+                            <div class="col-md-6">
+                                <label for="editFirstName" class="form-label">First Name</label>
+                                <input type="text" id="editFirstName" class="form-control">
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="col-md-6">
+                                <label for="editLastName" class="form-label">Last Name</label>
+                                <input type="text" id="editLastName" class="form-control">
+                            </div>
+
+                            <!-- Student ID -->
+                            <div class="col-md-6">
+                                <label for="editStudentId" class="form-label">Student ID</label>
+                                <input type="number" id="editStudentId" class="form-control">
+                            </div>
+
+                            <!-- Birthdate -->
+                            <div class="col-md-6">
+                                <label for="editBirthdate" class="form-label">Birthdate</label>
+                                <input type="date" id="editBirthdate" class="form-control">
+                            </div>
+
+                            <!-- Gender -->
+                            <div class="col-md-6">
+                                <label for="editGender" class="form-label">Gender</label>
+                                <select id="editGender" class="form-select">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="col-md-6">
+                                <label for="editStatus" class="form-label">Status</label>
+                                <select id="editStatus" class="form-select">
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+
+                        <!-- Hidden inputs for form submission -->
+                        <input type="hidden" id="selectedTeamId" name="teamId">
+                        <input type="hidden" id="selectedSportId" name="sportId">
+
+                        <!-- Team -->
+                        <div class="col-md-6">
+                            <label for="editTeamId" class="form-label">Team</label>
+                            <select id="editTeamId" class="form-select"></select>
+                        </div>
+
+                        <!-- Sport (readonly) -->
+                        <div class="col-md-6">
+                            <label for="editSportId" class="form-label">Sport</label>
+                            <input type="text" id="editSportId" class="form-control" readonly>
+                        </div>
+
+
+                            <!-- Medical Info Upload Section -->
+                            <div class="col-12">
+                                <label class="form-label">
+                                    <i class="bi bi-file-earmark-medical me-2"></i>Medical Info
+                                </label>
+                                <form asp-action="UploadMedicalInfo1" asp-controller="Home" method="post" enctype="multipart/form-data" class="d-flex gap-2">
+                                    <input type="hidden" name="athleteId" id="medicalAthleteId">
+                                    <input type="file" name="medicalFile" class="form-control" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-upload me-1"></i>Upload
+                                    </button>
+                                </form>
+                                <small class="text-muted mt-1 d-block">
+                                    Current: <span id="currentMedicalFile" class="fw-bold">None</span>
+                                    <a href="#" id="viewMedicalLink" class="ms-2" target="_blank" style="display:none;">
+                                        <i class="bi bi-eye"></i> View
+                                    </a>
+                                </small>
+                            </div>
+
+                            <!-- Grades Upload Section -->
+                            <div class="col-12">
+                                <label class="form-label">
+                                    <i class="bi bi-file-earmark-text me-2"></i>Grades
+                                </label>
+                                <form asp-action="UploadGrades1" asp-controller="Home" method="post" enctype="multipart/form-data" class="d-flex gap-2">
+                                    <input type="hidden" name="athleteId" id="gradesAthleteId">
+                                    <input type="file" name="gradesFile" class="form-control" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" required>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-upload me-1"></i>Upload
+                                    </button>
+                                </form>
+                                <small class="text-muted mt-1 d-block">
+                                    Current: <span id="currentGradesFile" class="fw-bold">None</span>
+                                    <a href="#" id="viewGradesLink" class="ms-2" target="_blank" style="display:none;">
+                                        <i class="bi bi-eye"></i> View
+                                    </a>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button"
+                                id="saveAthleteBtn"
+                                class="btn btn-warning text-dark fw-bold">
+                            Save Changes
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Remarks Modal -->
+    <div class="modal fade" id="remarksModal" tabindex="-1" aria-labelledby="remarksModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <!-- Smaller modal -->
+            <div class="modal-content border-0 shadow-lg rounded-4">
+
+                <!-- Modal Header -->
+                <div class="modal-header bg-success text-white rounded-top-4">
+                    <h5 class="modal-title d-flex align-items-center" id="remarksModalLabel">
+                        <i class="bi bi-person-lines-fill me-2"></i> Athlete Remarks
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+
+                    <!-- Athlete Info -->
+                    <div class="text-center mb-4">
+                        <h5 id="athleteSessionInfo" class="fw-bold text-secondary"></h5>
+                    </div>
+
+                    <!-- Remarks Section -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-success mb-2">
+                            <i class="bi bi-journal-text me-1"></i> Remarks
+                        </h6>
+                        <ul id="remarksList" class="list-group list-group-flush shadow-sm rounded">
+                            <!-- Filled dynamically via JS -->
+                        </ul>
+                    </div>
+
+                    <!-- Attendance Section -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-success mb-2">
+                            <i class="bi bi-calendar-check me-1"></i> Attendance
+                        </h6>
+                        <div class="table-responsive shadow-sm rounded">
+                            <table class="table table-sm table-bordered table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-center">Session Name</th>
+                                        <th class="text-center">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="attendanceTableBody">
+                                    <!-- Filled dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Scholarship Section -->
+                    <div class="mb-3">
+                        <h6 class="fw-bold text-success mb-2">
+                            <i class="bi bi-award me-1"></i> Scholarship
+                        </h6>
+                        <div id="scholarshipCard" class="card bg-success text-white shadow-sm" style="display:none;">
+                            <div class="card-body d-flex justify-content-between align-items-center py-2 px-3">
+                                <span>Scholarship Percentage</span>
+                                <span id="scholarshipPercentage" class="fs-5 fw-bold"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@foreach (var athlete in Model)
+{
+        <div class="modal fade" id="viewAthleteModal-@athlete.AthleteId" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-info text-white">
+                        <h5 class="modal-title">
+                            <i class="bi bi-person-circle me-2"></i>@athlete.FirstName @athlete.LastName
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <!-- Athlete Info Cards (same as before) -->
+                            <div class="col-md-6">
+                                <div class="card p-2 mb-2">
+                                    <i class="bi bi-person-fill me-1"></i>
+                                    <strong>Full Name:</strong> @athlete.FirstName @athlete.LastName
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-2 mb-2">
+                                    <i class="bi bi-gender-ambiguous me-1"></i>
+                                    <strong>Gender:</strong> @athlete.Gender
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-2 mb-2">
+                                    <i class="bi bi-calendar-event me-1"></i>
+                                    <strong>Birthdate:</strong> @(athlete.Birthdate?.ToString("yyyy-MM-dd") ?? "N/A")
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-2 mb-2">
+                                    <i class="bi bi-people-fill me-1"></i>
+                                    <strong>Team:</strong> @athlete.TeamName
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-2 mb-2">
+                                    <i class="bi bi-trophy-fill me-1"></i>
+                                    <strong>Sport:</strong> @athlete.SportName
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-2 mb-2">
+                                    <i class="bi bi-check2-circle me-1"></i>
+                                    <strong>Status:</strong> @athlete.Status
+                                </div>
+                            </div>
+
+                            <!-- Medical Info -->
+                            <div class="col-12">
+                                <div class="card p-3 mb-2">
+                                    <i class="bi bi-file-earmark-medical me-1"></i>
+                                    <strong>Medical Info:</strong>
+                                    @if (!string.IsNullOrEmpty(athlete.MedicalInfo))
+                                    {
+                                        <a href="@athlete.MedicalInfo" target="_blank" class="btn btn-sm btn-outline-primary ms-2">
+                                            <i class="bi bi-eye"></i> View
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span class="ms-2 text-muted">No file uploaded</span>
+                                        <form method="post" asp-action="UploadMedicalInfo" asp-route-id="@athlete.AthleteId" enctype="multipart/form-data" class="mt-2 d-flex gap-2">
+                                            <input type="file" name="MedicalFile" class="form-control form-control-sm" required />
+                                            <button type="submit" class="btn btn-sm btn-primary">
+                                                <i class="bi bi-upload"></i> Upload
+                                            </button>
+                                        </form>
+                                    }
+                                </div>
+                            </div>
+
+                            <!-- Grades -->
+                            <div class="col-12">
+                                <div class="card p-3 mb-2">
+                                    <i class="bi bi-journal-text me-1"></i>
+                                    <strong>Grades:</strong>
+                                    @if (!string.IsNullOrEmpty(athlete.Grades))
+                                    {
+                                        <a href="@athlete.Grades" target="_blank" class="btn btn-sm btn-outline-success ms-2">
+                                            <i class="bi bi-eye"></i> View
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span class="ms-2 text-muted">No file uploaded</span>
+                                        <form method="post" asp-action="UploadGrades" asp-route-id="@athlete.AthleteId" enctype="multipart/form-data" class="mt-2 d-flex gap-2">
+                                            <input type="file" name="GradesFile" class="form-control form-control-sm" required />
+                                            <button type="submit" class="btn btn-sm btn-success">
+                                                <i class="bi bi-upload"></i> Upload
+                                            </button>
+                                        </form>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-end">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle me-1"></i> Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+
+<script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('athleteSearch1');
+            const searchBtn = document.getElementById('searchBtn');
+            const searchResults = document.getElementById('searchResults');
+
+            // Team select change handler (existing functionality)
+            document.getElementById('teamSelect').addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                const sportName = selectedOption.getAttribute('data-sport') || '';
+                document.getElementById('sportName').value = sportName;
+            });
+
+            // Search function
+            function searchAthletes() {
+                const searchTerm = searchInput.value.trim();
+
+                if (searchTerm.length < 2) {
+                    alert('Please enter at least 2 characters to search');
+                    return;
+                }
+
+                // Make AJAX call to search for athletes
+                fetch(`/Home/SearchAthletesWithoutTeam?searchTerm=${encodeURIComponent(searchTerm)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        displaySearchResults(data);
+                    })
+                    .catch(error => {
+                        console.error('Error searching athletes:', error);
+                        alert('Error searching for athletes. Please try again.');
+                    });
+            }
+
+            // Display search results
+            function displaySearchResults(athletes) {
+                searchResults.innerHTML = '';
+
+                if (athletes.length === 0) {
+                    searchResults.innerHTML = '<div class="list-group-item text-muted">No athletes found without team assignment</div>';
+                    searchResults.style.display = 'block';
+                    return;
+                }
+
+                athletes.forEach(athlete => {
+                    const resultItem = document.createElement('a');
+                    resultItem.href = '#';
+                    resultItem.className = 'list-group-item list-group-item-action';
+                    resultItem.innerHTML = `
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>${athlete.firstName} ${athlete.lastName}</strong>
+                                <br>
+                                <small class="text-muted">Student ID: ${athlete.studentId}</small>
+                            </div>
+                            <span class="badge bg-secondary">${athlete.gender}</span>
+                        </div>
+                    `;
+
+                    resultItem.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        fillAthleteData(athlete);
+                        searchResults.style.display = 'none';
+                    });
+
+                    searchResults.appendChild(resultItem);
+                });
+
+                searchResults.style.display = 'block';
+            }
+
+                    // Fill form with athlete data
+        function fillAthleteData(athlete) {
+            document.getElementById('AthleteId').value = athlete.athleteId;
+            document.getElementById('StudentID').value = athlete.studentId;
+            document.getElementById('FirstName').value = athlete.firstName;
+            document.getElementById('LastName').value = athlete.lastName;
+            document.getElementById('Gender').value = athlete.gender;
+
+            // ADD THESE LINES
+            if (athlete.course) {
+                document.getElementById('Course').value = athlete.course;
+            }
+            if (athlete.yearLevel) {
+                document.getElementById('YearLevel').value = athlete.yearLevel;
+            }
+
+            if (athlete.birthdate) {
+                // Format date for input field (YYYY-MM-DD)
+                const date = new Date(athlete.birthdate);
+                const formattedDate = date.toISOString().split('T')[0];
+                document.getElementById('Birthdate').value = formattedDate;
+            }
+
+            // Show existing file info
+            if (athlete.medicalInfo) {
+                document.getElementById('existingMedical').textContent = `Existing file: ${athlete.medicalInfo.split('/').pop()}`;
+                document.getElementById('MedicalFile').removeAttribute('required');
+            }
+
+            if (athlete.grades) {
+                document.getElementById('existingGrades').textContent = `Existing file: ${athlete.grades.split('/').pop()}`;
+                document.getElementById('GradesFile').removeAttribute('required');
+            }
+
+            // Highlight that this is an existing athlete
+            searchInput.value = `Selected: ${athlete.firstName} ${athlete.lastName} (${athlete.studentId})`;
+            searchInput.classList.add('border-success');
+        }
+
+            // Event listeners
+            searchBtn.addEventListener('click', searchAthletes);
+
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    searchAthletes();
+                }
+            });
+
+            // Reset form when modal is closed
+            document.getElementById('addAthleteModal').addEventListener('hidden.bs.modal', function() {
+                document.getElementById('AthleteId').value = '';
+                searchInput.value = '';
+                searchInput.classList.remove('border-success');
+                searchResults.style.display = 'none';
+                searchResults.innerHTML = '';
+                document.getElementById('existingMedical').textContent = '';
+                document.getElementById('existingGrades').textContent = '';
+                document.getElementById('MedicalFile').setAttribute('required', 'required');
+                document.getElementById('GradesFile').setAttribute('required', 'required');
+            });
+        });
+
+                document.getElementById("saveAthleteBtn").addEventListener("click", function () {
+            const model = {
+                AthleteId: parseInt(document.getElementById("editAthleteId").value),
+                FirstName: document.getElementById("editFirstName").value,
+                LastName: document.getElementById("editLastName").value,
+                StudentId: parseInt(document.getElementById("editStudentId").value) || 0,
+                Gender: document.getElementById("editGender").value,
+                Status: document.getElementById("editStatus").value,
+                Birthdate: document.getElementById("editBirthdate").value || null,
+                TeamId: parseInt(document.getElementById("selectedTeamId").value) || null,
+                SportId: parseInt(document.getElementById("selectedSportId").value) || null
+            };
+
+            fetch('/Home/UpdateAthlete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(model)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    const modal = bootstrap.Modal.getInstance(document.getElementById("editAthleteModal"));
+                    modal.hide();
+                    alert(data.message);
+                    location.reload();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(err => console.error(err));
+        });
+
+
+
+               let teams = [];
+        let sports = [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fetch all teams and sports from API
+            fetch("/Home/GetTeamsAndSports")
+                .then(res => res.json())
+                .then(data => {
+                    teams = data.teams;
+                    sports = data.sports;
+
+                    const teamSelect = document.getElementById("editTeamId");
+                    teamSelect.innerHTML = '<option value="">Select Team</option>';
+
+                    teams.forEach(team => {
+                        const option = document.createElement("option");
+                        option.value = team.teamId;
+                        option.textContent = team.teamName;
+                        option.dataset.sportId = team.sportId; // store sportId
+                        teamSelect.appendChild(option);
+                    });
+                });
+        });
+
+        // Populate athlete info when clicking edit
+        document.addEventListener("click", function (e) {
+            const btn = e.target.closest(".view-remarks-btn");
+            if (!btn) return;
+
+            const id = btn.getAttribute("data-athleteid");
+
+            fetch(`/Home/GetAthleteById?id=${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("editAthleteId").value = data.athleteId;
+                    document.getElementById("medicalAthleteId").value = data.athleteId;
+                    document.getElementById("gradesAthleteId").value = data.athleteId;
+                    document.getElementById("editFirstName").value = data.firstName;
+                    document.getElementById("editLastName").value = data.lastName;
+                    document.getElementById("editStudentId").value = data.studentId;
+                    document.getElementById("editGender").value = data.gender;
+                    document.getElementById("editBirthdate").value = data.birthdate;
+                    document.getElementById("editStatus").value = data.status;
+                    document.getElementById("editMedicalInfo").value = data.medicalInfo ?? "";
+                    document.getElementById("editGrades").value = data.grades ?? "";
+
+                    // Set selected team
+                    const teamSelect = document.getElementById("editTeamId");
+                    teamSelect.value = data.teamId ?? "";
+
+                    // Set sport based on team
+                    const selectedTeam = teams.find(t => t.teamId == data.teamId);
+                    if (selectedTeam) {
+                        const sport = sports.find(s => s.id == selectedTeam.sportId);
+                        document.getElementById("editSportId").value = sport ? sport.name : "";
+
+                        // Update hidden inputs
+                        document.getElementById("selectedTeamId").value = selectedTeam.teamId;
+                        document.getElementById("selectedSportId").value = selectedTeam.sportId;
+                    } else {
+                        document.getElementById("editSportId").value = "";
+                        document.getElementById("selectedTeamId").value = "";
+                        document.getElementById("selectedSportId").value = "";
+                    }
+                });
+        });
+
+        // Update sport and hidden inputs when team changes
+        document.getElementById("editTeamId").addEventListener("change", function () {
+            const selectedTeam = teams.find(t => t.teamId == this.value);
+            if (selectedTeam) {
+                const sport = sports.find(s => s.id == selectedTeam.sportId);
+                document.getElementById("editSportId").value = sport ? sport.name : "";
+
+                // Update hidden inputs
+                document.getElementById("selectedTeamId").value = selectedTeam.teamId;
+                document.getElementById("selectedSportId").value = selectedTeam.sportId;
+            } else {
+                document.getElementById("editSportId").value = "";
+                document.getElementById("selectedTeamId").value = "";
+                document.getElementById("selectedSportId").value = "";
+            }
+        });
+
+
+
+
+
+        const birthdateInput = document.getElementById('Birthdate');
+            const today = new Date();
+            const currentYear = today.getFullYear();
+
+            // Disable current year
+            const minDate = '1900-01-01'; // optional: earliest allowed date
+            const maxDate = (currentYear - 1) + '-12-31'; // last day of previous year
+
+            birthdateInput.setAttribute('min', minDate);
+            birthdateInput.setAttribute('max', maxDate);
+
+        // FIX: Skip duplicate Student ID check for EXISTING athletes
+document.getElementById("StudentID").addEventListener("blur", function () {
+    let id = this.value;
+
+    // If AthleteId has value → this is an EXISTING athlete from Team Manager
+    if (document.getElementById("AthleteId").value !== "") {
+        return; // Skip duplicate validation completely
+    }
+
+    // If adding a brand-new athlete → perform duplicate check
+    if (id.length === 5) {
+        fetch(`/Home/CheckStudentID?studentId=${id}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.exists) {
+                    alert("Student ID already exists!");
+                    document.getElementById("StudentID").value = "";
+                    document.getElementById("StudentID").focus();
+                }
+            });
+    }
+});
+
+
+        document.getElementById("StudentID").addEventListener("input", function () {
+                this.value = this.value.replace(/\D/g, ""); // Remove non-digits
+                if (this.value.length > 5) {
+                    this.value = this.value.slice(0, 5); // Limit to 5 digits
+                }
+            });
+
+            // Auto-fill sport
+            document.getElementById("teamSelect").addEventListener("change", function () {
+                document.getElementById("sportName").value = this.selectedOptions[0].getAttribute("data-sport") || "";
+            });
+
+        // Search functionality for first & last name
+               document.getElementById('athleteSearch').addEventListener('keyup', function () {
+                   const filter = this.value.toLowerCase();
+                   const rows = document.querySelectorAll('#athleteTable tbody tr');
+
+                   rows.forEach(row => {
+                       const fullName = row.cells[2].textContent.toLowerCase(); // Full Name column
+                       if (fullName.includes(filter)) {
+                           row.style.display = '';
+                       } else {
+                           row.style.display = 'none';
+                       }
+                   });
+               });
+
+        document.querySelectorAll(".view-remarks-btn").forEach(button => {
+                       button.addEventListener("click", function () {
+                           const athleteId = this.getAttribute("data-athleteid");
+
+                           const remarksList = document.getElementById("remarksList");
+                           const athleteSessionInfo = document.getElementById("athleteSessionInfo");
+                           const tableBody = document.getElementById("attendanceTableBody");
+                           const scholarshipCard = document.getElementById("scholarshipCard");
+                           const scholarshipPercentage = document.getElementById("scholarshipPercentage");
+
+                           remarksList.innerHTML = "";
+                           tableBody.innerHTML = "";
+                           scholarshipCard.style.display = "none";
+
+                           // --- Fetch Remarks ---
+                              fetch(`/Home/GetRemarks?athleteId=${athleteId}`)
+    .then(response => response.json())
+    .then(data => {
+
+        // Set athlete name
+        athleteSessionInfo.textContent = data.athleteName;
+
+        // ---- Fill Remarks ----
+        remarksList.innerHTML = "";
+
+        if (!data.sessions || data.sessions.length === 0) {
+            remarksList.innerHTML = "<li class='list-group-item text-muted'>No remarks available</li>";
+        } else {
+            data.sessions.forEach(item => {
+                const li = document.createElement("li");
+                li.classList.add("list-group-item");
+                li.innerHTML = `
+                    <strong>Session:</strong> ${item.sessionName} <br>
+                    <strong>Rating:</strong> ${item.rating} / ${item.maxRating} <br>
+                    <em>${item.remarks}</em>
+                `;
+                remarksList.appendChild(li);
+            });
+        }
+
+        // ---- Show LATEST SCHOLARSHIP ----
+        if (data.latestScholarship > 0) {
+            scholarshipPercentage.textContent = data.latestScholarship + "%";
+            scholarshipCard.style.display = "block";
+        } else {
+            scholarshipPercentage.textContent = "No scholarship recorded";
+            scholarshipCard.style.display = "block";
+        }
+    })
+    .catch(err => console.error("Error fetching remarks:", err));
+
+      
+
+                           // --- Fetch Attendance ---
+                           fetch(`/Home/GetAttendance?athleteId=${athleteId}`)
+                               .then(response => response.json())
+                               .then(data => {
+                                   tableBody.innerHTML = "";
+
+                                   if (data.length === 0) {
+                                       tableBody.innerHTML = `
+                                           <tr>
+                                               <td colspan="2" class="text-center text-muted">No attendance records</td>
+                                           </tr>`;
+                                       return;
+                                   }
+
+                                   data.forEach(item => {
+                                       const row = document.createElement("tr");
+                                       row.innerHTML = `
+                                           <td>${item.sessionName}</td>
+                                           <td>${item.status}</td>
+                                       `;
+                                       tableBody.appendChild(row);
+                                   });
+                               });
+                       });
+                   });
+</script>
+       

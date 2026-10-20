@@ -1,0 +1,14 @@
+﻿.team-Btn {
+    background-color: #0e4e2c; /* Green */
+    color:aliceblue;
+}
+.team-Btn:hover {
+    color: aliceblue;
+}
+
+.fc .fc-col-header-cell-cushion {
+    color: aliceblue;
+}
+.fc .fc-daygrid-day-number {
+    color: #0e4e2c;
+}

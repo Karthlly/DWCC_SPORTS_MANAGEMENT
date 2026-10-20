@@ -1,0 +1,180 @@
+﻿@model List<DWCCSportsManagement.Models.AthleteModel>
+
+@{
+    ViewData["Title"] = "Athlete Performance Evaluation";
+
+    // Rating system
+    int maxPoints = 25;   // Always fixed to 25
+    int criteriaCount = 5; // 5 rows
+}
+
+<div class="container mt-4">
+
+    <h2 class="fw-bold mb-3">Athlete Performance Evaluation</h2>
+    <p class="text-muted">Fill out the rubrics and assign scholarship percentage after rating is computed.</p>
+
+    <!-- Session & Athlete Selection -->
+    <form method="post" asp-action="SubmitPerformance" id="performanceForm">
+
+        <div class="row g-3 mb-4">
+
+            <!-- Session Dropdown -->
+            <div class="col-md-6">
+                <label class="form-label fw-bold">Select Session</label>
+                <select class="form-select" id="sessionDropdown" name="sessionId" required>
+                    <option value="">Select Session</option>
+
+                    @foreach (var session in ViewBag.Sessions)
+                    {
+                        <option value="@session.SessionId">
+                            @session.Team.TeamName - @session.DateTime.ToString("MMM dd, yyyy HH:mm")
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <!-- Athlete Dropdown -->
+            <div class="col-md-6">
+                <label class="form-label fw-bold">Select Athlete</label>
+                <select class="form-select" id="athleteDropdown" name="athleteId" required disabled>
+                    <option value="">Select Session First</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Remarks -->
+        <div class="mb-3">
+            <label class="form-label fw-bold">Remarks</label>
+            <textarea class="form-control" name="remarks" rows="4" required></textarea>
+        </div>
+
+        <!-- ============================ -->
+        <!--       RUBRICS 5 x 5 GRID     -->
+        <!-- ============================ -->
+        <h4 class="fw-bold mt-4">Rubrics Evaluation</h4>
+
+        <table class="table table-bordered text-center align-middle" id="rubricTable">
+            <thead class="table-success">
+                <tr>
+                    <th>Criteria</th>
+                    <th>5 pts – Excellent</th>
+                    <th>4 pts – Good</th>
+                    <th>3 pts – Average</th>
+                    <th>2 pts – Fair</th>
+                    <th>1 pt – Poor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (int i = 0; i < 5; i++)
+                {
+                    <tr class="rubric-row" data-row="@i">
+                        <td class="criteria-label">Criteria @(i + 1)</td>
+
+                        @for (int p = 5; p >= 1; p--)
+                        {
+                            <td>
+                                <input type="radio"
+                                       name="rubricRow_@i"
+                                       class="rubric-check"
+                                       data-points="@p"
+                                       data-row="@i" />
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Rating total -->
+        <div class="mt-3">
+            <strong>Total Rating: </strong>
+            <span id="totalScore">0</span> / 25
+        </div>
+
+        <input type="hidden" name="rating" id="ratingInput" value="0" />
+        <input type="hidden" name="MaxRating" value="25" />
+
+        <!-- ============================ -->
+        <!--     SCHOLARSHIP PERCENTAGE   -->
+        <!-- ============================ -->
+
+        <div class="mt-4">
+            <label class="form-label fw-bold">Scholarship Percentage (%)</label>
+
+            <input type="number"
+                   class="form-control w-25"
+                   id="scholarshipInput"
+                   name="ScholarshipPercentage"
+                   min="0"
+                   max="100"
+                   value="0"
+                   disabled
+                   style="font-weight:bold; text-align:center;" />
+
+            <small class="text-muted">
+                Enter a percentage from 0–100. This unlocks after assigning a rating.
+            </small>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit"
+                class="btn btn-success mt-4 px-4"
+                id="submitBtn"
+                disabled>
+            Submit Evaluation
+        </button>
+
+    </form>
+</div>
+
+<script>
+    let totalScore = 0;
+
+    // ===================================
+    // CLICKABLE RUBRIC CHECKS (1 per row)
+    // ===================================
+    document.querySelectorAll(".rubric-check").forEach(cb => {
+        cb.addEventListener("change", function () {
+
+            let row = this.dataset.row;
+
+            // Uncheck all in same row
+            document.querySelectorAll(`input[data-row='${row}']`)
+                .forEach(other => {
+                    if (other !== this) other.checked = false;
+                });
+
+            updateScore();
+        });
+    });
+
+    // ===================================
+    // UPDATE TOTAL SCORE
+    // ===================================
+    function updateScore() {
+        totalScore = 0;
+
+        document.querySelectorAll(".rubric-row").forEach(row => {
+            let selected = row.querySelector(".rubric-check:checked");
+            if (selected)
+                totalScore += parseInt(selected.dataset.points);
+        });
+
+        document.getElementById("totalScore").innerText = totalScore;
+        document.getElementById("ratingInput").value = totalScore;
+
+        // Enable scholarship input if rating > 0
+        const scholarshipField = document.getElementById("scholarshipInput");
+        const submitBtn = document.getElementById("submitBtn");
+
+        if (totalScore > 0) {
+            scholarshipField.disabled = false;
+            submitBtn.disabled = false;
+        } else {
+            scholarshipField.disabled = true;
+            scholarshipField.value = 0;
+            submitBtn.disabled = true;
+        }
+    }
+</script>

@@ -1,0 +1,423 @@
+﻿@model List<DWCCSportsManagement.Models.AthleteModel>
+
+@{
+    ViewData["Title"] = "Attendance & Evaluation Management";
+
+    var existingAttendance = ViewBag.ExistingAttendance as Dictionary<int, DWCCSportsManagement.Models.AttendanceStatus>;
+    var existingRatings = ViewBag.ExistingRatings as Dictionary<int, int>;
+    var existingScholar = ViewBag.ExistingScholarships as Dictionary<int, int?>;
+    var rubricCriteria = ViewBag.RubricCriteria as List<string>;
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Attendance & Evaluation Management</h1>
+
+<form method="get" asp-action="Attendance" id="sessionForm">
+    <div class="row g-3 mb-4">
+        <div class="col-auto">
+            <label class="fw-bold">Select Session:</label>
+        </div>
+        <div class="col-auto">
+            <select class="form-select" name="sessionId" onchange="this.form.submit()">
+                <option value="">Select Session</option>
+
+                @foreach (var session in ViewBag.Sessions)
+                {
+                    bool isSelected = ViewBag.SelectedSessionId != null &&
+                                      ViewBag.SelectedSessionId == session.SessionId;
+
+                    <option value="@session.SessionId" selected="@(isSelected)">
+                        @session.Description - @session.DateTime.ToString("MMM dd, yyyy HH:mm")
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+</form>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<input type="text" id="attendanceSearch" class="form-control mb-3" placeholder="Search athlete...">
+
+<div class="d-flex gap-2 mb-3">
+    <button type="button" class="btn btn-success btn-sm" onclick="setAllStatus('Present')">All Present</button>
+    <button type="button" class="btn btn-warning btn-sm" onclick="setAllStatus('Late')">All Late</button>
+    <button type="button" class="btn btn-danger btn-sm" onclick="setAllStatus('Absent')">All Absent</button>
+    <button type="button" class="btn btn-secondary btn-sm" onclick="setAllStatus('Excused')">All Excused</button>
+</div>
+<form method="post" asp-action="SaveAttendance">
+    <input type="hidden" name="SessionId" value="@ViewBag.SelectedSessionId" />
+
+    <table class="table table-bordered text-center align-middle" id="attendanceTable">
+        <thead class="table-success">
+            <tr>
+                <th>Athlete ID</th>
+                <th>Full Name</th>
+                <th>Status</th>
+                <th>Scholarship %</th>     <!-- MOVED HERE -->
+                <th>Final Rating (0–25)</th> <!-- MOVED TO LAST -->
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="5">No athletes found for this session.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var athlete in Model)
+                {
+                    var status = existingAttendance != null &&
+                                 existingAttendance.TryGetValue(athlete.AthleteId, out var s)
+                                 ? s.ToString()
+                                 : "Present";
+
+                    var rating = existingRatings != null &&
+                                 existingRatings.TryGetValue(athlete.AthleteId, out var r)
+                                 ? r : 0;
+
+                    var scholarship = existingScholar != null &&
+                                      existingScholar.TryGetValue(athlete.AthleteId, out var sch)
+                                      ? sch : 0;
+
+                    <tr class="athlete-row" data-athlete-id="@athlete.AthleteId">
+
+                        <td>@athlete.AthleteId</td>
+                        <td>@athlete.FirstName @athlete.LastName</td>
+
+                        <!-- STATUS -->
+                        <td>
+                            <div class="status-options">
+                                <label><input type="radio" name="Statuses[@athlete.AthleteId]" value="Present" @(status=="Present"?"checked":"") /> Present</label>
+                                <label><input type="radio" name="Statuses[@athlete.AthleteId]" value="Late" @(status=="Late"?"checked":"") /> Late</label>
+                                <label><input type="radio" name="Statuses[@athlete.AthleteId]" value="Absent" @(status=="Absent"?"checked":"") /> Absent</label>
+                                <label><input type="radio" name="Statuses[@athlete.AthleteId]" value="Excused" @(status=="Excused"?"checked":"") /> Excused</label>
+                            </div>
+                        </td>
+
+                        <!-- SCHOLARSHIP % (NOW BESIDE STATUS) -->
+                        <td>
+                            <input type="number"
+                                   class="form-control scholarship-input"
+                                   name="Scholarship[@athlete.AthleteId]"
+                                   min="0" max="100"
+                                   value="@scholarship"
+                                   placeholder="0–100%" />
+                        </td>
+
+                        <!-- FINAL RATING (NOW LAST COLUMN) -->
+                        <td>
+                            <input type="number" class="form-control final-rating"
+                                   name="Ratings[@athlete.AthleteId]"
+                                   min="0" max="25"
+                                   value="@rating"
+                                   readonly />
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success mt-3">Save Attendance</button>
+</form>
+
+<style>
+.athlete-row {
+    cursor: pointer;
+    transition: background-color .25s ease;
+}
+.athlete-row:hover {
+    background-color: #e8f5e9;
+}
+.athlete-row.selected-athlete {
+    background-color: #81c784 !important;
+    font-weight: bold;
+}
+</style>
+<!-- ================================= -->
+<!--          RUBRICS 5×5 GRID         -->
+<!-- ================================= -->
+
+<h3 class="mb-3">Evaluation Rubrics (Max 25 Points)</h3>
+
+<table class="table table-bordered text-center" id="rubricTable">
+    <thead class="table-success">
+        <tr>
+            <th>Criteria</th>
+
+            <!-- NEW: Point labels with descriptions -->
+            <th>
+                5 pts
+                <div class="text-muted small">Excellent</div>
+            </th>
+            <th>
+                4 pts
+                <div class="text-muted small">Good</div>
+            </th>
+            <th>
+                3 pts
+                <div class="text-muted small">Average</div>
+            </th>
+            <th>
+                2 pts
+                <div class="text-muted small">Fair</div>
+            </th>
+            <th>
+                1 pt
+                <div class="text-muted small">Poor</div>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (int i = 0; i < 5; i++)
+        {
+            // FIX: Always load saved rubrics OR fallback to correct default
+            string criteriaName =
+                ViewBag.RubricCriteria != null && ViewBag.RubricCriteria.Count > i
+                ? ViewBag.RubricCriteria[i]
+                : new[] { "Agility", "Emotional", "Endurance", "Physical", "Teamwork" }[i];
+
+            <tr class="rubric-row" data-row="@i">
+                <td class="criteria-label">@criteriaName</td>
+
+                @for (int p = 5; p >= 1; p--)
+                {
+                    <td>
+                        <input type="radio"
+                               class="rubric-check"
+                               name="rubricRow_@i"
+                               data-row="@i"
+                               data-points="@p" />
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="fw-bold">Total Score: <span id="totalScore">0</span> / 25</p>
+
+<button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#rubricsModal">
+    Manage Rubrics
+</button>
+<!-- ================================ -->
+<!--       RUBRICS MANAGE MODAL       -->
+<!-- ================================ -->
+
+<div class="modal fade" id="rubricsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Manage Rubrics</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <table class="table table-bordered text-center">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Criteria Name</th>
+                            <th>5 pts<br/><span class="text-muted small">Excellent</span></th>
+                            <th>4 pts<br/><span class="text-muted small">Good</span></th>
+                            <th>3 pts<br/><span class="text-muted small">Average</span></th>
+                            <th>2 pts<br/><span class="text-muted small">Fair</span></th>
+                            <th>1 pt<br/><span class="text-muted small">Poor</span></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            string cName =
+                                ViewBag.RubricCriteria != null && ViewBag.RubricCriteria.Count > i
+                                ? ViewBag.RubricCriteria[i]
+                                : new[] { "Agility", "Emotional", "Endurance", "Physical", "Teamwork" }[i];
+
+                            <tr>
+                                <td>
+                                    <input type="text"
+                                           class="form-control criteria-input"
+                                           value="@cName"
+                                           placeholder="Enter criteria name..." />
+                                </td>
+                                <td>Excellent (5)</td>
+                                <td>Good (4)</td>
+                                <td>Average (3)</td>
+                                <td>Fair (2)</td>
+                                <td>Poor (1)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="saveRubricsBtn">Save Rubrics</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ================================ -->
+<!--             SCRIPTS              -->
+<!-- ================================ -->
+
+@section Scripts {
+<script>
+
+let selectedAthleteId = null;
+
+/* ------------------------------------
+   HIGHLIGHT SELECTED ATHLETE ROW
+------------------------------------ */
+document.querySelectorAll(".athlete-row").forEach(row => {
+    row.addEventListener("click", function () {
+
+        document.querySelectorAll(".athlete-row")
+            .forEach(r => r.classList.remove("selected-athlete"));
+
+        this.classList.add("selected-athlete");
+        selectedAthleteId = this.dataset.athleteId;
+
+        resetRubrics();
+    });
+});
+
+
+/* ------------------------------------
+   RESET RUBRICS GRID
+------------------------------------ */
+function resetRubrics() {
+    document.querySelectorAll(".rubric-check").forEach(cb => cb.checked = false);
+    document.getElementById("totalScore").textContent = "0";
+
+    if (selectedAthleteId) {
+        let ratingBox = document.querySelector(`input[name='Ratings[${selectedAthleteId}]']`);
+        if (ratingBox) ratingBox.value = 0;
+    }
+}
+
+
+/* ------------------------------------
+   RUBRIC CHECK — ONLY ONE PER ROW
+------------------------------------ */
+document.querySelectorAll(".rubric-check").forEach(cb => {
+
+    cb.addEventListener("change", function () {
+
+        if (!selectedAthleteId) {
+            alert("Please select an athlete first.");
+            this.checked = false;
+            return;
+        }
+
+        const row = this.dataset.row;
+
+        // Uncheck others in same row
+        document.querySelectorAll(`.rubric-check[data-row='${row}']`)
+            .forEach(other => { if (other !== this) other.checked = false; });
+
+        calculateScore();
+    });
+});
+
+
+/* ------------------------------------
+   CALCULATE TOTAL SCORE (0–25)
+------------------------------------ */
+function calculateScore() {
+
+    let total = 0;
+
+    document.querySelectorAll(".rubric-check:checked").forEach(cb => {
+        total += parseInt(cb.dataset.points);
+    });
+
+    document.getElementById("totalScore").textContent = total;
+
+    if (selectedAthleteId) {
+        const ratingBox = document.querySelector(`input[name='Ratings[${selectedAthleteId}]']`);
+        if (ratingBox) ratingBox.value = total;
+    }
+}
+
+
+/* ------------------------------------
+   SEARCH ATHLETE FILTER
+------------------------------------ */
+document.getElementById("attendanceSearch").addEventListener("input", function () {
+    const filter = this.value.toLowerCase();
+
+    document.querySelectorAll("#attendanceTable tbody tr").forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
+    });
+});
+
+
+/* ------------------------------------
+   SELECT-ALL STATUS BUTTONS
+------------------------------------ */
+function setAllStatus(statusValue) {
+
+    document.querySelectorAll(".status-options input[type='radio']").forEach(radio => {
+        if (radio.value === statusValue) radio.checked = true;
+    });
+
+    alert(`All athletes marked as ${statusValue}`);
+}
+
+
+/* ------------------------------------
+   SAVE RUBRICS BUTTON
+------------------------------------ */
+document.getElementById("saveRubricsBtn").addEventListener("click", function () {
+
+    const rows = document.querySelectorAll("#rubricsModal tbody tr");
+    let rubrics = [];
+
+    rows.forEach((row, i) => {
+
+        let criteriaName = row.querySelector(".criteria-input").value.trim();
+        if (criteriaName === "") criteriaName = new Array("Agility","Emotional","Endurance","Physical","Teamwork")[i];
+
+        // Fixed levels
+        rubrics.push({ Criteria: criteriaName, Points: 5, Description: "Excellent" });
+        rubrics.push({ Criteria: criteriaName, Points: 4, Description: "Good" });
+        rubrics.push({ Criteria: criteriaName, Points: 3, Description: "Average" });
+        rubrics.push({ Criteria: criteriaName, Points: 2, Description: "Fair" });
+        rubrics.push({ Criteria: criteriaName, Points: 1, Description: "Poor" });
+    });
+
+    fetch("/Home/SaveRubrics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(rubrics)
+    })
+    .then(r => r.text())
+    .then(msg => {
+        alert("Rubrics saved successfully!");
+        location.reload();
+    })
+    .catch(err => alert("Error saving rubrics: " + err));
+});
+
+</script>
+}

@@ -1,0 +1,125 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace DWCCSportsManagement.Migrations
+{
+    // Consolidated migration: creates core Sports Management tables
+    // Tables: sessions, attendance, competition_participants
+    public partial class CreateSportsManagementTables : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            // ---- Sessions Table ----
+            migrationBuilder.CreateTable(
+                name: "sessions",
+                columns: table => new
+                {
+                    SessionId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    date_time = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    location = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TeamId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_sessions", x => x.SessionId);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            // ---- Attendance Table ----
+            migrationBuilder.CreateTable(
+                name: "attendance",
+                columns: table => new
+                {
+                    AttendanceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    AthleteId = table.Column<int>(type: "int", nullable: false),
+                    SessionId = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_attendance", x => x.AttendanceId);
+                    table.ForeignKey(
+                        name: "FK_attendance_athletes_AthleteId",
+                        column: x => x.AthleteId,
+                        principalTable: "athletes",
+                        principalColumn: "AthleteId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_attendance_sessions_SessionId",
+                        column: x => x.SessionId,
+                        principalTable: "sessions",
+                        principalColumn: "SessionId",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_attendance_AthleteId",
+                table: "attendance",
+                column: "AthleteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_attendance_SessionId",
+                table: "attendance",
+                column: "SessionId");
+
+            // ---- Competition Participants Table ----
+            migrationBuilder.CreateTable(
+                name: "competition_participants",
+                columns: table => new
+                {
+                    ParticipantId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CompetitionId = table.Column<int>(type: "int", nullable: false),
+                    TeamId = table.Column<int>(type: "int", nullable: false),
+                    Results = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Status = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_competition_participants", x => x.ParticipantId);
+                    table.ForeignKey(
+                        name: "FK_competition_participants_competitions_CompetitionId",
+                        column: x => x.CompetitionId,
+                        principalTable: "competitions",
+                        principalColumn: "CompetitionId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_competition_participants_teams_TeamId",
+                        column: x => x.TeamId,
+                        principalTable: "teams",
+                        principalColumn: "TeamId",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateIndex(
+                name: "FK_competition_participants_competitions_CompetitionId",
+                table: "competition_participants",
+                column: "CompetitionId");
+
+            migrationBuilder.CreateIndex(
+                name: "FK_competition_participants_teams_TeamId",
+                table: "competition_participants",
+                column: "TeamId");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(name: "competition_participants");
+            migrationBuilder.DropTable(name: "attendance");
+            migrationBuilder.DropTable(name: "sessions");
+        }
+    }
+}

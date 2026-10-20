@@ -1,0 +1,228 @@
+﻿@*
+    Coach Sidebar Partial View
+*@
+@{
+    string IsActive(string controller, string action)
+    {
+        var routeData = ViewContext.RouteData;
+        var currentController = routeData.Values["Controller"]?.ToString();
+        var currentAction = routeData.Values["Action"]?.ToString();
+
+        return currentController == controller && currentAction == action ? "active" : "";
+    }
+}
+
+<style>
+    /* Sidebar base styling */
+    .sidebar {
+        width: 270px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #0e4e2c;
+        padding: 20px;
+        transition: width 0.3s ease;
+        overflow: hidden;
+        z-index: 1100;
+        color: white;
+    }
+
+        /* Collapsed sidebar */
+        .sidebar.collapsed {
+            width: 70px;
+        }
+
+        /* Brand transition when collapsed */
+        .sidebar .brand span {
+            transition: opacity 0.2s ease;
+            color: white;
+        }
+
+        .sidebar.collapsed .brand span {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar .brand img {
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.collapsed .brand img {
+            transform: scale(0.9);
+        }
+
+        /* Nav link styling */
+        .sidebar .nav-link {
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            color: white; /* text white */
+            transition: background-color 0.3s;
+        }
+
+            .sidebar .nav-link i {
+                color: white;
+                font-size: 18px;
+            }
+
+            .sidebar .nav-link.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white !important;
+                font-weight: 600;
+            }
+
+            .sidebar .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+        /* Nav link text hides when collapsed */
+        .sidebar.collapsed .nav-link span {
+            display: none;
+        }
+
+        /* Center icons when collapsed */
+        .sidebar.collapsed .nav-link {
+            justify-content: center;
+            text-align: center;
+            height: 50px;
+            align-items: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+    /* Main content */
+    .main-content {
+        margin-left: 270px;
+        padding: 20px;
+        transition: margin-left 0.3s ease;
+    }
+
+        .main-content.expanded {
+            margin-left: 70px;
+        }
+
+    /* Toggle button */
+    .toggle-btn {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        background: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        z-index: 1200;
+    }
+
+    .sidebar.collapsed .toggle-btn {
+        display: none;
+    }
+
+</style>
+
+<div class="sidebar" id="sidebar">
+    <!-- Toggle Button -->
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="bi bi-chevron-left" id="sidebar-icon"></i>
+    </div>
+
+    <div class="brand fw-bold mb-4 d-flex align-items-center">
+        <img src="~/images/logo-removebg-preview.png" alt="DWCC Logo" width="40" height="40">
+        <span>Coach</span>
+    </div>
+
+    <ul class="nav flex-column">
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "Roster")" asp-controller="Home" asp-action="Roster">
+                <i class="bi bi-people-fill"></i> <span>Athlete Management</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "Dashboard")" asp-controller="Home" asp-action="Dashboard">
+                <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "Attendance")" asp-controller="Home" asp-action="Attendance">
+                <i class="bi bi-check2-square"></i> <span>Attendance</span>
+            </a>
+        </li>
+
+        @*<li class="nav-item">
+            <a class="nav-link @IsActive("Home", "AthletePerformance")"
+               asp-controller="Home" asp-action="AthletePerformance"
+               style="font-size: 0.85rem;">
+                <i class="bi bi-bar-chart-line"></i>
+                <span>Manage Performance Rubrics</span>
+            </a>
+        </li>*@
+
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "ScheduleTraining")" asp-controller="Home" asp-action="ScheduleTraining">
+                <i class="bi bi-calendar2-week"></i> <span>Schedule Training</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "CompetitionParticipation")" asp-controller="Home" asp-action="CompetitionParticipation">
+                <i class="bi bi-trophy"></i> <span>Competition</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "CoachProfile")" asp-controller="Home" asp-action="CoachProfile">
+                <i class="bi bi-person-badge"></i> <span>Coach Profile</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link @IsActive("Home", "Reports")" asp-controller="Home" asp-action="Reports">
+                <i class="bi bi-flag-fill"></i> <span>Reports</span>
+            </a>
+        </li>
+
+        <li class="nav-item mt-3">
+            <form id="logoutForm" method="post" asp-controller="Home" asp-action="Logout" class="d-none">
+                @Html.AntiForgeryToken()
+            </form>
+            <a href="#" class="nav-link text-danger fw-bold" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                <i class="bi bi-box-arrow-right"></i> <span>Logout</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+<script>
+    function toggleSidebar() {
+        let sidebar = document.getElementById("sidebar");
+        let content = document.querySelector(".main-content");
+        let icon = document.getElementById("sidebar-icon");
+
+        sidebar.classList.toggle("collapsed");
+        content.classList.toggle("expanded");
+
+        if (sidebar.classList.contains("collapsed")) {
+            icon.classList.remove("bi-chevron-left");
+            icon.classList.add("bi-chevron-right");
+        } else {
+            icon.classList.remove("bi-chevron-right");
+            icon.classList.add("bi-chevron-left");
+        }
+    }
+</script>

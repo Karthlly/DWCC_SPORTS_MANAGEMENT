@@ -1,0 +1,901 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\competitionparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\competitionparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\managecompetition.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\managecompetition.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\competitionparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\competitionparticipation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\managecompetition.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\managecompetition.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\competitionparticipationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\competitionparticipationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\competitionparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\competitionparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\roster.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\roster.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\manageathlete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\manageathlete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\sessionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\sessionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\scheduletraining.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\scheduletraining.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_adminnavigation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_adminnavigation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\data\\sportscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\data\\sportscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\performancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\performancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\attendancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\attendancemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\athleteperformance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\athleteperformance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\coachprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\coachprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\rubric.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\rubric.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_coachnavigation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_coachnavigation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\coach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\coach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\athletemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\athletemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\managecoach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\managecoach.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\manageteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\manageteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\admin\\admininterface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\admin\\admininterface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_layoutteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_layoutteammanager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\teammanager\\manageteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\teammanager\\manageteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\shared\\_editcoachmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\shared\\_editcoachmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\manageteam.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\manageteam.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jhona\\AppData\\Local\\SourceServer\\e111b8fd6938f45332fdaa732eab241105b03064f9a1d8bb2005d822ae811f9e\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\verifyresetcode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\verifyresetcode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|c:\\users\\jhona\\onedrive\\documents\\dwccsportsmanagement\\dwccsportsmanagement\\models\\passwordreset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49734195-E235-4513-8CD1-81DBE1294896}|DWCCSportsManagement\\DWCCSportsManagement.csproj|solutionrelative:dwccsportsmanagement\\models\\passwordreset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 434,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAOgEAAAAAAAAAAAswPAEAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T15:47:57.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompetitionParticipation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\CompetitionParticipation.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\CompetitionParticipation.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\CompetitionParticipation.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\CompetitionParticipation.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-12T14:15:04.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManageCompetition.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageCompetition.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\ManageCompetition.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageCompetition.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\ManageCompetition.cshtml",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAAwAcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T15:55:08.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\appsettings.json",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\appsettings.json",
+              "RelativeToolTip": "DWCCSportsManagement\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-07T16:21:20.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompetitionParticipation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\CompetitionParticipation.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAK0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T13:07:07.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageCompetition.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\ManageCompetition.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T16:19:34.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CompetitionParticipationModel.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\CompetitionParticipationModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T09:05:11.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AthletePerformance.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\AthletePerformance.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAmwJ8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T05:01:28.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CompetitionParticipant.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\CompetitionParticipant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T09:05:51.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ManageAthlete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\ManageAthlete.cshtml",
+              "ViewState": "AgIAALIBAAAAAAAAAAAAAMsBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T14:34:18.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Roster.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Roster.cshtml",
+              "ViewState": "AgIAAKkDAAAAAAAAAAAYwL8DAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T17:18:49.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ScheduleTraining.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\ScheduleTraining.cshtml",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAkwNkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-12T07:20:51.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SportsContext.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Data\\SportsContext.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Data\\SportsContext.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Data\\SportsContext.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Data\\SportsContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T16:20:53.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SessionModel.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\SessionModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\SessionModel.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\SessionModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\SessionModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T05:53:48.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Attendance.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Attendance.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAJcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T09:50:19.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PerformanceModel.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\PerformanceModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T14:28:33.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_AdminNavigation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_AdminNavigation.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_AdminNavigation.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_AdminNavigation.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_AdminNavigation.cshtml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAUwKsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T14:47:30.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AttendanceModel.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\AttendanceModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T14:27:46.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Attendance.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Attendance.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Attendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T14:27:45.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Rubric.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Rubric.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Rubric.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Rubric.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Rubric.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T14:20:38.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Coach.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Coach.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\Coach.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\Coach.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\Coach.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwBUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T14:14:27.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TeamManager.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\TeamManager.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwKgBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T14:10:22.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\login.css",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-08T05:22:27.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CoachProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\CoachProfile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-10T16:12:00.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T14:36:59.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_CoachNavigation.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_CoachNavigation.cshtml",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAEwKAAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T13:39:40.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-08T14:37:05.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\User.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T14:14:37.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AthleteModel.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\AthleteModel.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T16:41:57.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\ReportController.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T14:06:45.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AdminInterface.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAOYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T05:01:30.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "dashboard.css",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\dashboard.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\dashboard.css",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\dashboard.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\dashboard.css",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-08T06:16:13.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "home.css",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\home.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-08T05:22:24.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "_LayoutTeamManager.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_LayoutTeamManager.cshtml",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAAAMgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T09:41:19.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\Dashboard.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\Dashboard.cshtml",
+              "ViewState": "AgIAAGkBAAAAAAAAAAAcwN4BAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T09:56:40.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T09:51:58.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T09:52:00.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ManageTeamManager.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\ManageTeamManager.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T05:02:17.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ManageTeam.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\TeamManager\\ManageTeam.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T16:22:51.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "_EditCoachModal.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Shared\\_EditCoachModal.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T15:27:01.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "manageteam.css",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\manageteam.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-08T05:22:29.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AdminInterface.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\AppData\\Local\\SourceServer\\e111b8fd6938f45332fdaa732eab241105b03064f9a1d8bb2005d822ae811f9e\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\SourceServer\\e111b8fd6938f45332fdaa732eab241105b03064f9a1d8bb2005d822ae811f9e\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\AppData\\Local\\SourceServer\\e111b8fd6938f45332fdaa732eab241105b03064f9a1d8bb2005d822ae811f9e\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\SourceServer\\e111b8fd6938f45332fdaa732eab241105b03064f9a1d8bb2005d822ae811f9e\\DWCCSportsManagement\\Views\\Admin\\AdminInterface.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T10:01:53.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ManageCoach.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Admin\\ManageCoach.cshtml",
+              "ViewState": "AgIAALsAAAAAAAAAAAAwwM4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T06:03:44.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T09:50:31.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAFEBAAAAAAAAAAAtwMgBAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T05:36:06.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Program.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Program.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Program.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T15:46:35.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "DWCCSportsManagement\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-08T05:22:35.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Services\\EmailService.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T16:20:53.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "PasswordReset.cs",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\PasswordReset.cs",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Models\\PasswordReset.cs",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Models\\PasswordReset.cs",
+              "RelativeToolTip": "DWCCSportsManagement\\Models\\PasswordReset.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T16:20:53.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ForgotPassword.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAJUAAAAAAAAAAIBJwJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T15:46:56.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "VerifyResetCode.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\VerifyResetCode.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\VerifyResetCode.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\VerifyResetCode.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\VerifyResetCode.cshtml",
+              "ViewState": "AgIAAKMAAAAAAAAAAIBJwKUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T15:47:05.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\ResetPassword.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\ResetPassword.cshtml",
+              "ViewState": "AgIAAMYAAAAAAAAAAIBJwMgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T15:47:16.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Jhona\\OneDrive\\Documents\\DWCCSportsManagement\\DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DWCCSportsManagement\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAJkAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-07T15:47:28.464Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 86,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 82,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

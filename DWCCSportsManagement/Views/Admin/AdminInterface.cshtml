@@ -1,0 +1,486 @@
+﻿@model List<DWCCSportsManagement.Models.Competition>
+
+@{
+    ViewData["Title"] = "Manage Competition";
+    var comps = Model ?? new List<DWCCSportsManagement.Models.Competition>();
+}
+
+<link rel="stylesheet" href="~/css/dashboard.css" />
+
+<div class="dashboard-container">
+
+    <h2 class="mb-3">Dashboard</h2>
+
+    <!-- STATS SECTION -->
+    <div class="stats-grid">
+
+    <div class="stats-card">
+        <div class="stats-icon bg-blue"><i class="bi bi-person-workspace"></i></div>
+        <div class="stats-value">@ViewBag.TotalCoaches</div>
+        <div class="stats-label">Total Coaches</div>
+    </div>
+
+    <div class="stats-card">
+        <div class="stats-icon bg-green"><i class="bi bi-people-fill"></i></div>
+        <div class="stats-value">@ViewBag.TotalAthletes</div>
+        <div class="stats-label">Total Athletes</div>
+    </div>
+
+    <div class="stats-card">
+        <div class="stats-icon bg-yellow"><i class="bi bi-person-lines-fill"></i></div>
+        <div class="stats-value">@ViewBag.TotalTeams</div>
+        <div class="stats-label">Total Teams</div>
+    </div>
+
+    <div class="stats-card">
+        <div class="stats-icon bg-red"><i class="bi bi-trophy-fill"></i></div>
+        <div class="stats-value">@ViewBag.TotalCompetitions</div>
+        <div class="stats-label">Competitions</div>
+    </div>
+
+</div>
+
+
+
+
+    <!-- MAIN TWO COLUMN LAYOUT -->
+    <div class="row mt-4">
+
+        <!-- LEFT COLUMN -->
+        <div class="col-lg-6">
+
+            <!-- Gender / Sports Chart -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-header">Athlete Sports Distribution</div>
+                <canvas id="athleteSportsPieChart" height="280"></canvas>
+                <div id="genderInsight" class="text-center mt-2 text-muted"></div>
+            </div>
+
+            <!-- Attendance Chart -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-header">Attendance Over Time</div>
+                <canvas id="attendanceLineChart" height="250"></canvas>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-lg-6">
+
+            <!-- Leaderboard -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-header">
+                    Athlete Ranked Leaderboard
+                    <div class="d-flex gap-2">
+                        <select id="teamFilter" class="form-select form-select-sm">
+                            <option value="">All Teams</option>
+                            @foreach (var t in ViewBag.Teams)
+                            {
+                                <option value="@t.TeamId">@t.TeamName</option>
+                            }
+                        </select>
+
+                        <select id="sportFilter" class="form-select form-select-sm">
+                            <option value="">All Sports</option>
+                            @foreach (var s in ViewBag.Sports)
+                            {
+                                <option value="@s.sportId">@s.sportName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <canvas id="athleteRankedChart" height="300"></canvas>
+            </div>
+
+            <!-- Calendar -->
+            <div class="dashboard-card">
+                <div class="dashboard-card-header">Competition Schedule</div>
+                <div id="competitionCalendar"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- TABLE SECTION -->
+    <div class="dashboard-card mt-4">
+        <div class="dashboard-card-header">Competition Results</div>
+
+        <div class="table-wrapper">
+            <table class="table table-bordered table-striped" id="participantsTable">
+                <thead>
+                    <tr>
+                        <th>Participant ID</th>
+                        <th>Competition Name</th>
+                        <th>Team Name</th>
+                        <th>Results</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- FullCalendar CDN -->
+<link rel="stylesheet" href="~/css/manageteam.css" />
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Calendar Initialization -->
+<script>
+
+        async function loadParticipants() {
+                try {
+                    const response = await fetch('/Admin/GetAllParticipants');
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    console.log(response);
+                    const participants = await response.json();
+                    const tbody = document.querySelector('#participantsTable tbody');
+                    tbody.innerHTML = ''; // Clear existing rows
+
+                    participants.forEach(p => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${p.participantId}</td>
+                            <td>${p.competitionName}</td>
+                            <td>${p.teamName}</td>
+                            <td>${p.results}</td>
+                            <td>${p.status}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                } catch (error) {
+                    console.error('Error fetching participants:', error);
+                }
+            }
+
+            // Load data on page load
+            document.addEventListener('DOMContentLoaded', loadParticipants);
+
+        const ctx = document.getElementById('attendanceLineChart').getContext('2d');
+
+        // Initialize empty chart first
+        const attendanceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Present',
+                        data: [],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Total',
+                        data: [],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                interaction: { mode: 'nearest', intersect: false },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Date' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Count' },
+                        beginAtZero: true,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+
+        // Fetch data from API
+        fetch('/Admin/GetAttendanceOverTime')
+            .then(response => response.json())
+            .then(data => {
+                const labels = data.map(item => new Date(item.date).toLocaleDateString());
+                const presentCounts = data.map(item => item.presentCount);
+                const totalCounts = data.map(item => item.totalCount);
+
+                // Update chart data
+                attendanceChart.data.labels = labels;
+                attendanceChart.data.datasets[0].data = presentCounts;
+                attendanceChart.data.datasets[1].data = totalCounts;
+                attendanceChart.update();
+            })
+            .catch(error => console.error('Error fetching attendance data:', error));
+
+            const teamSelect = document.getElementById('teamFilter');
+const sportSelect = document.getElementById('sportFilter');
+let allAthletesData = []; // store all leaderboard data
+let athleteChart; // reference to Chart.js instance
+
+// Function to populate sports dropdown
+function populateSportsDropdown(sports) {
+    sportSelect.innerHTML = '<option value="">All Sports</option>';
+
+    sports.forEach(sport => {
+        const opt = document.createElement("option");
+        opt.value = sport.sportId;
+        opt.textContent = sport.sportName;
+        sportSelect.appendChild(opt);
+    });
+}
+
+
+// Fetch teams
+fetch('/Admin/GetTeams/')
+    .then(response => response.json())
+    .then(teamsData => {
+        teamSelect.innerHTML = '<option value="">All Teams</option>';
+        teamsData.forEach(team => {
+            const option = document.createElement('option');
+            option.value = team.teamId;
+            option.dataset.sportId = team.sportId; // for filtering
+            option.textContent = team.teamName;
+            teamSelect.appendChild(option);
+        });
+    })
+    .catch(error => console.error('Error fetching teams:', error));
+
+// Event listener for team selection
+teamSelect.addEventListener('change', function () {
+    const selectedTeamId = this.value;
+
+    // Fetch sports based on selected team
+    let url = '/Admin/GetSports';
+    if (selectedTeamId) {
+        url += `?teamId=${selectedTeamId}`;
+    }
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => populateSportsDropdown(data))
+        .catch(error => console.error('Error fetching sports:', error));
+
+    renderFilteredLeaderboard();
+});
+
+// Event listener for sport selection
+sportSelect.addEventListener('change', function () {
+    renderFilteredLeaderboard();
+});
+
+// Fetch and render athlete leaderboard
+async function fetchLeaderboardData() {
+    try {
+        const response = await fetch('/Admin/GetAthleteLeaderboard');
+        allAthletesData = await response.json();
+        renderFilteredLeaderboard(); // initial render
+    } catch (err) {
+        console.error("Failed to fetch leaderboard:", err);
+    }
+}
+
+// Render filtered leaderboard chart
+function renderFilteredLeaderboard() {
+    if (!allAthletesData.length) return;
+
+    const selectedTeamId = teamSelect.value;
+    const selectedSportId = sportSelect.value;
+
+    // Filter data based on selections
+    let filteredData = [...allAthletesData];
+    if (selectedTeamId) {
+        filteredData = filteredData.filter(a => a.teamId == selectedTeamId);
+    }
+    if (selectedSportId) {
+        filteredData = filteredData.filter(a => a.sportId == selectedSportId);
+    }
+
+    // Sort by percentage descending
+    filteredData.sort((a, b) => b.percentage - a.percentage);
+
+    const ctx = document.getElementById('athleteRankedChart').getContext('2d');
+
+    // Destroy previous chart if exists
+    if (athleteChart) athleteChart.destroy();
+
+    athleteChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: filteredData.map((d, index) => `${index + 1}. ${d.athleteName}`),
+            datasets: [{
+                label: 'Percentage (%)',
+                data: filteredData.map(d => d.percentage.toFixed(2)),
+                backgroundColor: filteredData.map((d, index) => {
+                    if (index === 0) return '#ffd700';
+                    if (index === 1) return '#c0c0c0';
+                    if (index === 2) return '#cd7f32';
+                    return '#4e73df';
+                })
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Athlete Ranked Leaderboard',
+                    font: { size: 16, weight: 'bold' }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const athlete = filteredData[context.dataIndex];
+                            return `${athlete.percentage.toFixed(2)}% (${athlete.totalPoints}/${athlete.maxPoints} pts)`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    max: 100,
+                    title: { display: true, text: 'Performance (%)' }
+                },
+                y: {
+                    title: { display: true, text: 'Athletes (Ranked)' }
+                }
+            }
+        }
+    });
+}
+
+// Initial fetch
+document.addEventListener('DOMContentLoaded', fetchLeaderboardData);
+
+                       async function renderAthleteGenderBarChart() {
+        try {
+            const response = await fetch('/Admin/GetAthleteGenderDistribution');
+            const data = await response.json();
+
+            let labels = [];
+            let counts = [];
+
+            if (Array.isArray(data)) {
+                labels = data.map(d => d.gender);
+                counts = data.map(d => d.count);
+            } else {
+                labels = ["Male", "Female"];
+                counts = [data.male, data.female];
+            }
+
+            // Render chart
+            const ctx = document.getElementById('athleteSportsPieChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Number of Athletes',
+                        data: counts,
+                        backgroundColor: ['#4e73df', '#e74a3b'],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Athlete Gender Distribution'
+                        }
+                    }
+                }
+            });
+
+            // -------------------------
+            // 🔥 Generate Insights
+            // -------------------------
+            const male = counts[labels.indexOf("Male")] || 0;
+            const female = counts[labels.indexOf("Female")] || 0;
+            const total = male + female;
+
+            let insightText = "";
+
+            if (total === 0) {
+                insightText = "No athlete data available.";
+            } else if (male > female) {
+                const diff = male - female;
+                const percent = ((diff / total) * 100).toFixed(2);
+                insightText = `There are more male athletes than female athletes by ${diff}, accounting for ${percent}% difference.`;
+            } else if (female > male) {
+                const diff = female - male;
+                const percent = ((diff / total) * 100).toFixed(2);
+                insightText = `There are more female athletes** than male athletes by ${diff}, accounting for ${percent}% difference.`;
+            } else {
+                insightText = "The number of male and female athletes is equal.";
+            }
+
+            document.getElementById("genderInsight").innerHTML = insightText;
+
+        } catch (err) {
+            console.error("Failed to render gender bar chart:", err);
+        }
+    }
+
+
+
+
+        // Render chart on page load
+            document.addEventListener('DOMContentLoaded', renderAthleteGenderBarChart());
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('competitionCalendar');
+
+        var events = [
+            @foreach (var c in comps)
+            {
+                    <text>
+                    {
+                        title: '@(c.Name.Replace("'", "\\'")) (@(c.Venue.Replace("'", "\\'")))',
+                        start: '@c.StartDate.ToString("yyyy-MM-ddTHH:mm")',
+                        end: '@c.EndDate.ToString("yyyy-MM-ddTHH:mm")',
+                        extendedProps: { id: @c.CompetitionId },
+                        color: 'green'
+                    },
+                    </text>
+            }
+        ];
+
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: events,
+            height: 450,
+            eventClick: function(info) {
+                // Optional: handle click events
+            }
+        });
+
+        calendar.render();
+    });
+</script>

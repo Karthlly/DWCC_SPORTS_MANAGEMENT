@@ -1,0 +1,765 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="container mt-4">
+
+    <h2>Participant Competitions Report</h2>
+    <div class="mb-4">
+        <button id="combinedCsvBtn" class="btn btn-success mt-4">Export Both Tables CSV</button>
+        <button id="combinedPdfBtn" class="btn btn-danger mt-4">Export Both Tables PDF</button>
+        <button id="exportReportsBtn" class="btn btn-warning mt-4">
+            <i class="bi bi-file-earmark-arrow-down me-1"></i> Export Student Remarks
+        </button>
+    </div>
+
+    <!-- Competition Filters & Export -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body d-flex flex-wrap align-items-center gap-2">
+            <div class="form-group">
+                <label for="compDateFrom" class="form-label">From:</label>
+                <input type="date" id="compDateFrom" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="compDateTo" class="form-label">To:</label>
+                <input type="date" id="compDateTo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="subCategoryFilter" class="form-label">SubCategory:</label>
+                <select id="subCategoryFilter" class="form-control">
+                    <option value="">All</option>
+                </select>
+            </div>
+            <button id="compFilterBtn" class="btn btn-primary mt-4">Filter</button>
+            <button id="compClearBtn" class="btn btn-secondary mt-4">Show All</button>
+            <button id="compCsvBtn" class="btn btn-success mt-4">Export CSV</button>
+            <button id="compPdfBtn" class="btn btn-danger mt-4">Export PDF</button>
+        </div>
+    </div>
+
+    <!-- Competition Table -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="compReportsTable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Participant ID</th>
+                            <th>Competition</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Team</th>
+                            <th>Sport</th>
+                            <th>SubCategory</th>
+                            <th>Results</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <h2>Team Participation Report</h2>
+
+    <!-- Team Filters & Export -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body d-flex flex-wrap align-items-center gap-2">
+            <div class="form-group">
+                <label for="tpDateFrom" class="form-label">From:</label>
+                <input type="date" id="tpDateFrom" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="tpDateTo" class="form-label">To:</label>
+                <input type="date" id="tpDateTo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="divisionFilter" class="form-label">Division:</label>
+                <select id="divisionFilter" class="form-control">
+                    <option value="">All</option>
+                </select>
+            </div>
+            <button id="tpFilterBtn" class="btn btn-primary mt-4">Filter</button>
+            <button id="tpClearBtn" class="btn btn-secondary mt-4">Show All</button>
+            <button id="tpCsvBtn" class="btn btn-success mt-4">Export CSV</button>
+            <button id="tpPdfBtn" class="btn btn-danger mt-4">Export PDF</button>
+        </div>
+    </div>
+
+    <!-- Team Participation Table -->
+    <div class="card shadow-sm mb-5">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="teamParticipationTable" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Competition</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Team Name</th>
+                            <th>Coach</th>
+                            <th>Division</th>
+                            <th>Participation Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Combined Export -->
+        
+
+</div>
+
+@section Scripts {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+
+        document.getElementById("exportReportsBtn").addEventListener("click", async function () {
+                // Fetch all remarks
+                const remarksResponse = await fetch('/TeamManager/GetAllRemarks');
+                const allRemarks = await remarksResponse.json();
+
+                // Fetch all attendance
+                const attendanceResponse = await fetch('/TeamManager/GetAllAttendance');
+                const allAttendance = await attendanceResponse.json();
+
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+
+                // --- Cover Page / Header ---
+                let y = 40;
+                const reportDate = new Date().toLocaleString();
+                doc.setFontSize(22);
+                doc.setTextColor(0, 51, 102);
+                doc.setFont("helvetica", "bold");
+                doc.text("DWCC Sports Management", 297.5, y, null, null, "center"); // A4 center
+                y += 30;
+                doc.setFontSize(16);
+                doc.text("Athlete Performance Report", 297.5, y, null, null, "center");
+                y += 20;
+                doc.setFontSize(10);
+                doc.setTextColor(50);
+                doc.setFont("helvetica", "normal");
+                doc.text(`Generated on: ${reportDate}`, 297.5, y, null, null, "center");
+                y += 40;
+
+                // --- Loop through athletes ---
+                const athletes = [...new Set(allRemarks.map(r => r.athleteId))];
+
+                for (const athleteId of athletes) {
+                    const athleteRemarks = allRemarks.filter(r => r.athleteId === athleteId);
+                    const athleteAttendance = allAttendance.filter(a => a.athleteId === athleteId);
+                    const athleteName = athleteRemarks.length > 0 ? athleteRemarks[0].athleteName : "Unknown";
+
+                    // Calculate scholarship percentage
+                    let totalRating = 0;
+                    let totalMax = 0;
+                    athleteRemarks.forEach(r => {
+                        totalRating += parseFloat(r.rating || 0);
+                        totalMax += parseFloat(r.maxRating || 0);
+                    });
+                    const scholarshipPercentage = totalMax > 0 ? ((totalRating / totalMax) * 100).toFixed(2) + "%" : "N/A";
+
+                    // --- Athlete Section Header ---
+                    doc.setFontSize(14);
+                    doc.setTextColor(0, 51, 102);
+                    doc.setFont("helvetica", "bold");
+                    doc.text(`Athlete: ${athleteName} | Scholarship: ${scholarshipPercentage}`, 40, y);
+                    y += 20;
+
+                    // Prepare table data
+                    const tableData = athleteRemarks.map(r => {
+                        const attendanceRecord = athleteAttendance.find(a => a.sessionName === r.sessionName);
+                        const status = attendanceRecord ? attendanceRecord.status : "N/A";
+                        return [r.sessionName, r.rating, r.maxRating, r.remarks, status];
+                    });
+
+                    // --- AutoTable for remarks and attendance ---
+                    doc.autoTable({
+                        startY: y,
+                        head: [['Session Name', 'Rating', 'Max Rating', 'Remarks', 'Attendance']],
+                        body: tableData,
+                        theme: 'grid',
+                        headStyles: { fillColor: [0, 51, 102], textColor: 255, fontStyle: 'bold' },
+                        styles: { fontSize: 10, cellPadding: 4 },
+                        margin: { left: 40, right: 40 },
+                        didDrawPage: function (data) { y = data.cursor.y + 20; }
+                    });
+
+                    // Page break if near bottom
+                    if (y > 720) {
+                        doc.addPage();
+                        y = 40;
+                    }
+                }
+
+                // --- Footer with page numbers ---
+                const pageCount = doc.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(9);
+                    doc.setTextColor(100);
+                    doc.text(`Page ${i} of ${pageCount}`, 297.5, 820, null, null, "center");
+                }
+
+                // Save PDF
+                doc.save("Athlete_Performance_Report.pdf");
+            });
+        let allCompData = [];
+        let teamParticipationData = [];
+
+        // ---------------- COMPETITION ----------------
+        async function loadCompReports() {
+            const res = await fetch('@Url.Action("GetParticipantCompetitions", "TeamManager")');
+            allCompData = await res.json();
+            populateSubCategoryFilter(allCompData);
+            setCompDateRange(allCompData);
+            renderCompTable(allCompData);
+        }
+
+        function populateSubCategoryFilter(data){
+            const select = document.getElementById("subCategoryFilter");
+            [...new Set(data.map(d=>d.subCategoryName))].forEach(sc=>{
+                const opt=document.createElement("option"); opt.value=sc; opt.text=sc; select.appendChild(opt);
+            });
+        }
+
+        function setCompDateRange(data){
+            const dates = data.map(d=>new Date(d.competitionStartDate));
+            const min=new Date(Math.min(...dates)), max=new Date(Math.max(...dates));
+            ["compDateFrom","compDateTo"].forEach(id=>{
+                document.getElementById(id).min = min.toISOString().split("T")[0];
+                document.getElementById(id).max = max.toISOString().split("T")[0];
+            });
+        }
+
+        function renderCompTable(data){
+            const tbody=document.querySelector("#compReportsTable tbody"); tbody.innerHTML="";
+            data.forEach(item=>{
+                const row=document.createElement("tr");
+                row.innerHTML=`
+                <td>${item.participantId}</td>
+                <td>${item.competitionName}</td>
+                <td>${new Date(item.competitionStartDate).toISOString().split("T")[0]}</td>
+                <td>${new Date(item.competitionEndDate).toISOString().split("T")[0]}</td>
+                <td>${item.teamName}</td>
+                <td>${item.sportName}</td>
+                <td>${item.subCategoryName}</td>
+                <td>${item.results}</td>
+                <td>${item.status}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterCompTable(){
+            const from=new Date(document.getElementById("compDateFrom").value);
+            const to=new Date(document.getElementById("compDateTo").value); to.setHours(23,59,59,999);
+            const sub=document.getElementById("subCategoryFilter").value;
+            renderCompTable(allCompData.filter(d=>{
+                const date=new Date(d.competitionStartDate);
+                return (isNaN(from)||isNaN(to)?true:date>=from&&date<=to) && (sub===""||d.subCategoryName===sub);
+            }));
+        }
+
+        function clearCompFilter(){
+            document.getElementById("compDateFrom").value="";
+            document.getElementById("compDateTo").value="";
+            document.getElementById("subCategoryFilter").value="";
+            renderCompTable(allCompData);
+        }
+
+        function exportCompCSV(){
+            exportCSVFromTable("#compReportsTable","competition_report.csv");
+        }
+
+        function exportCompPDF(){
+            const insights = generateCompetitionInsights(allCompData);
+            exportPDFfromTable("#compReportsTable","competition_report.pdf","Participant Competitions Report", insights);
+        }
+
+        // ---------------- TEAM PARTICIPATION ----------------
+        async function loadTeamParticipation() {
+            const res = await fetch('@Url.Action("TeamParticipation", "TeamManager")');
+            teamParticipationData = await res.json();
+            populateDivisionFilter(teamParticipationData);
+            setTPDateRange(teamParticipationData);
+            renderTeamParticipationTable(teamParticipationData);
+        }
+
+        function populateDivisionFilter(data){
+            const select=document.getElementById("divisionFilter");
+            [...new Set(data.map(d=>d.division))].forEach(div=>{
+                const opt=document.createElement("option"); opt.value=div; opt.text=div; select.appendChild(opt);
+            });
+        }
+
+        function setTPDateRange(data){
+            const dates=data.map(d=>new Date(d.dateStart));
+            const min=new Date(Math.min(...dates)), max=new Date(Math.max(...dates));
+            ["tpDateFrom","tpDateTo"].forEach(id=>{
+                document.getElementById(id).min=min.toISOString().split("T")[0];
+                document.getElementById(id).max=max.toISOString().split("T")[0];
+            });
+        }
+
+        function renderTeamParticipationTable(data){
+            const tbody=document.querySelector("#teamParticipationTable tbody"); tbody.innerHTML="";
+            data.forEach(item=>{
+                const row=document.createElement("tr");
+                row.innerHTML=`
+                <td>${item.competition}</td>
+                <td>${new Date(item.dateStart).toISOString().split("T")[0]}</td>
+                <td>${new Date(item.dateEnd).toISOString().split("T")[0]}</td>
+                <td>${item.teamName}</td>
+                <td>${item.coach}</td>
+                <td>${item.division}</td>
+                <td>${item.participationStatus}</td>`;
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterTeamParticipation(){
+            const from=new Date(document.getElementById("tpDateFrom").value);
+            const to=new Date(document.getElementById("tpDateTo").value); to.setHours(23,59,59,999);
+            const div=document.getElementById("divisionFilter").value;
+            renderTeamParticipationTable(teamParticipationData.filter(d=>{
+                const date=new Date(d.dateStart);
+                return (isNaN(from)||isNaN(to)?true:date>=from&&date<=to) && (div===""||d.division===div);
+            }));
+        }
+
+        function clearTeamParticipationFilter(){
+            document.getElementById("tpDateFrom").value="";
+            document.getElementById("tpDateTo").value="";
+            document.getElementById("divisionFilter").value="";
+            renderTeamParticipationTable(teamParticipationData);
+        }
+
+        function exportTeamParticipationCSV(){
+            exportCSVFromTable("#teamParticipationTable","team_participation_report.csv");
+        }
+
+        function exportTeamParticipationPDF(){
+            const insights = generateTeamParticipationInsights(teamParticipationData);
+            exportPDFfromTable("#teamParticipationTable","team_participation_report.pdf","Team Participation Report", insights);
+        }
+
+        // ---------------- INSIGHTS GENERATION ----------------
+        function generateCompetitionInsights(data) {
+            if (!data || data.length === 0) return null;
+
+            const totalCompetitions = data.length;
+            const uniqueParticipants = new Set(data.map(d => d.participantId)).size;
+            const sportBreakdown = {};
+            const statusBreakdown = {};
+            const subCategoryBreakdown = {};
+
+            data.forEach(item => {
+                sportBreakdown[item.sportName] = (sportBreakdown[item.sportName] || 0) + 1;
+                statusBreakdown[item.status] = (statusBreakdown[item.status] || 0) + 1;
+                subCategoryBreakdown[item.subCategoryName] = (subCategoryBreakdown[item.subCategoryName] || 0) + 1;
+            });
+
+            const mostPopularSport = Object.keys(sportBreakdown).reduce((a, b) =>
+                sportBreakdown[a] > sportBreakdown[b] ? a : b);
+
+            const mostPopularCategory = Object.keys(subCategoryBreakdown).reduce((a, b) =>
+                subCategoryBreakdown[a] > subCategoryBreakdown[b] ? a : b);
+
+            return {
+                totalCompetitions,
+                uniqueParticipants,
+                mostPopularSport,
+                mostPopularCategory,
+                sportBreakdown,
+                statusBreakdown,
+                subCategoryBreakdown
+            };
+        }
+
+        function generateTeamParticipationInsights(data) {
+            if (!data || data.length === 0) return null;
+
+            const totalParticipations = data.length;
+            const uniqueTeams = new Set(data.map(d => d.teamName)).size;
+            const uniqueCoaches = new Set(data.map(d => d.coach)).size;
+            const divisionBreakdown = {};
+            const statusBreakdown = {};
+
+            data.forEach(item => {
+                divisionBreakdown[item.division] = (divisionBreakdown[item.division] || 0) + 1;
+                statusBreakdown[item.participationStatus] = (statusBreakdown[item.participationStatus] || 0) + 1;
+            });
+
+            const mostActiveDivision = Object.keys(divisionBreakdown).reduce((a, b) =>
+                divisionBreakdown[a] > divisionBreakdown[b] ? a : b);
+
+            return {
+                totalParticipations,
+                uniqueTeams,
+                uniqueCoaches,
+                mostActiveDivision,
+                divisionBreakdown,
+                statusBreakdown
+            };
+        }
+
+        // ---------------- COMBINED EXPORT ----------------
+        function exportCombinedCSV(){
+            let csvContent = "";
+            // Competition
+            csvContent += Array.from(document.querySelectorAll("#compReportsTable thead tr th")).map(th=>th.innerText).join(",") + "\n";
+            csvContent += Array.from(document.querySelectorAll("#compReportsTable tbody tr")).map(tr=>Array.from(tr.children).map(td=>td.innerText).join(",")).join("\n") + "\n\n";
+            // Team
+            csvContent += Array.from(document.querySelectorAll("#teamParticipationTable thead tr th")).map(th=>th.innerText).join(",") + "\n";
+            csvContent += Array.from(document.querySelectorAll("#teamParticipationTable tbody tr")).map(tr=>Array.from(tr.children).map(td=>td.innerText).join(",")).join("\n");
+            const blob=new Blob([csvContent],{type:"text/csv;charset=utf-8;"}); const link=document.createElement("a");
+            link.href=URL.createObjectURL(blob); link.download="combined_report.csv"; link.click();
+        }
+
+        async function exportCombinedPDF() {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF('p', 'pt', 'a4');
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            const margin = 40;
+            let yOffset = margin;
+
+            // ============ COVER PAGE ============
+            pdf.setFillColor(14, 78, 44); // #0e4e2c (your green color)
+            pdf.rect(0, 0, pageWidth, pageHeight, 'F');
+
+            pdf.setTextColor(255, 255, 255);
+            pdf.setFontSize(36);
+            pdf.setFont(undefined, 'bold');
+            pdf.text('DWCC SPORTS', pageWidth / 2, pageHeight / 3, { align: 'center' });
+            pdf.text('MANAGEMENT REPORT', pageWidth / 2, pageHeight / 3 + 50, { align: 'center' });
+
+            pdf.setFontSize(16);
+            pdf.setFont(undefined, 'normal');
+            const today = new Date().toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+            pdf.text(`Generated on ${today}`, pageWidth / 2, pageHeight / 2 + 50, { align: 'center' });
+
+            pdf.setFontSize(12);
+            pdf.text('Comprehensive Analysis & Insights', pageWidth / 2, pageHeight - 100, { align: 'center' });
+
+            // ============ EXECUTIVE SUMMARY PAGE ============
+            pdf.addPage();
+            yOffset = margin;
+
+            pdf.setTextColor(14, 78, 44);
+            pdf.setFontSize(24);
+            pdf.setFont(undefined, 'bold');
+            pdf.text('Executive Summary', margin, yOffset);
+            yOffset += 40;
+
+            // Draw horizontal line
+            pdf.setDrawColor(14, 78, 44);
+            pdf.setLineWidth(2);
+            pdf.line(margin, yOffset, pageWidth - margin, yOffset);
+            yOffset += 30;
+
+            // Competition Insights
+            const compInsights = generateCompetitionInsights(allCompData);
+            const teamInsights = generateTeamParticipationInsights(teamParticipationData);
+
+            pdf.setFontSize(16);
+            pdf.setFont(undefined, 'bold');
+            pdf.setTextColor(0, 0, 0);
+            pdf.text('Competition Overview', margin, yOffset);
+            yOffset += 25;
+
+            pdf.setFontSize(11);
+            pdf.setFont(undefined, 'normal');
+            pdf.setTextColor(60, 60, 60);
+
+            if (compInsights) {
+                const compSummary = [
+                    `• Total Competitions: ${compInsights.totalCompetitions}`,
+                    `• Unique Participants: ${compInsights.uniqueParticipants}`,
+                    `• Most Popular Sport: ${compInsights.mostPopularSport}`,
+                    `• Leading Category: ${compInsights.mostPopularCategory}`,
+                ];
+                compSummary.forEach(line => {
+                    pdf.text(line, margin + 10, yOffset);
+                    yOffset += 20;
+                });
+            }
+
+            yOffset += 20;
+
+            // Team Participation Insights
+            pdf.setFontSize(16);
+            pdf.setFont(undefined, 'bold');
+            pdf.setTextColor(0, 0, 0);
+            pdf.text('Team Participation Overview', margin, yOffset);
+            yOffset += 25;
+
+            pdf.setFontSize(11);
+            pdf.setFont(undefined, 'normal');
+            pdf.setTextColor(60, 60, 60);
+
+            if (teamInsights) {
+                const teamSummary = [
+                    `• Total Participations: ${teamInsights.totalParticipations}`,
+                    `• Active Teams: ${teamInsights.uniqueTeams}`,
+                    `• Coaching Staff: ${teamInsights.uniqueCoaches}`,
+                    `• Most Active Division: ${teamInsights.mostActiveDivision}`,
+                ];
+                teamSummary.forEach(line => {
+                    pdf.text(line, margin + 10, yOffset);
+                    yOffset += 20;
+                });
+            }
+
+            yOffset += 30;
+
+            // ============ COMPETITION REPORT PAGE ============
+            pdf.addPage();
+            yOffset = margin;
+
+            pdf.setFillColor(14, 78, 44);
+            pdf.rect(0, 0, pageWidth, 60, 'F');
+
+            pdf.setTextColor(255, 255, 255);
+            pdf.setFontSize(20);
+            pdf.setFont(undefined, 'bold');
+            pdf.text('Participant Competitions Report', margin, 40);
+
+            yOffset = 80;
+
+            // Add detailed breakdown
+            if (compInsights) {
+                pdf.setFontSize(12);
+                pdf.setFont(undefined, 'bold');
+                pdf.setTextColor(14, 78, 44);
+                pdf.text('Sport Distribution', margin, yOffset);
+                yOffset += 20;
+
+                pdf.setFontSize(10);
+                pdf.setFont(undefined, 'normal');
+                pdf.setTextColor(60, 60, 60);
+
+                Object.entries(compInsights.sportBreakdown).forEach(([sport, count]) => {
+                    const percentage = ((count / compInsights.totalCompetitions) * 100).toFixed(1);
+                    pdf.text(`${sport}: ${count} (${percentage}%)`, margin + 10, yOffset);
+                    yOffset += 18;
+                });
+
+                yOffset += 10;
+            }
+
+            // Competition Table
+            const compTable = document.querySelector("#compReportsTable");
+            const compCanvas = await html2canvas(compTable, { scale: 1.5 });
+            const compImgData = compCanvas.toDataURL("image/png");
+            const compProps = pdf.getImageProperties(compImgData);
+            const compPdfWidth = pageWidth - margin * 2;
+            const compPdfHeight = (compProps.height * compPdfWidth) / compProps.width;
+
+            if (yOffset + compPdfHeight > pageHeight - margin) {
+                pdf.addPage();
+                yOffset = margin;
+            }
+
+            pdf.addImage(compImgData, "PNG", margin, yOffset, compPdfWidth, compPdfHeight);
+
+            // ============ TEAM PARTICIPATION REPORT PAGE ============
+            pdf.addPage();
+            yOffset = margin;
+
+            pdf.setFillColor(14, 78, 44);
+            pdf.rect(0, 0, pageWidth, 60, 'F');
+
+            pdf.setTextColor(255, 255, 255);
+            pdf.setFontSize(20);
+            pdf.setFont(undefined, 'bold');
+            pdf.text('Team Participation Report', margin, 40);
+
+            yOffset = 80;
+
+            // Add detailed breakdown
+            if (teamInsights) {
+                pdf.setFontSize(12);
+                pdf.setFont(undefined, 'bold');
+                pdf.setTextColor(14, 78, 44);
+                pdf.text('Division Distribution', margin, yOffset);
+                yOffset += 20;
+
+                pdf.setFontSize(10);
+                pdf.setFont(undefined, 'normal');
+                pdf.setTextColor(60, 60, 60);
+
+                Object.entries(teamInsights.divisionBreakdown).forEach(([division, count]) => {
+                    const percentage = ((count / teamInsights.totalParticipations) * 100).toFixed(1);
+                    pdf.text(`${division}: ${count} (${percentage}%)`, margin + 10, yOffset);
+                    yOffset += 18;
+                });
+
+                yOffset += 10;
+            }
+
+            // Team Participation Table
+            const teamTable = document.querySelector("#teamParticipationTable");
+            const teamCanvas = await html2canvas(teamTable, { scale: 1.5 });
+            const teamImgData = teamCanvas.toDataURL("image/png");
+            const teamProps = pdf.getImageProperties(teamImgData);
+            const teamPdfWidth = pageWidth - margin * 2;
+            const teamPdfHeight = (teamProps.height * teamPdfWidth) / teamProps.width;
+
+            if (yOffset + teamPdfHeight > pageHeight - margin) {
+                pdf.addPage();
+                yOffset = margin;
+            }
+
+            pdf.addImage(teamImgData, "PNG", margin, yOffset, teamPdfWidth, teamPdfHeight);
+
+            // ============ FOOTER ON ALL PAGES ============
+            const totalPages = pdf.internal.getNumberOfPages();
+            for (let i = 1; i <= totalPages; i++) {
+                pdf.setPage(i);
+                pdf.setFontSize(8);
+                pdf.setTextColor(150, 150, 150);
+                pdf.text(
+                    `Page ${i} of ${totalPages} | DWCC Sports Management System | ${today}`,
+                    pageWidth / 2,
+                    pageHeight - 20,
+                    { align: 'center' }
+                );
+            }
+
+            pdf.save("combined_sports_report.pdf");
+        }
+
+        // ---------------- HELPER FUNCTIONS ----------------
+        function exportCSVFromTable(selector,filename){
+            const headers=Array.from(document.querySelectorAll(selector+" thead tr th")).map(th=>th.innerText);
+            const rows=Array.from(document.querySelectorAll(selector+" tbody tr")).map(tr=>Array.from(tr.children).map(td=>td.innerText).join(","));
+            const csvContent=headers.join(",")+"\n"+rows.join("\n");
+            const blob=new Blob([csvContent],{type:"text/csv;charset=utf-8;"}); const link=document.createElement("a");
+            link.href=URL.createObjectURL(blob); link.download=filename; link.click();
+        }
+
+        async function exportPDFfromTable(selector, filename, title, insights = null) {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF('p', 'pt', 'a4');
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            const margin = 40;
+            let yOffset = margin;
+
+            // Header with colored background
+            pdf.setFillColor(14, 78, 44);
+            pdf.rect(0, 0, pageWidth, 70, 'F');
+
+            pdf.setTextColor(255, 255, 255);
+            pdf.setFontSize(22);
+            pdf.setFont(undefined, 'bold');
+            pdf.text(title, margin, 45);
+
+            yOffset = 90;
+
+            // Date and metadata
+            const today = new Date().toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+            pdf.setFontSize(10);
+            pdf.setTextColor(100, 100, 100);
+            pdf.text(`Generated: ${today}`, margin, yOffset);
+            yOffset += 30;
+
+            // Insights section
+            if (insights) {
+                pdf.setFillColor(245, 247, 250);
+                const insightBoxHeight = 150;
+                pdf.roundedRect(margin, yOffset, pageWidth - margin * 2, insightBoxHeight, 5, 5, 'F');
+
+                pdf.setFontSize(14);
+                pdf.setFont(undefined, 'bold');
+                pdf.setTextColor(14, 78, 44);
+                pdf.text('Report Insights', margin + 15, yOffset + 25);
+
+                pdf.setFontSize(10);
+                pdf.setFont(undefined, 'normal');
+                pdf.setTextColor(60, 60, 60);
+
+                let insightY = yOffset + 50;
+
+                if (insights.totalCompetitions !== undefined) {
+                    pdf.text(`• Total Records: ${insights.totalCompetitions}`, margin + 20, insightY);
+                    insightY += 20;
+                    pdf.text(`• Unique Participants: ${insights.uniqueParticipants}`, margin + 20, insightY);
+                    insightY += 20;
+                    pdf.text(`• Popular Sport: ${insights.mostPopularSport}`, margin + 20, insightY);
+                    insightY += 20;
+                    pdf.text(`• Top Category: ${insights.mostPopularCategory}`, margin + 20, insightY);
+                } else if (insights.totalParticipations !== undefined) {
+                    pdf.text(`• Total Participations: ${insights.totalParticipations}`, margin + 20, insightY);
+                    insightY += 20;
+                    pdf.text(`• Active Teams: ${insights.uniqueTeams}`, margin + 20, insightY);
+                    insightY += 20;
+                    pdf.text(`• Coaches: ${insights.uniqueCoaches}`, margin + 20, insightY);
+                    insightY += 20;
+                    pdf.text(`• Most Active: ${insights.mostActiveDivision}`, margin + 20, insightY);
+                }
+
+                yOffset += insightBoxHeight + 30;
+            }
+
+            // Table
+            const table = document.querySelector(selector);
+            const canvas = await html2canvas(table, { scale: 1.5 });
+            const imgData = canvas.toDataURL("image/png");
+            const props = pdf.getImageProperties(imgData);
+            const pdfWidth = pageWidth - margin * 2;
+            const pdfHeight = (props.height * pdfWidth) / props.width;
+
+            if (yOffset + pdfHeight > pageHeight - margin) {
+                pdf.addPage();
+                yOffset = margin;
+            }
+
+            pdf.addImage(imgData, "PNG", margin, yOffset, pdfWidth, pdfHeight);
+
+            // Footer
+            pdf.setFontSize(8);
+            pdf.setTextColor(150, 150, 150);
+            pdf.text(
+                `DWCC Sports Management System | ${today}`,
+                pageWidth / 2,
+                pageHeight - 20,
+                { align: 'center' }
+            );
+
+            pdf.save(filename);
+        }
+
+        // ---------------- EVENT LISTENERS ----------------
+        document.getElementById("compFilterBtn").addEventListener("click",filterCompTable);
+        document.getElementById("compClearBtn").addEventListener("click",clearCompFilter);
+        document.getElementById("compCsvBtn").addEventListener("click",exportCompCSV);
+        document.getElementById("compPdfBtn").addEventListener("click",exportCompPDF);
+
+        document.getElementById("tpFilterBtn").addEventListener("click",filterTeamParticipation);
+        document.getElementById("tpClearBtn").addEventListener("click",clearTeamParticipationFilter);
+        document.getElementById("tpCsvBtn").addEventListener("click",exportTeamParticipationCSV);
+        document.getElementById("tpPdfBtn").addEventListener("click",exportTeamParticipationPDF);
+
+        document.getElementById("combinedCsvBtn").addEventListener("click",exportCombinedCSV);
+        document.getElementById("combinedPdfBtn").addEventListener("click",exportCombinedPDF);
+
+        // ---------------- INITIAL LOAD ----------------
+        loadCompReports();
+        loadTeamParticipation();
+</script>
+}

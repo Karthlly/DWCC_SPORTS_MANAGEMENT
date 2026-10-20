@@ -1,0 +1,15 @@
+﻿{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=sportsmanagement;User=root;Password=;TreatTinyAsBoolean=true;"
+    },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AllowedHosts": "*"
+
+
+
+}

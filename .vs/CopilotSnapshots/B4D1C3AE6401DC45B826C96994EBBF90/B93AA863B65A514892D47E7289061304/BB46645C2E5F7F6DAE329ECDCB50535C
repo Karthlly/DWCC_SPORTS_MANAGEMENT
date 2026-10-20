@@ -1,0 +1,271 @@
+﻿using DWCCSportsManagement.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+
+namespace DWCCSportsManagement.Data
+{
+    public class SportsContext : DbContext
+    {
+        public SportsContext(DbContextOptions<SportsContext> options) : base(options) { }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Coach> Coaches { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Sport> Sports { get; set; }
+        public DbSet<Competition> Competitions { get; set; }
+        public DbSet<TeamModel> Teams { get; set; }
+
+        public DbSet<Rubric> Rubrics { get; set; }  // ✅ ADD THIS
+        public DbSet<AthleteModel> Athletes { get; set; }
+        public DbSet<SessionModel> Sessions { get; set; }
+        public DbSet<AttendanceModel> Attendance { get; set; }
+        public DbSet<PerformanceModel> Performances { get; set; }  // <- Add this
+        public DbSet<PasswordReset> PasswordResets { get; set; } // Add this DbSet
+
+        public DbSet<CompetitionParticipant> CompetitionParticipants { get; set; }
+        public DbSet<PerformanceModel> Performance { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Configure User table
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("users");
+                entity.HasKey(e => e.Id);
+                // Store Role as string to match MySQL ENUM/VARCHAR
+                entity.Property(e => e.Role)
+                      .HasConversion<string>();
+            });
+            
+
+            modelBuilder.Entity<Sport>(entity =>
+            {
+                entity.ToTable("sport");
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Name)
+                      .HasColumnName("name")
+                      .IsRequired();
+
+                // Category FK
+                entity.Property(e => e.CategoryId)
+                      .HasColumnName("category_id")
+                      .IsRequired();
+
+                entity.HasOne(e => e.Category)
+                      .WithMany()
+                      .HasForeignKey(e => e.CategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                // SubCategory FK
+                entity.Property(e => e.SubCategoryId)
+                      .HasColumnName("sub_category")
+                      .IsRequired();
+
+                entity.HasOne(e => e.SubCategory)
+                      .WithMany()
+                      .HasForeignKey(e => e.SubCategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Users table
+            // modelBuilder.Entity<User>(entity =>
+            // {
+            //     entity.ToTable("users");
+            //     entity.HasKey(e => e.Id);
+            // });
+
+            // Coaches table
+            modelBuilder.Entity<Coach>(entity =>
+            {
+                entity.ToTable("coaches");
+                entity.HasKey(e => e.Id);
+            });
+
+            // Categories table
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.ToTable("category");
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).HasColumnName("category_id");
+                entity.Property(e => e.Name).HasColumnName("category_name").IsRequired();
+            });
+
+            // Sport table
+            modelBuilder.Entity<Sport>(entity =>
+            {
+                entity.ToTable("sport");
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Name)
+                      .HasColumnName("name")
+                      .IsRequired();
+
+                // Foreign key mapping to category
+                entity.Property(e => e.CategoryId)
+                      .HasColumnName("category_id")
+                      .IsRequired();
+
+                entity.HasOne(e => e.Category)
+                      .WithMany()
+                      .HasForeignKey(e => e.CategoryId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Competitions table
+            modelBuilder.Entity<Competition>(entity =>
+            {
+                entity.ToTable("competitions");
+                entity.HasKey(e => e.CompetitionId);
+            });
+
+            // Teams table
+            modelBuilder.Entity<TeamModel>(entity =>
+            {
+                entity.ToTable("teams");
+                entity.HasKey(e => e.TeamId);
+
+                entity.Property(e => e.TeamName)
+                      .HasColumnName("teamName")
+                      .IsRequired();
+
+                entity.Property(e => e.CoachId)
+                      .HasColumnName("CoachId")
+                      .IsRequired();
+
+                entity.Property(e => e.SportId)
+                      .HasColumnName("SportId")
+                      .IsRequired();
+
+                entity.Property(e => e.Status)
+                      .HasColumnName("status")
+                      .HasDefaultValue("Pending");
+
+                // Navigation
+                entity.HasOne(e => e.Coach)
+                      .WithMany()
+                      .HasForeignKey(e => e.CoachId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Sport)
+                      .WithMany()
+                      .HasForeignKey(e => e.SportId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Athletes table
+            modelBuilder.Entity<AthleteModel>(entity =>
+            {
+                entity.ToTable("athletes");
+                entity.HasKey(a => a.AthleteId);
+
+                entity.Property(a => a.FirstName).IsRequired();
+                entity.Property(a => a.LastName).IsRequired();
+                entity.Property(a => a.Gender);
+                entity.Property(a => a.Birthdate);
+                entity.Property(a => a.MedicalInfo);
+            });
+
+            // Sessions table
+            modelBuilder.Entity<SessionModel>(entity =>
+            {
+                entity.ToTable("sessions");
+                entity.HasKey(s => s.SessionId);
+
+                entity.Property(s => s.DateTime)
+                      .HasColumnName("date_time")
+                      .IsRequired();
+
+                // Map the TeamId foreign key
+                entity.Property(s => s.TeamId)
+                      .HasColumnName("TeamId")
+                      .IsRequired();
+
+                // Set up the relationship with TeamModel
+                entity.HasOne(s => s.Team)
+                      .WithMany()
+                      .HasForeignKey(s => s.TeamId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.Property(s => s.Description)
+                      .HasColumnName("description");
+
+                entity.Property(s => s.Location)
+                      .HasColumnName("location")
+                      .HasMaxLength(150);
+            });
+
+            modelBuilder.Entity<AttendanceModel>(entity =>
+            {
+                entity.ToTable("attendance");
+
+                entity.HasKey(a => a.AttendanceId);
+
+                entity.Property(a => a.Status)
+                      .HasConversion<string>() // store enum as string
+                      .IsRequired();
+
+                entity.HasOne(a => a.Athlete)
+                      .WithMany()
+                      .HasForeignKey(a => a.AthleteId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(a => a.Session)
+                      .WithMany()
+                      .HasForeignKey(a => a.SessionId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            // CompetitionParticipants table
+            modelBuilder.Entity<CompetitionParticipant>(entity =>
+            {
+                entity.ToTable("competition_participants");
+                entity.HasKey(e => e.ParticipantId);
+
+                // Competition foreign key
+                entity.HasOne(e => e.Competition)
+                      .WithMany()
+                      .HasForeignKey(e => e.CompetitionId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                // Team foreign key
+                entity.HasOne(e => e.Team)
+                      .WithMany()
+                      .HasForeignKey(e => e.TeamId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.Property(e => e.Results)
+                      .HasMaxLength(255);
+            });
+
+
+            modelBuilder.Entity<PasswordReset>(entity =>
+            {
+                entity.ToTable("password_resets");
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.UserId)
+                      .HasColumnName("user_id")
+                      .IsRequired();
+
+                entity.Property(e => e.Token)
+                      .HasColumnName("token")
+                      .IsRequired()
+                      .HasMaxLength(255); // assuming token is a string
+
+                entity.Property(e => e.Expiration)
+                      .HasColumnName("expiration")
+                      .IsRequired();
+
+                // Relationships
+                entity.HasOne(e => e.User)
+                      .WithMany()
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+        }
+    }
+}
